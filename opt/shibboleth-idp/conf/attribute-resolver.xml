@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<AttributeResolver xmlns="urn:mace:shibboleth:2.0:resolver"
+    xmlns:sec="urn:mace:shibboleth:2.0:security"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mace:shibboleth:2.0:resolver http://shibboleth.net/schema/idp/shibboleth-attribute-resolver.xsd
+                      urn:mace:shibboleth:2.0:security http://shibboleth.net/schema/idp/shibboleth-security.xsd">
+
+    <DataConnector propagateResolutionExceptions="true" acceptTypes="application/json" id="rest" xsi:type="HTTP" httpClientRef="shibboleth.NonCachingHttpClient">
+        <URLTemplate>
+            <![CDATA[
+                http://rest:4000/attributes/$pathEscaper.escape($resolutionContext.principal)
+            ]]>
+        </URLTemplate>
+
+        <ResponseMapping>
+            <Script>
+                <![CDATA[
+        var HashSet = Java.type("java.util.HashSet");
+        var HttpClientSupport = Java.type("net.shibboleth.utilities.java.support.httpclient.HttpClientSupport");
+        var logger = Java.type("org.slf4j.LoggerFactory").getLogger("net.shibboleth.idp.attribute");
+        var IdPAttribute = Java.type("net.shibboleth.idp.attribute.IdPAttribute");
+        var StringAttributeValue = Java.type("net.shibboleth.idp.attribute.StringAttributeValue");
+
+        logger.info("===shibboleth attribute resolver===");
+        // Limits length to 64k
+        var body = HttpClientSupport.toString(response.getEntity(), "UTF-8", 65536);
+        logger.info(body);
+        var result = JSON.parse(body);
+
+        var attrSN = new IdPAttribute("sn");
+        var values = new HashSet();
+        if (result.sn != null) {
+            for (var i=0; i<result.sn.length; i++) {
+
+            logger.info("result.sn[i].name " + result.sn[i].name);
+            logger.info("result.sn " + result.sn[i]);
+                values.add(new StringAttributeValue(result.sn[i]));
+            }
+        }
+        attrSN.setValues(values);
+        connectorResults.add(attrSN);
+
+        var attrGIVENNAME = new IdPAttribute("givenName");
+        var values = new HashSet();
+        if (result.givenName != null) {
+            for (var i=0; i<result.givenName.length; i++) {
+                values.add(new StringAttributeValue(result.givenName[i]));
+            }
+        }
+        attrGIVENNAME.setValues(values);
+        connectorResults.add(attrGIVENNAME);
+
+        var attrDISPLAYNAME = new IdPAttribute("displayName");
+        var values = new HashSet();
+        if (result.displayName != null) {
+            for (var i=0; i<result.displayName.length; i++) {
+                values.add(new StringAttributeValue(result.displayName[i]));
+            }
+        }
+
+        attrDISPLAYNAME.setValues(values);
+        connectorResults.add(attrDISPLAYNAME);
+
+        var attrUID = new IdPAttribute("uid");
+        var values = new HashSet();
+        if (result.uid != null) {
+            for (var i=0; i<result.uid.length; i++) {
+                values.add(new StringAttributeValue(result.uid[i]));
+            }
+        }
+        attrUID.setValues(values);
+        connectorResults.add(attrUID);
+
+        var attrMAIL = new IdPAttribute("mail");
+        var values = new HashSet();
+        if (result.mail != null) {
+            for (var i=0; i<result.mail.length; i++) {
+                values.add(new StringAttributeValue(result.mail[i]));
+            }
+        }
+        attrMAIL.setValues(values);
+        connectorResults.add(attrMAIL);
+        
+        var attrEMPLOYEENUMBER = new IdPAttribute("employeeNumber");
+        var values = new HashSet();
+        if (result.employeeNumber != null) {
+            for (var i=0; i<result.employeeNumber.length; i++) {
+                values.add(new StringAttributeValue(result.employeeNumber[i]));
+            }
+        }
+        attrEMPLOYEENUMBER.setValues(values);
+        connectorResults.add(attrEMPLOYEENUMBER);
+
+        var attreduPersonScopedAffiliation = new IdPAttribute("eduPersonScopedAffiliation");
+        var values = new HashSet();
+        if (result.eduPersonScopedAffiliation != null) {
+            for (var i=0; i<result.eduPersonScopedAffiliation.length; i++) {
+                values.add(new StringAttributeValue(result.eduPersonScopedAffiliation[i]));
+            }
+        }
+        attreduPersonScopedAffiliation.setValues(values);
+        connectorResults.add(attreduPersonScopedAffiliation);
+       
+        logger.info(connectorResults);
+
+        ]]>
+            </Script>
+        </ResponseMapping>
+
+        <!-- <ResultCache expireAfterWrite="PT5M"/> -->
+    </DataConnector>
+    <AttributeDefinition xsi:type="Simple" id="sn" sourceAttributeID="sn">
+        <Dependency ref="rest" />
+        <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:sn" encodeType="false" />
+        <AttributeEncoder xsi:type="SAML2String" name="urn:oid:2.5.4.4" friendlyName="Surname" encodeType="false" />
+    </AttributeDefinition>
+    <AttributeDefinition xsi:type="Simple" id="givenName" sourceAttributeID="givenName">
+        <Dependency ref="rest" />
+        <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:givenName" encodeType="false" />
+        <AttributeEncoder xsi:type="SAML2String" name="urn:oid:2.5.4.42" friendlyName="givenName" encodeType="false" />
+    </AttributeDefinition>
+    <AttributeDefinition xsi:type="Simple" id="displayName" sourceAttributeID="displayName">
+        <Dependency ref="rest" />
+        <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:displayName" encodeType="false" />
+        <AttributeEncoder xsi:type="SAML2String" name="urn:oid:2.16.840.1.113730.3.1.241" friendlyName="displayName" encodeType="false" />
+    </AttributeDefinition>
+    <AttributeDefinition xsi:type="Simple" id="uid" sourceAttributeID="uid">
+        <Dependency ref="rest" />
+        <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:uid" encodeType="false" />
+        <AttributeEncoder xsi:type="SAML2String" name="urn:oid:0.9.2342.19200300.100.1.1" friendlyName="uid" encodeType="false" />
+    </AttributeDefinition>
+
+    <AttributeDefinition xsi:type="Simple" id="mail" sourceAttributeID="mail">
+        <Dependency ref="rest" />
+        <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:mail" encodeType="false" />
+        <AttributeEncoder xsi:type="SAML2String" name="urn:oid:0.9.2342.19200300.100.1.3" friendlyName="mail" encodeType="false" />
+    </AttributeDefinition>
+    <AttributeDefinition xsi:type="Simple" id="employeeNumber" sourceAttributeID="employeeNumber">
+        <Dependency ref="rest" />
+        <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:employeeNumber" encodeType="false" />
+        <AttributeEncoder xsi:type="SAML2String" name="urn:oid:2.16.840.1.113730.3.1.3" friendlyName="employeeNumber" encodeType="false" />
+    </AttributeDefinition>
+    <AttributeDefinition xsi:type="Simple" id="eduPersonScopedAffiliation" sourceAttributeID="eduPersonScopedAffiliation">
+        <Dependency ref="rest" />
+        <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:eduPersonScopedAffiliation" encodeType="false" />
+        <AttributeEncoder xsi:type="SAML2String" name="urn:oid:1.3.6.1.4.1.5923.1.1.1.9" friendlyName="eduPersonScopedAffiliation" encodeType="false" />
+    </AttributeDefinition>
+</AttributeResolver>
+    
+    
