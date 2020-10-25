@@ -1,0 +1,46 @@
+version: "3.1"
+services:
+  rest:
+    image: ailabreg.jnu.ac.kr/shibboleth/jnu-rest
+    environment:
+    - TZ=Asia/Seoul
+    - LANG=ko_KR.UTF-8
+    - USER_NAME=dbuser
+    - PASSWORD=dbpassword
+    - DATABASE=XEPDB1
+    - HOST=13.209.18.89
+    - DB_PORT=32118
+    - DB_TYPE=oracle
+    - AUTH_QUERY=SELECT FIRST_NAME AS "sn", LAST_NAME AS "givenName", CONCAT(FIRST_NAME, LAST_NAME) AS "displayName", ID AS "uid", EMAIL AS "mail", ID AS "employeeNumber", '빛가람대학교' as "eduPersonScopedAffiliation" FROM DBUSER.USERS WHERE username = :USERID and PASSWORD=DBMS_CRYPTO.HASH(UTL_I18N.STRING_TO_RAW(:PASSWORD, 'AL32UTF8'), 4)
+    - ATTRIBUTE_QUERY=SELECT FIRST_NAME AS "sn", LAST_NAME AS "givenName", CONCAT(FIRST_NAME, LAST_NAME) AS "displayName", ID AS "uid", EMAIL AS "mail", ID AS "employeeNumber", '빛가람대학교' as "eduPersonScopedAffiliation" FROM DBUSER.USERS WHERE username = :USERID
+    networks:
+        idpapp:
+            aliases:
+             - rest
+  idp:
+    build:
+      context: ./
+    # image:  ailabreg.jnu.ac.kr/shibboleth/jnu-idp
+    image:  jnu-idp:latest
+    environment:
+     - JETTY_MAX_HEAP=64m
+     - JETTY_BROWSER_SSL_KEYSTORE_PASSWORD=changeme
+     - JETTY_BACKCHANNEL_SSL_KEYSTORE_PASSWORD=58463
+     - TZ=Asia/Seoul
+     - LANG=ko_KR.UTF-8
+     - HOSTNAME=idps.jnu.ac.kr
+    ports:
+    - 443:443
+    - 8080:8080
+    depends_on:
+     - rest
+    networks:
+        idpapp:
+    volumes:
+      - ./logs:/opt/shib-jetty-base/logs
+    # deploy:
+    #     mode: replicated
+    #     replicas: 2
+networks:
+    idpapp:
+
