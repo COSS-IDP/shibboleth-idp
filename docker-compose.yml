@@ -20,18 +20,15 @@ services:
   idp:
     build:
       context: ./
-    # image:  ailabreg.jnu.ac.kr/shibboleth/jnu-idp
-    image:  jnu-idp:latest
+    image:  ailabreg.jnu.ac.kr/shibboleth/jnu-idp
+    # image:  jnu-idp:latest
     environment:
-     - JETTY_MAX_HEAP=64m
-     - JETTY_BROWSER_SSL_KEYSTORE_PASSWORD=changeme
-     - JETTY_BACKCHANNEL_SSL_KEYSTORE_PASSWORD=58463
      - TZ=Asia/Seoul
      - LANG=ko_KR.UTF-8
      - HOSTNAME=idps.jnu.ac.kr
     ports:
     - 443:443
-    - 8080:8080
+    - 80:80
     depends_on:
      - rest
     networks:

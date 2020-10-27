@@ -5,6 +5,7 @@ Shibboleth IdP
 annotations
 deploy
 ext
+http
 https
 jsp
 jstl

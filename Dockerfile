@@ -56,6 +56,7 @@ RUN wget -q https://shibboleth.net/downloads/identity-provider/$idp_version/shib
     && echo idp.entityID=$IDP_ENTITYID>>$S \
     && echo idp.sealer.storePassword=$IDP_KEYSTORE_PASSWORD>>$S \
     && echo idp.sealer.keyPassword=$IDP_KEYSTORE_PASSWORD>>$S \
+    && echo idp.status.accessPolicy=status.AccessByIPAddress>>$S \
     && $IDP_SRC/bin/install.sh \
     -Didp.scope=$IDP_SCOPE \
     -Didp.target.dir=$IDP_HOME \
@@ -71,59 +72,15 @@ RUN wget -q https://shibboleth.net/downloads/identity-provider/$idp_version/shib
     && rm shibboleth-identity-provider-$idp_version.tar.gz \
     && rm -rf shibboleth-identity-provider-$idp_version
 
-# slf4j - Download, verify and install
-RUN wget -q https://repo1.maven.org/maven2/org/slf4j/slf4j-api/$slf4j_version/slf4j-api-$slf4j_version.jar \
-    && echo "$slf4j_hash  slf4j-api-$slf4j_version.jar" | sha256sum -c - \
-    && mv slf4j-api-$slf4j_version.jar $JETTY_BASE/lib/logging/
-
-# logback_classic - Download verify and install
-RUN wget -q https://repo1.maven.org/maven2/ch/qos/logback/logback-classic/$logback_version/logback-classic-$logback_version.jar \
-    && echo "$logback_classic_hash  logback-classic-$logback_version.jar" | sha256sum -c - \
-    && mv logback-classic-$logback_version.jar $JETTY_BASE/lib/logging/
-
-# logback-core - Download, verify and install
-RUN wget -q https://repo1.maven.org/maven2/ch/qos/logback/logback-core/$logback_version/logback-core-$logback_version.jar \
-    && echo "$logback_core_hash  logback-core-$logback_version.jar" | sha256sum -c - \
-    && mv logback-core-$logback_version.jar $JETTY_BASE/lib/logging/
-
-# logback-access - Download, verify and install
-RUN wget -q https://repo1.maven.org/maven2/ch/qos/logback/logback-access/$logback_version/logback-access-$logback_version.jar \
-    && echo "$logback_access_hash  logback-access-$logback_version.jar" | sha256sum -c - \
-    && mv logback-access-$logback_version.jar $JETTY_BASE/lib/logging/ \
-    && $IDP_HOME/bin/build.sh -Didp.target.dir=$IDP_HOME
-
-# mariadb-java-client - Donwload, verify and install
-# RUN wget -q https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/$mariadb_version/mariadb-java-client-$mariadb_version.jar \
-#     && echo "$mariadb_hash  mariadb-java-client-$mariadb_version.jar" | sha256sum -c - \
-#     && mv mariadb-java-client-$mariadb_version.jar $IDP_HOME/edit-webapp/WEB-INF/lib/
-
-# # # idp-oidc-extension - Donwload, verify and install
-# RUN wget -q https://shibboleth.net/downloads/identity-provider/extensions/java-idp-oidc/$idp_oidcext_version/idp-oidc-extension-distribution-$idp_oidcext_version-bin.tar.gz \
-#     && echo "$idp_oidcext_hash  idp-oidc-extension-distribution-$idp_oidcext_version-bin.tar.gz" | sha256sum -c - \
-#     && tar -zxvf idp-oidc-extension-distribution-$idp_oidcext_version-bin.tar.gz -C /opt/shibboleth-idp --strip-components=1 \
-#     && rm idp-oidc-extension-distribution-$idp_oidcext_version-bin.tar.gz \
-#     && $IDP_HOME/bin/build.sh -Didp.target.dir=$IDP_HOME
-
-# # idp-oidc-extension - Configuration
-# RUN grep -q 'oidc-relying-party.xml' $IDP_HOME/conf/relying-party.xml || gawk -i inplace '{print} /-->/ && !n {print "    <import resource=\"oidc-relying-party.xml\" />\n"; n++}' $IDP_HOME/conf/relying-party.xml \
-#     && grep -q 'global-oidc.xml' $IDP_HOME/conf/global.xml || gawk -i inplace '{print} /-->/ && !n {print "    <import resource=\"global-oidc.xml\" />\n"; n++}' $IDP_HOME/conf/global.xml \
-#     && grep -q 'credentials-oidc.xml' $IDP_HOME/conf/credentials.xml || gawk -i inplace '{print} /-->/ && !n {print "    <import resource=\"credentials-oidc.xml\" />\n"; n++}' $IDP_HOME/conf/credentials.xml \
-#     && grep -q 'services-oidc.xml' $IDP_HOME/conf/services.xml || gawk -i inplace '{print} /-->/ && !n {print "    <import resource=\"services-oidc.xml\" />\n"; n++}' $IDP_HOME/conf/services.xml \
-# 		&& grep -q 'schac.xml' $IDP_HOME/conf/attributes/default-rules.xml || gawk -i inplace '{print} /-->/ && !n {print "    <import resource=\"schac.xml\" />\n"; n++}' $IDP_HOME/conf/attributes/default-rules.xml \
-# 		&& grep -q 'funetEduPerson.xml' $IDP_HOME/conf/attributes/default-rules.xml || gawk -i inplace '{print} /-->/ && !n {print "    <import resource=\"funetEduPerson.xml\" />\n"; n++}' $IDP_HOME/conf/attributes/default-rules.xml \
-#     && grep -q 'oidc-subject.properties' $IDP_HOME/conf/idp.properties || sed -i '/^idp.additionalProperties=/ s/$/\, \/conf\/oidc-subject.properties\, \/conf\/idp-oidc.properties/' $IDP_HOME/conf/idp.properties \
-#     && gawk -i inplace '/^#?idp.oidc.issuer/ {$0="idp.oidc.issuer = $IDP_HOST_NAME"} 1' $IDP_HOME/conf/idp-oidc.properties \
-#     && INI=jetty.setuid.groupName;VALUE=root; sed -i 's/.*'$INI'=.*/'$INI'='$VALUE'/' $JETTY_BASE/start.d/setuid.ini \
-#     && cp $IDP_HOME/conf/attribute-filter-oidc.xml $IDP_HOME/conf/attribute-filter.xml \
-#     && cp $IDP_HOME/conf/attribute-resolver-oidc.xml $IDP_HOME/conf/attribute-resolver.xml \
-#     && cp $IDP_HOME/conf/authn/authn-comparison-oidc.xml $IDP_HOME/conf/authn/authn-comparison.xml
 
 COPY opt/shibboleth-idp/ /opt/shibboleth-idp/
+
 COPY $JETTY_BASE $JETTY_BASE
 # Create new user to run jetty with
 # RUN addgroup -g 1000 -S jetty && \
 # RUN adduser -u 1000 -S jetty -G root -s /sbin/nologin
-RUN useradd jetty
+# RUN useradd jetty
+RUN useradd --system --no-create-home --user-group jetty
 
 # Set ownerships
 RUN mkdir -p $JETTY_BASE/logs \
@@ -150,14 +107,15 @@ COPY bin/ /usr/local/bin/
 
 # RUN adduser -u 1000 -S jetty -G root -s /sbin/nologin \
 RUN useradd jetty \
-    && chmod 750 /usr/local/bin/run-jetty.sh /usr/local/bin/init-idp.sh
+    && chmod 750 /usr/local/bin/init-idp.sh
 
 COPY --from=temp /opt/ /opt/
 
+RUN /opt/shibboleth-idp/bin/build.sh -Didp.target.dir=/opt/shibboleth-idp
 RUN chmod +x /opt/jetty-home/bin/jetty.sh
 
 # Opening 8080
-EXPOSE 443 8443
+EXPOSE 443 80
 ENV JETTY_HOME=/opt/jetty-home \
     JETTY_BASE=/opt/shib-jetty-base \
     PATH=$PATH:$JAVA_HOME/bin
@@ -165,20 +123,8 @@ ENV JETTY_HOME=/opt/jetty-home \
 
 #establish a healthcheck command so that docker might know the container's true state
 HEALTHCHECK --interval=1m --timeout=30s \
-    CMD curl -k -f http://127.0.0.1:8080/idp/status || exit 1
+    CMD curl -k -f http://localhost/idp/status || exit 1
 
 
 
  CMD /opt/jetty-home/bin/jetty.sh run
-# CMD "run-jetty.sh"
-
-# CMD $JAVA_HOME/bin/java -jar $JETTY_HOME/start.jar \
-#     jetty.home=$JETTY_HOME jetty.base=$JETTY_BASE \
-#     -Djetty.sslContext.keyStorePassword=58463 \
-#     -Djetty.sslContext.keyStoreType=PKCS12 \
-#     -Djetty.sslContext.trustStorePassword=58463 \
-#     -Djetty.sslContext.trustStoreType=PKCS12 \
-#     -Djetty.sslContext.keyStorePath=../shibboleth-idp/credentials/idp-browser.p12 \
-#     -Djetty.sslContext.trustStorePath=../shibboleth-idp/credentials/idp-browser.p12 \
-#     -Djetty.sslContext.keyManagerPassword=58463 \
-#     -Djetty.ssl.port=443
