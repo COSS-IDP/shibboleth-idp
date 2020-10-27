@@ -1,9 +1,8 @@
-
 <!--
 This is example metadata only. Do *NOT* supply it as is without review,
 and do *NOT* provide it in real time to your partners.
  -->
-<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" ID="_bf63813d70b5f63a1d2a3504dca89b5e268be651" entityID="http://idf-sp.jnu.ac.kr/shibboleth">
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" ID="_aa998ce628b2b1edb3766a3f8b518ea36b64e2af" entityID="https://devsp.jnu.ac.kr/Shibboleth.sso/Metadata">
 
   <md:Extensions xmlns:alg="urn:oasis:names:tc:SAML:metadata:algsupport">
     <alg:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/>
@@ -26,29 +25,34 @@ and do *NOT* provide it in real time to your partners.
 
   <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:1.0:protocol">
     <md:Extensions>
-      <init:RequestInitiator xmlns:init="urn:oasis:names:tc:SAML:profiles:SSO:request-init" Binding="urn:oasis:names:tc:SAML:profiles:SSO:request-init" Location="http://idf-sp.jnu.ac.kr/Shibboleth.sso/Login"/>
+      <init:RequestInitiator xmlns:init="urn:oasis:names:tc:SAML:profiles:SSO:request-init" Binding="urn:oasis:names:tc:SAML:profiles:SSO:request-init" Location="https://devsp.jnu.ac.kr/Shibboleth.sso/Login"/>
     </md:Extensions>
     <md:KeyDescriptor>
       <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-        <ds:KeyName>79943fee7865</ds:KeyName>
+        <ds:KeyName>devsp</ds:KeyName>
         <ds:X509Data>
-          <ds:X509SubjectName>CN=79943fee7865</ds:X509SubjectName>
-          <ds:X509Certificate>MIIC6zCCAdOgAwIBAgIJAOy0nki3WAOVMA0GCSqGSIb3DQEBBQUAMBcxFTATBgNV
-BAMTDDc5OTQzZmVlNzg2NTAeFw0xNTEyMTEwMzAwNDJaFw0yNTEyMDgwMzAwNDJa
-MBcxFTATBgNVBAMTDDc5OTQzZmVlNzg2NTCCASIwDQYJKoZIhvcNAQEBBQADggEP
-ADCCAQoCggEBALPBzAz0DTn+j2YsQKfqWI+m08lP5UzwVsE9ZKzLqO3PRHZqiOBm
-EaFmRrYCZCAOcJ0TXcxPGtNSo8HC4uw5/Y5lJGuI3jN7X7KB1VUQDpUSwfgOqtro
-uDoVRKrsaYZTnlNV8KbZ0WQz5s4Uw6CxKRB9RZ5iQMP1fuxc8B6GSOb3x69MiY6c
-1jlgVAc6rV4zGfpafacxOLM8qcYhY8u3TiSd0H+oiGEqi1mFLK8yp6FKzX8OUkQf
-We49YHz6wBxFOe+/p+7ziym1rBs/lGfenEo8ziCIMmjnoo257fz00bcz9rFl1rTx
-KLFfgy72xTlG72l6u+pB9VqK3YNJS52Ns5UCAwEAAaM6MDgwFwYDVR0RBBAwDoIM
-Nzk5NDNmZWU3ODY1MB0GA1UdDgQWBBRiDMNPjiAMC50WWubI3PMjP45S/DANBgkq
-hkiG9w0BAQUFAAOCAQEAYZM/iWgC93vAq0d98egEzvESKodxHffkDOagd4Kxt/S0
-AAHsVQCmAK/9kmRhsWzR3f1KIw98q4EX7nH/K68BFrerUvaL5+fEGE9W6Ki6QdW8
-bM17GQkLyRDKZzGPm/hsaG1Oxru2kDf7qSvv59aRZlZ8skrDEnx8+dZ8JKC02ZDU
-ClC+xWl1UPfO2BL4tJei/siSymGpiRqznQ2JMoTFu5CUUpoxyCVz1bl9lCVceoJ9
-FaL38knS0p5DnXcm+I8wqNEVGLDPbDalBQryhJT9fIMm1/B85gB3AWAvcu9PPfHK
-lQQUhxyEXTBJx3luLlpIjoloFKIute9K7pE5qAENjg==
+          <ds:X509SubjectName>CN=devsp</ds:X509SubjectName>
+          <ds:X509Certificate>MIID1jCCAj6gAwIBAgIJAJcAa9Ad9FQ6MA0GCSqGSIb3DQEBCwUAMBAxDjAMBgNV
+BAMTBWRldnNwMB4XDTIwMDczMDA3NDQ0OFoXDTMwMDcyODA3NDQ0OFowEDEOMAwG
+A1UEAxMFZGV2c3AwggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAwggGKAoIBgQCmlG6o
+U9FTqXJtFAMX7XpsIalsSzBklibikjMaL9y9ZLt6qSxZrAE+6VhR5OAluiEuA3zW
+CE8R2V3C/syvOUqPmSk+DValpt20u6xic+n5vnOLKwBhv9819c79rXgtMHogXU4p
+g4qND8px0z+UexXCiD6sxFAj0rOEiTTemEUJo3lcdwLs/ioeccGjSaG4qL1+97AS
+pss/9DFLTKQhPvnMRJqERGS/tUx7v21LmqSidk1rpRfXTxZpCXfmbIyM1NLLQakk
+p9fUr5A2gUcT1qmF/rJjS+JA3Ll3GdSQfbtXFcSQNMurLa1bMGB2IvGhBAg721kJ
+l/pLNBwHZVh0kUDBC9kt1og8YpG7/fPKtmu0SNdie7ELHqK1lcwPQmC9j4J/0sYs
+1WB7z2+vYDWnjXZkKpjCk4GtObT39nUUUYKvbdS0CjIOAgRMYY09TsT6SGR4dbej
+2rHdCAwaelQS9Q6cmWxeNgP1XYVw0ZDUWaWoXXKLmcM6pn37bWh4bb/0GG8CAwEA
+AaMzMDEwEAYDVR0RBAkwB4IFZGV2c3AwHQYDVR0OBBYEFJWOEAhW3ENNfRr554dW
+LRNoMCrAMA0GCSqGSIb3DQEBCwUAA4IBgQAGkkSLHRzztbzB54rFNZCRt8uB2Zem
+01uEJuqVESUcn+2QlvaNP4G+0DljhJ0Fpq1XNuCvfIw+Esme/P+AK+aH4pBchSKR
+adlsq6ILXVvBhq8QTCjD+Qr9st9hqQfeJiBvQXc8k3WQTPRWU3SRE1Db5eJJpidh
+zTJslx3n9uvtHCBIrNluxJqZ4ZogM3UP3J8GbnrGCQLwUZZGzm7POGCuGMVkKYON
+TIcE4nE3mk18UH2JUhOwmxnehZhtpFtoZ2G7FOO9YScA0j0E8k+UVn/4lQ/H6Whm
+qy+DDAK6JqHkwY8PsMMyuVqmucUsT9rc1dm43iQPNJTMw3kin2LhgV0tzp2nO0bJ
+qubm9sF2ZVUEPTrqPZdO6B4J3AVI1T29DUV+nrwSAAjR4KHmOCQcw8xTXWYqQ/vN
+YduhFumFA0U6aUh4g7yTgASKpFwMlxbmJthdBzPiKfw9WUlvwjKj7aEDYGMgNleK
+SWfOawvTqPblRBy3d705IpioAKsJ0AiWj0g=
 </ds:X509Certificate>
         </ds:X509Data>
       </ds:KeyInfo>
@@ -62,17 +66,19 @@ lQQUhxyEXTBJx3luLlpIjoloFKIute9K7pE5qAENjg==
       <md:EncryptionMethod Algorithm="http://www.w3.org/2009/xmlenc11#rsa-oaep"/>
       <md:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p"/>
     </md:KeyDescriptor>
-    <md:ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="http://idf-sp.jnu.ac.kr/Shibboleth.sso/Artifact/SOAP" index="1"/>
-    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="http://idf-sp.jnu.ac.kr/Shibboleth.sso/SLO/SOAP"/>
-    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://idf-sp.jnu.ac.kr/Shibboleth.sso/SLO/Redirect"/>
-    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://idf-sp.jnu.ac.kr/Shibboleth.sso/SLO/POST"/>
-    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="http://idf-sp.jnu.ac.kr/Shibboleth.sso/SLO/Artifact"/>
-    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://idf-sp.jnu.ac.kr/Shibboleth.sso/SAML2/POST" index="1"/>
-    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="http://idf-sp.jnu.ac.kr/Shibboleth.sso/SAML2/POST-SimpleSign" index="2"/>
-    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="http://idf-sp.jnu.ac.kr/Shibboleth.sso/SAML2/Artifact" index="3"/>
-    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:PAOS" Location="http://idf-sp.jnu.ac.kr/Shibboleth.sso/SAML2/ECP" index="4"/>
-    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:browser-post" Location="http://idf-sp.jnu.ac.kr/Shibboleth.sso/SAML/POST" index="5"/>
-    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:artifact-01" Location="http://idf-sp.jnu.ac.kr/Shibboleth.sso/SAML/Artifact" index="6"/>
+    <md:ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://devsp.jnu.ac.kr/Shibboleth.sso/Artifact/SOAP" index="1"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://devsp.jnu.ac.kr/Shibboleth.sso/SAML2/POST" index="1"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://devsp.jnu.ac.kr/Shibboleth.sso/SAML2/POST-SimpleSign" index="2"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://devsp.jnu.ac.kr/Shibboleth.sso/SAML2/Artifact" index="3"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:PAOS" Location="https://devsp.jnu.ac.kr/Shibboleth.sso/SAML2/ECP" index="4"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:browser-post" Location="https://devsp.jnu.ac.kr/Shibboleth.sso/SAML/POST" index="5"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:artifact-01" Location="https://devsp.jnu.ac.kr/Shibboleth.sso/SAML/Artifact" index="6"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://devsp.jnu.ac.kr/Shibboleth.sso/SAML2/POST" index="7"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://devsp.jnu.ac.kr/Shibboleth.sso/SAML2/POST-SimpleSign" index="8"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://devsp.jnu.ac.kr/Shibboleth.sso/SAML2/Artifact" index="9"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:PAOS" Location="https://devsp.jnu.ac.kr/Shibboleth.sso/SAML2/ECP" index="10"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:browser-post" Location="https://devsp.jnu.ac.kr/Shibboleth.sso/SAML/POST" index="11"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:artifact-01" Location="https://devsp.jnu.ac.kr/Shibboleth.sso/SAML/Artifact" index="12"/>
   </md:SPSSODescriptor>
 
 </md:EntityDescriptor>
