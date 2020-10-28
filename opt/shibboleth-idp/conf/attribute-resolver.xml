@@ -80,7 +80,7 @@
         }
         attrMAIL.setValues(values);
         connectorResults.add(attrMAIL);
-        
+
         var attrEMPLOYEENUMBER = new IdPAttribute("employeeNumber");
         var values = new HashSet();
         if (result.employeeNumber != null) {
@@ -100,7 +100,17 @@
         }
         attreduPersonScopedAffiliation.setValues(values);
         connectorResults.add(attreduPersonScopedAffiliation);
-       
+
+        var attrEMPLOYEETYPE = new IdPAttribute("employeeType");
+        var values = new HashSet();
+        if (result.employeeType != null) {
+            for (var i=0; i<result.employeeType.length; i++) {
+                values.add(new StringAttributeValue(result.employeeType[i]));
+            }
+        }
+        attrEMPLOYEETYPE.setValues(values);
+        connectorResults.add(attrEMPLOYEETYPE);
+
         logger.info(connectorResults);
 
         ]]>
@@ -145,6 +155,10 @@
         <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:eduPersonScopedAffiliation" encodeType="false" />
         <AttributeEncoder xsi:type="SAML2String" name="urn:oid:1.3.6.1.4.1.5923.1.1.1.9" friendlyName="eduPersonScopedAffiliation" encodeType="false" />
     </AttributeDefinition>
+    <AttributeDefinition xsi:type="Simple" id="employeeType" sourceAttributeID="employeeType">
+        <Dependency ref="rest" />
+        <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:employeeType" encodeType="false" />
+        <AttributeEncoder xsi:type="SAML2String" name="urn:oid:2.16.840.1.113730.3.1.4" friendlyName="employeeType" encodeType="false" />
+    </AttributeDefinition>
 </AttributeResolver>
-    
-    
+

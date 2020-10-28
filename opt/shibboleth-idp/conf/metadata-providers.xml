@@ -5,8 +5,7 @@
     xmlns:resource="urn:mace:shibboleth:2.0:resource"
     xmlns:security="urn:mace:shibboleth:2.0:security"
     xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="urn:mace:shibboleth:2.0:metadata http://shibboleth.net/schema/idp/shibboleth-metadata.xsd
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mace:shibboleth:2.0:metadata http://shibboleth.net/schema/idp/shibboleth-metadata.xsd
                         urn:mace:shibboleth:2.0:resource http://shibboleth.net/schema/idp/shibboleth-resource.xsd
                         urn:mace:shibboleth:2.0:security http://shibboleth.net/schema/idp/shibboleth-security.xsd
                         urn:oasis:names:tc:SAML:2.0:metadata http://docs.oasis-open.org/security/saml/v2.0/saml-schema-metadata-2.0.xsd">
@@ -25,8 +24,22 @@
     <!--                                                                                            -->
     <!-- ========================================================================================== -->
 
-    <MetadataProvider id="JNU_SP"  xsi:type="FilesystemMetadataProvider" metadataFile="%{idp.home}/metadata/sp-metadata.xml"/>
+    <!-- <MetadataProvider id="JNU_SP" xsi:type="FilesystemMetadataProvider" metadataFile="%{idp.home}/metadata/sp-metadata.xml"/> -->
+    <MetadataProvider id="JNU_SP" xsi:type="FileBackedHTTPMetadataProvider" backingFile="%{idp.home}/metadata/sp-metadata.xml" metadataURL="https://devsp.jnu.ac.kr/Shibboleth.sso/Metadata">
+        <!-- You should always check the signature and freshness of remote
+              metadata.  It's commented out until you get the basics working.
+           <MetadataFilter xsi:type="SignatureValidation" certificateFile="%{idp.home}/credentials/signet.crt" />
+           <MetadataFilter xsi:type="RequiredValidUntil" maxValidityInterval="P30D"/>
+        -->
+    </MetadataProvider>
 
+    <MetadataProvider id="SAMLtest" xsi:type="FileBackedHTTPMetadataProvider" backingFile="%{idp.home}/metadata/SAMLtest.xml" metadataURL="https://samltest.id/saml/sp">
+        <!-- You should always check the signature and freshness of remote
+              metadata.  It's commented out until you get the basics working.
+           <MetadataFilter xsi:type="SignatureValidation" certificateFile="%{idp.home}/credentials/signet.crt" />
+           <MetadataFilter xsi:type="RequiredValidUntil" maxValidityInterval="P30D"/>
+        -->
+    </MetadataProvider>
     <!-- Example HTTP metadata provider.  Use this if you want to download
          the metadata from a remote service.
 
@@ -37,13 +50,9 @@
          The EntityRoleWhiteList saves memory by only loading metadata from entity types
          that you will interoperate with.
 
-    <MetadataProvider id="HTTPMetadata"
-                      xsi:type="FileBackedHTTPMetadataProvider"
-                      backingFile="%{idp.home}/metadata/localCopyFromXYZHTTP.xml"
-                      metadataURL="http://WHATEVER">
+    <MetadataProvider id="HTTPMetadata" xsi:type="FileBackedHTTPMetadataProvider" backingFile="%{idp.home}/metadata/localCopyFromXYZHTTP.xml" metadataURL="http://WHATEVER">
 
-        <MetadataFilter xsi:type="SignatureValidation"
-            requireSignedMetadata="false">
+        <MetadataFilter xsi:type="SignatureValidation" requireSignedMetadata="false">
             <PublicKey>
                 THIS IS AN EXAMPLE
 
@@ -72,7 +81,7 @@
          to know that the file is valid.
 
 
-    <MetadataProvider id="LocalMetadata"  xsi:type="FilesystemMetadataProvider" metadataFile="PATH_TO_YOUR_METADATA"/>
+    <MetadataProvider id="LocalMetadata" xsi:type="FilesystemMetadataProvider" metadataFile="PATH_TO_YOUR_METADATA"/>
 
      -->
 
