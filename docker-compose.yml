@@ -1,7 +1,7 @@
 version: "3.1"
 services:
   rest:
-    image: ailabreg.jnu.ac.kr/shibboleth/rest-oracle:latest
+    image: ailabreg.jnu.ac.kr/${REALM}/rest-oracle:latest
     environment:
     - TZ=Asia/Seoul
     - LANG=ko_KR.UTF-8
@@ -20,7 +20,7 @@ services:
   idp:
     build:
       context: ./
-    image:  ailabreg.jnu.ac.kr/shibboleth/idp-${realm}:latest
+    image:  ailabreg.jnu.ac.kr/${REALM}/shibboleth-idp:latest
     # image:  jnu-idp:latest
     environment:
      - TZ=Asia/Seoul
@@ -32,8 +32,8 @@ services:
      - rest
     networks:
         idpapp:
-    volumes:
-      - ./logs:/opt/shib-jetty-base/logs
+    # volumes:
+      # - ./logs:/opt/shib-jetty-base/logs
     # deploy:
     #     mode: replicated
     #     replicas: 2
