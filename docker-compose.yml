@@ -1,12 +1,12 @@
 version: "3.1"
 services:
   rest:
-    image: ailabreg.jnu.ac.kr/${REALM}/rest-oracle:latest
+    image: ailabreg.jnu.ac.kr/jnu/rest-oracle:latest
     environment:
     - TZ=Asia/Seoul
     - LANG=ko_KR.UTF-8
     - USER_NAME=dbuser
-    - PASSWORD=${PASSWORD}
+    - PASSWORD=/run/secrets/PASSWORD
     - SERVICE=XEPDB1
     - HOST=13.209.18.89
     - DB_PORT=32118
@@ -20,7 +20,7 @@ services:
   idp:
     build:
       context: ./
-    image:  ailabreg.jnu.ac.kr/${REALM}/shibboleth-idp:latest
+    image:  ailabreg.jnu.ac.kr/jnu/shibboleth-idp:latest
     # image:  jnu-idp:latest
     environment:
      - TZ=Asia/Seoul
@@ -40,3 +40,6 @@ services:
 networks:
     idpapp:
 
+secrets:
+    PASSWORD:
+      file: PASSWORD.txt
