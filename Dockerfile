@@ -23,8 +23,8 @@ ENV JETTY_HOME=/opt/jetty-home \
     IDP_SCOPE=jnu.ac.kr \
     IDP_HOST_NAME=idps.jnu.ac.kr \
     IDP_ENTITYID=https://idps.jnu.ac.kr/idp/shibboleth \
-    IDP_KEYSTORE_PASSWORD=58463 \
-    IDP_SEALER_PASSWORD=58463 \
+    IDP_KEYSTORE_PASSWORD=changeme \
+    IDP_SEALER_PASSWORD=changeme \
     PATH=$PATH:$JAVA_HOME/bin
 
 LABEL maintainer="CSCfi"\

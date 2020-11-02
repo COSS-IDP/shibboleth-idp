@@ -53,7 +53,7 @@
                 #springMessageText("idp.login.loginTo", "Login to") $encoder.encodeForHTML($serviceName)
               </legend>
             #end
-                        
+
             #if ($passwordEnabled)
               <div class="form-element-wrapper">
                 <label for="username">#springMessageText("idp.login.username", "Username")</label>
@@ -73,7 +73,7 @@
                 <label for="donotcache">#springMessageText("idp.login.donotcache", "Don't Remember Login")</label>
                </div>
               #end
-              
+
             #end
 
               <div class="form-element-wrapper">
@@ -120,7 +120,7 @@
             #if ($desc)
               $encoder.encodeForHTML($desc)
             #end
-            
+
           </div>
           <div class="column two">
             <ul class="list list-help">
@@ -139,6 +139,7 @@
         </div>
       </footer>
     </div>
-    
+
  	</body>
 </html>
+

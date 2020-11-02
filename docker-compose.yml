@@ -5,7 +5,7 @@ services:
     environment:
     - TZ=Asia/Seoul
     - LANG=ko_KR.UTF-8
-    - USER_NAME=dbuser
+    - DB_USER=dbuser
     - PASSWORD=/run/secrets/PASSWORD
     - SERVICE=XEPDB1
     - HOST=13.209.18.89
