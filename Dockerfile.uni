@@ -17,7 +17,7 @@ ENV jetty_version=9.4.29.v20200521 \
 
 ENV JETTY_HOME=/opt/jetty-home \
     JETTY_BASE=/opt/shib-jetty-base \
-    JETTY_KEYSTORE_PASSWORD=changeme \
+    JETTY_KEYSTORE_PASSWORD=58463 \
     IDP_HOME=/opt/shibboleth-idp \
     JAVA_HOME=/usr/lib/jvm/default-jvm \
     IDP_SRC=/opt/shibboleth-identity-provider-$idp_version \

@@ -27,18 +27,18 @@
         logger.info(body);
         var result = JSON.parse(body);
 
-        var attrSN = new IdPAttribute("sn");
+        var attrSURNAME = new IdPAttribute("surname");
         var values = new HashSet();
-        if (result.sn != null) {
-            for (var i=0; i<result.sn.length; i++) {
+        if (result.surname != null) {
+            for (var i=0; i<result.surname.length; i++) {
 
-            logger.info("result.sn[i].name " + result.sn[i].name);
-            logger.info("result.sn " + result.sn[i]);
-                values.add(new StringAttributeValue(result.sn[i]));
+            logger.info("result.surname[i].name " + result.surname[i].name);
+            logger.info("result.surname " + result.surname[i]);
+                values.add(new StringAttributeValue(result.surname[i]));
             }
         }
-        attrSN.setValues(values);
-        connectorResults.add(attrSN);
+        attrSURNAME.setValues(values);
+        connectorResults.add(attrSURNAME);
 
         var attrGIVENNAME = new IdPAttribute("givenName");
         var values = new HashSet();
@@ -119,7 +119,7 @@
 
         <!-- <ResultCache expireAfterWrite="PT5M"/> -->
     </DataConnector>
-    <AttributeDefinition xsi:type="Simple" id="sn" sourceAttributeID="sn">
+    <AttributeDefinition xsi:type="Simple" id="surname" sourceAttributeID="surname">
         <Dependency ref="rest" />
         <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:sn" encodeType="false" />
         <AttributeEncoder xsi:type="SAML2String" name="urn:oid:2.5.4.4" friendlyName="Surname" encodeType="false" />
