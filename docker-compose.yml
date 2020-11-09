@@ -12,8 +12,8 @@ services:
     - HOST=13.209.18.89
     - DB_PORT=32118
     - DB_TYPE=oracle
-    - AUTH_QUERY=SELECT FIRST_NAME AS "surname", LAST_NAME AS "givenName", CONCAT(FIRST_NAME, LAST_NAME) AS "displayName", USERNAME AS "uid", EMAIL AS "mail", ID AS "employeeNumber", CONCAT(CONCAT('빛가람대학교', '|'), DEPARTMENT)  as "eduPersonScopedAffiliation", EMPLOYEE_TYPE as "employeeType" FROM DBUSER.USERS WHERE username = :USERID and PASSWORD=DBMS_CRYPTO.HASH(UTL_I18N.STRING_TO_RAW(:PASSWORD, 'AL32UTF8'), 4)
-    - ATTRIBUTE_QUERY=SELECT FIRST_NAME AS "surname", LAST_NAME AS "givenName", CONCAT(FIRST_NAME, LAST_NAME) AS "displayName", USERNAME AS "uid", EMAIL AS "mail", ID AS "employeeNumber", CONCAT(CONCAT('빛가람대학교', '|'), DEPARTMENT)  as "eduPersonScopedAffiliation", EMPLOYEE_TYPE as "employeeType" FROM DBUSER.USERS WHERE username = :USERID
+    - AUTH_QUERY=SELECT FIRST_NAME AS "surname", LAST_NAME AS "givenName", CONCAT(FIRST_NAME, LAST_NAME) AS "displayName", USERNAME AS "uid", EMAIL AS "mail", EMPLOYEE_NUMBER AS "employeeNumber", '빛가람대학교' as "organizationName",  DEPARTMENT as "organizationalUnitName", EMPLOYEE_TYPE as "employeeType" FROM DBUSER.USERS WHERE username = :USERID and PASSWORD=DBMS_CRYPTO.HASH(UTL_I18N.STRING_TO_RAW(:PASSWORD, 'AL32UTF8'), 4)
+    - ATTRIBUTE_QUERY=SELECT FIRST_NAME AS "surname", LAST_NAME AS "givenName", CONCAT(FIRST_NAME, LAST_NAME) AS "displayName", USERNAME AS "uid", EMAIL AS "mail", EMPLOYEE_NUMBER AS "employeeNumber", '빛가람대학교' as "organizationName",  DEPARTMENT as "organizationalUnitName", EMPLOYEE_TYPE as "employeeType" FROM DBUSER.USERS WHERE username = :USERID
     # secrets:
       # DB_PASSWORD
     networks:

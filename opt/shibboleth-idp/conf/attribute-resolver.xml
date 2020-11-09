@@ -71,6 +71,27 @@
         attrUID.setValues(values);
         connectorResults.add(attrUID);
 
+        var attr_ORGANIZATIONAL_UNIT_NAME = new IdPAttribute("organizationalUnitName");
+        var values = new HashSet();
+        if (result.organizationalUnitName != null) {
+            for (var i=0; i<result.organizationalUnitName.length; i++) {
+                values.add(new StringAttributeValue(result.organizationalUnitName[i]));
+            }
+        }
+        attr_ORGANIZATIONAL_UNIT_NAME.setValues(values);
+        connectorResults.add(attr_ORGANIZATIONAL_UNIT_NAME);
+
+        var attr_ORGANIZATION_NAME = new IdPAttribute("organizationName");
+        var values = new HashSet();
+        if (result.uid != null) {
+            for (var i=0; i<result.organizationName.length; i++) {
+                values.add(new StringAttributeValue(result.organizationName[i]));
+            }
+        }
+        attr_ORGANIZATION_NAME.setValues(values);
+        connectorResults.add(attr_ORGANIZATION_NAME);
+
+
         var attrMAIL = new IdPAttribute("mail");
         var values = new HashSet();
         if (result.mail != null) {
@@ -150,10 +171,15 @@
         <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:employeeNumber" encodeType="false" />
         <AttributeEncoder xsi:type="SAML2String" name="urn:oid:2.16.840.1.113730.3.1.3" friendlyName="employeeNumber" encodeType="false" />
     </AttributeDefinition>
-    <AttributeDefinition xsi:type="Simple" id="eduPersonScopedAffiliation" sourceAttributeID="eduPersonScopedAffiliation">
+    <AttributeDefinition id="organizationName" xsi:type="Simple" sourceAttributeID="organizationName">
         <Dependency ref="rest" />
-        <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:eduPersonScopedAffiliation" encodeType="false" />
-        <AttributeEncoder xsi:type="SAML2String" name="urn:oid:1.3.6.1.4.1.5923.1.1.1.9" friendlyName="eduPersonScopedAffiliation" encodeType="false" />
+        <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:o" encodeType="false" />
+        <AttributeEncoder xsi:type="SAML2String" name="urn:oid:2.5.4.10" friendlyName="o" encodeType="false" />
+    </AttributeDefinition>
+    <AttributeDefinition id="organizationalUnitName" xsi:type="Simple" sourceAttributeID="organizationalUnitName">
+        <Dependency ref="rest" />
+        <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:ou" encodeType="false" />
+        <AttributeEncoder xsi:type="SAML2String" name="urn:oid:2.5.4.11" friendlyName="ou" encodeType="false" />
     </AttributeDefinition>
     <AttributeDefinition xsi:type="Simple" id="employeeType" sourceAttributeID="employeeType">
         <Dependency ref="rest" />

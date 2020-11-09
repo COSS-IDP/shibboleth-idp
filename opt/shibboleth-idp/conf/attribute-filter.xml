@@ -32,10 +32,12 @@
 	<AttributeRule attributeID="employeeType">
             <PermitValueRule xsi:type="ANY" />
     	</AttributeRule>
-	<AttributeRule attributeID="eduPersonScopedAffiliation">
+	<AttributeRule attributeID="organizationName">
             <PermitValueRule xsi:type="ANY" />
     	</AttributeRule>
-
+	<AttributeRule attributeID="organizationalUnitName">
+            <PermitValueRule xsi:type="ANY" />
+    	</AttributeRule>
     </AttributeFilterPolicy>
 </AttributeFilterPolicyGroup>
 
