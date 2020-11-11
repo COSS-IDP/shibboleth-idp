@@ -1,8 +1,8 @@
 # FROM alpine:3.11.6 as temp
 FROM amazoncorretto:11 as temp
 
-ENV jetty_version=9.4.19.v20190610 \
-    jetty_hash=2cb34d740fbc22f6c716c87ebfaaaa2d \
+ENV jetty_version=9.4.34.v20201102 \
+    jetty_hash=10a7d765abd2709ce544f09100650a48 \
     idp_version=3.4.7 \
     idp_hash=28b235279ebe6a6644436a42d09a63e7f914e3e2d22330d48a1b8d75b5357acb \
     idp_oidcext_version=2.0.0 \
@@ -23,8 +23,8 @@ ENV JETTY_HOME=/opt/jetty-home \
     IDP_SCOPE=jnu.ac.kr \
     IDP_HOST_NAME=idps.jnu.ac.kr \
     IDP_ENTITYID=https://idps.jnu.ac.kr/idp/shibboleth \
-    IDP_KEYSTORE_PASSWORD=changeme \
-    IDP_SEALER_PASSWORD=changeme \
+    IDP_KEYSTORE_PASSWORD=58463 \
+    IDP_SEALER_PASSWORD=58463 \
     PATH=$PATH:$JAVA_HOME/bin
 
 LABEL maintainer="CSCfi"\
