@@ -1,7 +1,7 @@
 version: "3.1"
 services:
   rest:
-    image: ailabreg.jnu.ac.kr/jnu/rest-oracle:latest
+    image: ailabreg.jnu.ac.kr/rest-oracle:latest
     environment:
     - TZ=Asia/Seoul
     - LANG=ko_KR.UTF-8
@@ -23,7 +23,7 @@ services:
   idp:
     build:
       context: ./
-    image:  ailabreg.jnu.ac.kr/jnu/shibboleth-idp:latest
+    image:  ailabreg.jnu.ac.kr/${REALM}/shibboleth-idp:latest
     # image:  jnu-idp:latest
     environment:
      - TZ=Asia/Seoul
@@ -37,6 +37,7 @@ services:
         idpapp:
     # secrets: #for HA
     # - DB_PASSWORD
+    # - REALM
     # volumes:
       # - ./logs:/opt/shib-jetty-base/logs
     # deploy:
@@ -48,3 +49,5 @@ networks:
 secrets:
     DB_PASSWORD:
       file: DB_PASSWORD.txt
+    REALM:
+      file: REALM.txt
