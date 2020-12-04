@@ -29,7 +29,9 @@
 
         var attrSURNAME = new IdPAttribute("surname");
         var values = new HashSet();
-        if (result.surname != null) {
+        if (result.surname != null
+            && result.surname.length > 0
+        ) {
             for (var i=0; i<result.surname.length; i++) {
 
             logger.info("result.surname[i].name " + result.surname[i].name);
@@ -45,7 +47,9 @@
 
         var attrGIVENNAME = new IdPAttribute("givenName");
         var values = new HashSet();
-        if (result.givenName != null) {
+        if (result.givenName != null
+           && result.givenName.length > 0
+        ) {
             for (var i=0; i<result.givenName.length; i++) {
                 values.add(new StringAttributeValue(result.givenName[i]));
             }
@@ -57,7 +61,9 @@
 
         var attrDISPLAYNAME = new IdPAttribute("displayName");
         var values = new HashSet();
-        if (result.displayName != null) {
+        if (result.displayName != null
+        && result.displayName.length > 0
+        ) {
             for (var i=0; i<result.displayName.length; i++) {
                 values.add(new StringAttributeValue(result.displayName[i]));
             }
@@ -82,7 +88,8 @@
 
         var attr_ORGANIZATIONAL_UNIT_NAME = new IdPAttribute("organizationalUnitName");
         var values = new HashSet();
-        if (result.organizationalUnitName != null) {
+        if (result.organizationalUnitName != null
+        && result.organizationalUnitName.length > 0 ) {
             for (var i=0; i<result.organizationalUnitName.length; i++) {
                 values.add(new StringAttributeValue(result.organizationalUnitName[i]));
             }
@@ -94,7 +101,9 @@
 
         var attr_ORGANIZATION_NAME = new IdPAttribute("organizationName");
         var values = new HashSet();
-        if (result.uid != null) {
+        if (result.organizationName != null
+        && result.organizationName.length > 0
+        ) {
             for (var i=0; i<result.organizationName.length; i++) {
                 values.add(new StringAttributeValue(result.organizationName[i]));
             }
@@ -107,7 +116,7 @@
 
         var attrMAIL = new IdPAttribute("mail");
         var values = new HashSet();
-        if (result.mail != null) {
+        if (result.mail != null && result.mail.length > 0) {
             for (var i=0; i<result.mail.length; i++) {
                 values.add(new StringAttributeValue(result.mail[i]));
             }
@@ -119,7 +128,7 @@
 
         var attrEMPLOYEENUMBER = new IdPAttribute("employeeNumber");
         var values = new HashSet();
-        if (result.employeeNumber != null) {
+        if (result.employeeNumber != null && result.employeeNumber.length > 0) {
             for (var i=0; i<result.employeeNumber.length; i++) {
                 values.add(new StringAttributeValue(result.employeeNumber[i]));
             }
@@ -129,21 +138,9 @@
         attrEMPLOYEENUMBER.setValues(values);
         connectorResults.add(attrEMPLOYEENUMBER);
 
-        var attreduPersonScopedAffiliation = new IdPAttribute("eduPersonScopedAffiliation");
-        var values = new HashSet();
-        if (result.eduPersonScopedAffiliation != null) {
-            for (var i=0; i<result.eduPersonScopedAffiliation.length; i++) {
-                values.add(new StringAttributeValue(result.eduPersonScopedAffiliation[i]));
-            }
-        }else{
-            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
-        }
-        attreduPersonScopedAffiliation.setValues(values);
-        connectorResults.add(attreduPersonScopedAffiliation);
-
         var attrEMPLOYEETYPE = new IdPAttribute("employeeType");
         var values = new HashSet();
-        if (result.employeeType != null) {
+        if (result.employeeType != null && result.employeeType.length > 0 ) {
             for (var i=0; i<result.employeeType.length; i++) {
                 values.add(new StringAttributeValue(result.employeeType[i]));
             }
