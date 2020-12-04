@@ -1,0 +1,51 @@
+version: "3.1"
+services:
+  rest:
+    build:
+      context: ./
+    image: ailabreg.jnu.ac.kr/common/rest-ldap:latest
+    environment:
+    - TZ=Asia/Seoul
+    - LANG=ko_KR.UTF-8
+    - SVC_ACCOUNT=${SVC_ACCOUNT}
+    - SVC_PASSWORD=${SVC_PASSWORD}
+    - HOST=10.211.55.5
+    - SEARCH_BASE=${SEARCH_BASE}
+    - ATTRIBUTES=uid|sAMAccountName,mail|mail,surname|sn,givenName|givenName,displayName|displayName,employeeNumber|employeeNumber,employeeType|employeeType,organizationName|division,organizationalUnitName|department
+    # secrets:
+      # DB_PASSWORD
+    networks:
+        idpapp:
+            aliases:
+             - rest
+  idp:
+    build:
+      context: ./
+    image:  ailabreg.jnu.ac.kr/${REALM}/shibboleth-idp:latest
+    # image:  jnu-idp:latest
+    environment:
+     - TZ=Asia/Seoul
+     - LANG=ko_KR.UTF-8
+    ports:
+    - 443:443
+    - 80:80
+    depends_on:
+     - rest
+    networks:
+        idpapp:
+    # secrets: #for HA
+    # - DB_PASSWORD
+    # - REALM
+    # volumes:
+      # - ./logs:/opt/shib-jetty-base/logs
+    # deploy:
+    #     mode: replicated
+    #     replicas: 2
+networks:
+    idpapp:
+
+secrets:
+    DB_PASSWORD:
+      file: DB_PASSWORD.txt
+    REALM:
+      file: REALM.txt
