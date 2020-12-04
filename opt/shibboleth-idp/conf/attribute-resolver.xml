@@ -36,7 +36,10 @@
             logger.info("result.surname " + result.surname[i]);
                 values.add(new StringAttributeValue(result.surname[i]));
             }
+        }else{
+            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
         }
+
         attrSURNAME.setValues(values);
         connectorResults.add(attrSURNAME);
 
@@ -46,6 +49,8 @@
             for (var i=0; i<result.givenName.length; i++) {
                 values.add(new StringAttributeValue(result.givenName[i]));
             }
+        }else{
+            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
         }
         attrGIVENNAME.setValues(values);
         connectorResults.add(attrGIVENNAME);
@@ -56,6 +61,8 @@
             for (var i=0; i<result.displayName.length; i++) {
                 values.add(new StringAttributeValue(result.displayName[i]));
             }
+        }else{
+            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
         }
 
         attrDISPLAYNAME.setValues(values);
@@ -67,6 +74,8 @@
             for (var i=0; i<result.uid.length; i++) {
                 values.add(new StringAttributeValue(result.uid[i]));
             }
+        }else{
+            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
         }
         attrUID.setValues(values);
         connectorResults.add(attrUID);
@@ -77,6 +86,8 @@
             for (var i=0; i<result.organizationalUnitName.length; i++) {
                 values.add(new StringAttributeValue(result.organizationalUnitName[i]));
             }
+        }else{
+            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
         }
         attr_ORGANIZATIONAL_UNIT_NAME.setValues(values);
         connectorResults.add(attr_ORGANIZATIONAL_UNIT_NAME);
@@ -87,6 +98,8 @@
             for (var i=0; i<result.organizationName.length; i++) {
                 values.add(new StringAttributeValue(result.organizationName[i]));
             }
+        }else{
+            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
         }
         attr_ORGANIZATION_NAME.setValues(values);
         connectorResults.add(attr_ORGANIZATION_NAME);
@@ -98,6 +111,8 @@
             for (var i=0; i<result.mail.length; i++) {
                 values.add(new StringAttributeValue(result.mail[i]));
             }
+        }else{
+            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
         }
         attrMAIL.setValues(values);
         connectorResults.add(attrMAIL);
@@ -108,6 +123,8 @@
             for (var i=0; i<result.employeeNumber.length; i++) {
                 values.add(new StringAttributeValue(result.employeeNumber[i]));
             }
+        }else{
+            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
         }
         attrEMPLOYEENUMBER.setValues(values);
         connectorResults.add(attrEMPLOYEENUMBER);
@@ -118,6 +135,8 @@
             for (var i=0; i<result.eduPersonScopedAffiliation.length; i++) {
                 values.add(new StringAttributeValue(result.eduPersonScopedAffiliation[i]));
             }
+        }else{
+            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
         }
         attreduPersonScopedAffiliation.setValues(values);
         connectorResults.add(attreduPersonScopedAffiliation);
@@ -128,6 +147,8 @@
             for (var i=0; i<result.employeeType.length; i++) {
                 values.add(new StringAttributeValue(result.employeeType[i]));
             }
+        }else{
+            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
         }
         attrEMPLOYEETYPE.setValues(values);
         connectorResults.add(attrEMPLOYEETYPE);
