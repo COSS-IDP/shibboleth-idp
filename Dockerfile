@@ -21,10 +21,10 @@ ENV JETTY_HOME=/opt/jetty-home \
     IDP_HOME=/opt/shibboleth-idp \
     IDP_SRC=/opt/shibboleth-identity-provider-$idp_version \
     IDP_SCOPE=jnu.ac.kr \
-    IDP_HOST_NAME=idps.jnu.ac.kr \
-    IDP_ENTITYID=https://idps.jnu.ac.kr/idp/shibboleth \
-    IDP_KEYSTORE_PASSWORD=changeme \
-    IDP_SEALER_PASSWORD=changeme \
+    IDP_HOST_NAME=idps2.jnu.ac.kr \
+    IDP_ENTITYID=https://idps2.jnu.ac.kr/idp/shibboleth \
+    IDP_KEYSTORE_PASSWORD=58463 \
+    IDP_SEALER_PASSWORD=58463 \
     PATH=$PATH:$JAVA_HOME/bin
 
 LABEL maintainer="CSCfi"\

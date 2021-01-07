@@ -20,6 +20,17 @@
         var logger = Java.type("org.slf4j.LoggerFactory").getLogger("net.shibboleth.idp.attribute");
         var IdPAttribute = Java.type("net.shibboleth.idp.attribute.IdPAttribute");
         var StringAttributeValue = Java.type("net.shibboleth.idp.attribute.StringAttributeValue");
+        var EmptyAttributeValue = Java.type("net.shibboleth.idp.attribute.EmptyAttributeValue");
+        var EmptyType = Java.type("net.shibboleth.idp.attribute.EmptyAttributeValue.EmptyType");
+
+        function isEmpty(obj) {
+          for(var prop in obj) {
+            if(obj.hasOwnProperty(prop)) {
+              return false;
+            }
+          }
+          return JSON.stringify(obj) === JSON.stringify({});
+        }
 
         logger.info("===shibboleth attribute resolver===");
         // Limits length to 64k
@@ -29,9 +40,7 @@
 
         var attrSURNAME = new IdPAttribute("surname");
         var values = new HashSet();
-        if (result.surname != null
-            && result.surname.length > 0
-        ) {
+        if (!isEmpty(result.surname[0]) {
             for (var i=0; i<result.surname.length; i++) {
 
             logger.info("result.surname[i].name " + result.surname[i].name);
@@ -39,7 +48,7 @@
                 values.add(new StringAttributeValue(result.surname[i]));
             }
         }else{
-            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
+            values.add(new 	EmptyAttributeValue(EmptyAttributeValue.EmptyType.NULL_VALUE));
         }
 
         attrSURNAME.setValues(values);
@@ -47,28 +56,24 @@
 
         var attrGIVENNAME = new IdPAttribute("givenName");
         var values = new HashSet();
-        if (result.givenName != null
-           && result.givenName.length > 0
-        ) {
+        if (!isEmpty(result.givenName[0]) {
             for (var i=0; i<result.givenName.length; i++) {
                 values.add(new StringAttributeValue(result.givenName[i]));
             }
         }else{
-            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
+            values.add(new 	EmptyAttributeValue(EmptyAttributeValue.EmptyType.NULL_VALUE));
         }
         attrGIVENNAME.setValues(values);
         connectorResults.add(attrGIVENNAME);
 
         var attrDISPLAYNAME = new IdPAttribute("displayName");
         var values = new HashSet();
-        if (result.displayName != null
-        && result.displayName.length > 0
-        ) {
+        if (!isEmpty(result.displayName[0]) {
             for (var i=0; i<result.displayName.length; i++) {
                 values.add(new StringAttributeValue(result.displayName[i]));
             }
         }else{
-            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
+            values.add(new 	EmptyAttributeValue(EmptyAttributeValue.EmptyType.NULL_VALUE));
         }
 
         attrDISPLAYNAME.setValues(values);
@@ -81,20 +86,19 @@
                 values.add(new StringAttributeValue(result.uid[i]));
             }
         }else{
-            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
+            values.add(new 	EmptyAttributeValue(EmptyAttributeValue.EmptyType.NULL_VALUE));
         }
         attrUID.setValues(values);
         connectorResults.add(attrUID);
 
         var attr_ORGANIZATIONAL_UNIT_NAME = new IdPAttribute("organizationalUnitName");
         var values = new HashSet();
-        if (result.organizationalUnitName != null
-        && result.organizationalUnitName.length > 0 ) {
+        if (!isEmpty(result.organizationalUnitName[0]) {
             for (var i=0; i<result.organizationalUnitName.length; i++) {
                 values.add(new StringAttributeValue(result.organizationalUnitName[i]));
             }
         }else{
-            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
+            values.add(new 	EmptyAttributeValue(EmptyAttributeValue.EmptyType.NULL_VALUE));
         }
         attr_ORGANIZATIONAL_UNIT_NAME.setValues(values);
         connectorResults.add(attr_ORGANIZATIONAL_UNIT_NAME);
@@ -102,13 +106,13 @@
         var attr_ORGANIZATION_NAME = new IdPAttribute("organizationName");
         var values = new HashSet();
         if (result.organizationName != null
-        && result.organizationName.length > 0
+        && result.organizationName[0].length > 0
         ) {
             for (var i=0; i<result.organizationName.length; i++) {
                 values.add(new StringAttributeValue(result.organizationName[i]));
             }
         }else{
-            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
+            values.add(new 	EmptyAttributeValue(EmptyAttributeValue.EmptyType.NULL_VALUE));
         }
         attr_ORGANIZATION_NAME.setValues(values);
         connectorResults.add(attr_ORGANIZATION_NAME);
@@ -116,36 +120,36 @@
 
         var attrMAIL = new IdPAttribute("mail");
         var values = new HashSet();
-        if (result.mail != null && result.mail.length > 0) {
+        if (!isEmpty(result.mail[0]) {
             for (var i=0; i<result.mail.length; i++) {
                 values.add(new StringAttributeValue(result.mail[i]));
             }
         }else{
-            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
+            values.add(new 	EmptyAttributeValue(EmptyAttributeValue.EmptyType.NULL_VALUE));
         }
         attrMAIL.setValues(values);
         connectorResults.add(attrMAIL);
 
         var attrEMPLOYEENUMBER = new IdPAttribute("employeeNumber");
         var values = new HashSet();
-        if (result.employeeNumber != null && result.employeeNumber.length > 0) {
+        if (!isEmpty(result.employeeNumber[0]) {
             for (var i=0; i<result.employeeNumber.length; i++) {
                 values.add(new StringAttributeValue(result.employeeNumber[i]));
             }
         }else{
-            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
+            values.add(new 	EmptyAttributeValue(EmptyAttributeValue.EmptyType.NULL_VALUE));
         }
         attrEMPLOYEENUMBER.setValues(values);
         connectorResults.add(attrEMPLOYEENUMBER);
 
         var attrEMPLOYEETYPE = new IdPAttribute("employeeType");
         var values = new HashSet();
-        if (result.employeeType != null && result.employeeType.length > 0 ) {
+        if (!isEmpty(result.employeeType[0]) {
             for (var i=0; i<result.employeeType.length; i++) {
                 values.add(new StringAttributeValue(result.employeeType[i]));
             }
         }else{
-            values.add(new 	EmptyAttributeValue(EmptyType.NULL_VALUE));
+            values.add(new 	EmptyAttributeValue(EmptyAttributeValue.EmptyType.NULL_VALUE));
         }
         attrEMPLOYEETYPE.setValues(values);
         connectorResults.add(attrEMPLOYEETYPE);

@@ -140,8 +140,8 @@ The image exposes two ports. `4443` is the for standard browser-based TLS commun
 ### Environmental variables
 The container will use environmental variables to control IdP functionality at runtime. Currently there are 3 such variables that can be set from the `docker run` command:
 
-* `-e JETTY_BROWSER_SSL_KEYSTORE_PASSWORD=<changeme>`: The password for the browser TLS p12 key store (`/opt/shibboleth-idp/credentials/idp-browser.p12`). Defaults to `changeme`.
-* `-e JETTY_BACKCHANNEL_SSL_KEYSTORE_PASSWORD=<changeme>`: The password for the browser TLS p12 key store (`/opt/shibboleth-idp/credentials/idp-backchannel.p12`). Defaults to `changeme`.
+* `-e JETTY_BROWSER_SSL_KEYSTORE_PASSWORD=<58463>`: The password for the browser TLS p12 key store (`/opt/shibboleth-idp/credentials/idp-browser.p12`). Defaults to `58463`.
+* `-e JETTY_BACKCHANNEL_SSL_KEYSTORE_PASSWORD=<58463>`: The password for the browser TLS p12 key store (`/opt/shibboleth-idp/credentials/idp-backchannel.p12`). Defaults to `58463`.
 * `-e JETTY_MAX_HEAP=<2048m>`: Specifies the maximum heap sized used by Jetty's child process to run the IdP application.
 
 ### Volume Mount
