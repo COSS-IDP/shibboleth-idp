@@ -3,8 +3,8 @@ FROM amazoncorretto:11 as temp
 
 ENV jetty_version=9.4.34.v20201102 \
     jetty_hash=10a7d765abd2709ce544f09100650a48 \
-    idp_version=3.4.7 \
-    idp_hash=28b235279ebe6a6644436a42d09a63e7f914e3e2d22330d48a1b8d75b5357acb \
+    idp_version=3.4.8 \
+    idp_hash=ad0fcd834d0c6571363d47ad6dde08fbb75cce3202c41f8c64a5b42614f95a27 \
     idp_oidcext_version=2.0.0 \
     idp_oidcext_hash=304eb4e58eadc3377fae02209f8eef6549fd17ac5fd9356ad1216869b75bb23a \
     slf4j_version=1.7.29 \
@@ -16,18 +16,30 @@ ENV jetty_version=9.4.34.v20201102 \
     mariadb_version=2.5.4 \
     mariadb_hash=5fafee1aad82be39143b4bfb8915d6c2d73d860938e667db8371183ff3c8500a
 
+ARG IDP_SCOPE 
+ARG IDP_HOST_NAME 
+ARG IDP_ENTITYID 
+ARG IDP_KEYSTORE_PASSWORD 
+ARG IDP_SEALER_PASSWORD 
+
 ENV JETTY_HOME=/opt/jetty-home \
     JETTY_BASE=/opt/shib-jetty-base \
     IDP_HOME=/opt/shibboleth-idp \
     IDP_SRC=/opt/shibboleth-identity-provider-$idp_version \
-    IDP_SCOPE=jnu.ac.kr \
-    IDP_HOST_NAME=idps2.jnu.ac.kr \
-    IDP_ENTITYID=https://idps2.jnu.ac.kr/idp/shibboleth \
-    IDP_KEYSTORE_PASSWORD=58463 \
-    IDP_SEALER_PASSWORD=58463 \
+    # IDP_SCOPE=jnu.ac.kr \
+    # IDP_HOST_NAME=idps2.jnu.ac.kr \
+    # IDP_ENTITYID=https://idps2.jnu.ac.kr/idp/shibboleth \
+    # IDP_KEYSTORE_PASSWORD=58463 \
+    # IDP_SEALER_PASSWORD=58463 \
+    # IDP_SCOPE=${IDP_SCOPE} \
+    # IDP_HOST_NAME=${IDP_HOST_NAME} \
+    # IDP_ENTITYID=${IDP_ENTITYID} \
+    # IDP_KEYSTORE_PASSWORD=${IDP_KEYSTORE_PASSWORD} \
+    # IDP_SEALER_PASSWORD=${IDP_SEALER_PASSWORD} \
     PATH=$PATH:$JAVA_HOME/bin
 
-LABEL maintainer="CSCfi"\
+RUN echo ${IDP_HOST_NAME}
+LABEL maintainer="chrisryu"\
       idp.java.version="Alpine - openjdk11-jre-headless" \
       idp.jetty.version=$jetty_version \
       idp.version=$idp_version
@@ -52,21 +64,21 @@ RUN wget -q https://shibboleth.net/downloads/identity-provider/$idp_version/shib
     && echo "$idp_hash  shibboleth-identity-provider-$idp_version.tar.gz" | sha256sum -c - \
     && tar -zxvf  shibboleth-identity-provider-$idp_version.tar.gz -C /opt \
     && S=$IDP_SRC/idp.merge.properties \
-    && echo idp.scope=$IDP_SCOPE>>$S \
-    && echo idp.entityID=$IDP_ENTITYID>>$S \
-    && echo idp.sealer.storePassword=$IDP_KEYSTORE_PASSWORD>>$S \
-    && echo idp.sealer.keyPassword=$IDP_KEYSTORE_PASSWORD>>$S \
+    && echo idp.scope=${IDP_SCOPE}>>$S \
+    && echo idp.entityID=${IDP_ENTITYID}>>$S \
+    && echo idp.sealer.storePassword=${IDP_KEYSTORE_PASSWORD}>>$S \
+    && echo idp.sealer.keyPassword=${IDP_KEYSTORE_PASSWORD}>>$S \
     && echo idp.status.accessPolicy=status.AccessByIPAddress>>$S \
     && $IDP_SRC/bin/install.sh \
-    -Didp.scope=$IDP_SCOPE \
+    -Didp.scope=${IDP_SCOPE} \
     -Didp.target.dir=$IDP_HOME \
     -Didp.src.dir=$IDP_SRC \
-    -Didp.scope=$IDP_SCOPE \
-    -Didp.host.name=$IDP_HOST_NAME \
+    -Didp.scope=${IDP_SCOPE} \
+    -Didp.host.name=${IDP_HOST_NAME} \
     -Didp.noprompt=true \
-    -Didp.sealer.password=$IDP_SEALER_PASSWORD \
-    -Didp.keystore.password=$IDP_KEYSTORE_PASSWORD \
-    -Didp.entityID=$IDP_ENTITYID \
+    -Didp.sealer.password=${IDP_SEALER_PASSWORD} \
+    -Didp.keystore.password=${IDP_KEYSTORE_PASSWORD} \
+    -Didp.entityID=${IDP_ENTITYID} \
     -Didp.property.file=idp.install.properties \
     -Didp.merge.properties=idp.merge.properties \
     && rm shibboleth-identity-provider-$idp_version.tar.gz \

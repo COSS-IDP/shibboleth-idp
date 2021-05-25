@@ -1,17 +1,19 @@
 version: "3.1"
 services:
   rest:
-    ports:
-    - 4000:4000
-    image: ailabreg.jnu.ac.kr/common/rest-ldap:latest
+    image: docker.iugj.ac.kr/rest-oracle:latest
     environment:
     - TZ=Asia/Seoul
     - LANG=ko_KR.UTF-8
-    - SVC_ACCOUNT=${SVC_ACCOUNT}
-    - SVC_PASSWORD=${SVC_PASSWORD}
-    - HOST=10.211.55.5
-    - SEARCH_BASE=${SEARCH_BASE}
-    - ATTRIBUTES=uid|sAMAccountName,mail|mail,surname|sn,givenName|givenName,displayName|displayName,employeeNumber|employeeNumber,employeeType|employeeType,organizationName|division,organizationalUnitName|department
+    - DB_USER=SYSTEM
+    # - PASSWORD=/run/secrets/PASSWORD for HA config
+    - DB_PASSWORD=${DB_PASSWORD}
+    - SERVICE=ORCL
+    - HOST=168.131.19.132
+    - DB_PORT=1521
+    - DB_TYPE=oracle
+    - AUTH_QUERY=SELECT FIRST_NAME AS "surname", LAST_NAME AS "givenName", CONCAT(FIRST_NAME, LAST_NAME) AS "displayName", USERNAME AS "uid", EMAIL AS "mail", EMPLOYEE_NUMBER AS "employeeNumber", '빛가람대학교' as "organizationName",  DEPARTMENT as "organizationalUnitName", EMPLOYEE_TYPE as "employeeType" FROM DBUSER.USERS WHERE username = :USERID and PASSWORD=DBMS_CRYPTO.HASH(UTL_I18N.STRING_TO_RAW(:PASSWORD, 'AL32UTF8'), 4)
+    - ATTRIBUTE_QUERY=SELECT FIRST_NAME AS "surname", LAST_NAME AS "givenName", CONCAT(FIRST_NAME, LAST_NAME) AS "displayName", USERNAME AS "uid", EMAIL AS "mail", EMPLOYEE_NUMBER AS "employeeNumber", '빛가람대학교' as "organizationName",  DEPARTMENT as "organizationalUnitName", EMPLOYEE_TYPE as "employeeType" FROM DBUSER.USERS WHERE username = :USERID
     # secrets:
       # DB_PASSWORD
     networks:
@@ -20,8 +22,14 @@ services:
              - rest
   idp:
     build:
-      context: ./
-    image:  ailabreg.jnu.ac.kr/${REALM}/shibboleth-idp:latest
+        context: ./
+        args:
+            - IDP_SCOPE=jnu.ac.kr
+            - IDP_HOST_NAME=idps2.jnu.ac.kr 
+            - IDP_ENTITYID=https://idps2.jnu.ac.kr/idp/shibboleth
+            - IDP_KEYSTORE_PASSWORD=58463 
+            - IDP_SEALER_PASSWORD=58463 
+    image: docker.iugj.ac.kr/jnu/shibboleth-idp:latest
     # image:  jnu-idp:latest
     environment:
      - TZ=Asia/Seoul
@@ -43,7 +51,6 @@ services:
     #     replicas: 2
 networks:
     idpapp:
-
 secrets:
     DB_PASSWORD:
       file: DB_PASSWORD.txt
