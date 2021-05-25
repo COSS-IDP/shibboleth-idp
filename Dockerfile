@@ -29,8 +29,8 @@ ENV JETTY_HOME=/opt/jetty-home \
     # IDP_SCOPE=jnu.ac.kr \
     # IDP_HOST_NAME=idps2.jnu.ac.kr \
     # IDP_ENTITYID=https://idps2.jnu.ac.kr/idp/shibboleth \
-    # IDP_KEYSTORE_PASSWORD=58463 \
-    # IDP_SEALER_PASSWORD=58463 \
+    # IDP_KEYSTORE_PASSWORD=changeme \
+    # IDP_SEALER_PASSWORD=changeme \
     # IDP_SCOPE=${IDP_SCOPE} \
     # IDP_HOST_NAME=${IDP_HOST_NAME} \
     # IDP_ENTITYID=${IDP_ENTITYID} \
@@ -92,6 +92,7 @@ COPY $JETTY_BASE $JETTY_BASE
 # RUN addgroup -g 1000 -S jetty && \
 # RUN adduser -u 1000 -S jetty -G root -s /sbin/nologin
 # RUN useradd jetty
+RUN sed -i 's/changeme/'${IDP_KEYSTORE_PASSWORD}'/' $JETTY_BASE/start.d/idp.ini
 RUN useradd --system --no-create-home --user-group jetty
 
 # Set ownerships
