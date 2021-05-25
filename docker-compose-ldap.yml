@@ -1,7 +1,7 @@
 version: "3.1"
 services:
   rest:
-    image: ailabreg.jnu.ac.kr/common/rest-ldap:latest
+    image: ailabreg.changeme.ac.kr/common/rest-ldap:latest
     environment:
     - TZ=Asia/Seoul
     - LANG=ko_KR.UTF-8
@@ -19,7 +19,7 @@ services:
   idp:
     build:
       context: ./
-    image:  ailabreg.jnu.ac.kr/${REALM}/shibboleth-idp:latest
+    image:  ailabreg.changeme.ac.kr/${REALM}/shibboleth-idp:latest
     # image:  jnu-idp:latest
     environment:
      - TZ=Asia/Seoul

@@ -24,9 +24,9 @@ services:
     build:
         context: ./
         args:
-            - IDP_SCOPE=jnu.ac.kr
-            - IDP_HOST_NAME=idps2.jnu.ac.kr 
-            - IDP_ENTITYID=https://idps2.jnu.ac.kr/idp/shibboleth
+            - IDP_SCOPE=univ.ac.kr
+            - IDP_HOST_NAME=idps2.changeme.ac.kr 
+            - IDP_ENTITYID=https://idps2.changeme.ac.kr/idp/shibboleth
             - IDP_KEYSTORE_PASSWORD=changeme 
             - IDP_SEALER_PASSWORD=changeme 
     image: docker.iugj.ac.kr/jnu/shibboleth-idp:latest
