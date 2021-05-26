@@ -31,6 +31,7 @@
            <MetadataFilter xsi:type="SignatureValidation" certificateFile="%{idp.home}/credentials/signet.crt" />
            <MetadataFilter xsi:type="RequiredValidUntil" maxValidityInterval="P30D"/>
         -->
+    <MetadataProvider id="IUGJ_DEV_SP" xsi:type="FileBackedHTTPMetadataProvider" backingFile="%{idp.home}/metadata/iugj-dev-sp-metadata.xml" metadataURL="https://dev.iugj.ac.kr/simplesaml/module.php/saml/sp/metadata.php/default-sp">
     </MetadataProvider>
 
     <MetadataProvider id="SAMLtest" xsi:type="FileBackedHTTPMetadataProvider" backingFile="%{idp.home}/metadata/SAMLtest.xml" metadataURL="https://samltest.id/saml/sp">
