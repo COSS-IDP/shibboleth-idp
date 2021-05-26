@@ -40,7 +40,7 @@
 
         var attrDISPLAYNAME = new IdPAttribute("displayName");
         var values = new HashSet();
-        if (!isEmpty(result.displayName[0]) {
+        if (!isEmpty(result.displayName[0])) {
             for (var i=0; i<result.displayName.length; i++) {
                 values.add(new StringAttributeValue(result.displayName[i]));
             }
@@ -79,7 +79,7 @@
 
         var attrMAIL = new IdPAttribute("mail");
         var values = new HashSet();
-        if (!isEmpty(result.mail[0]) {
+        if (!isEmpty(result.mail[0])) {
             for (var i=0; i<result.mail.length; i++) {
                 values.add(new StringAttributeValue(result.mail[i]));
             }
@@ -91,7 +91,7 @@
 
         var attrUSERTYPE = new IdPAttribute("userType");
         var values = new HashSet();
-        if (!isEmpty(result.userType[0]) {
+        if (!isEmpty(result.userType[0])) {
             for (var i=0; i<result.userType.length; i++) {
                 values.add(new StringAttributeValue(result.userType[i]));
             }
@@ -103,7 +103,7 @@
 
         var attrORGANIZATION_CODE = new IdPAttribute("organizationCode");
         var values = new HashSet();
-        if (!isEmpty(result.organizationCode[0]) {
+        if (!isEmpty(result.organizationCode[0])) {
             for (var i=0; i<result.organizationCode.length; i++) {
                 values.add(new StringAttributeValue(result.organizationCode[i]));
             }
@@ -115,7 +115,7 @@
 
         var attrDIVISION = new IdPAttribute("division");
         var values = new HashSet();
-        if (!isEmpty(result.division[0]) {
+        if (!isEmpty(result.division[0])) {
             for (var i=0; i<result.division.length; i++) {
                 values.add(new StringAttributeValue(result.division[i]));
             }
