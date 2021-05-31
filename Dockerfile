@@ -3,8 +3,10 @@ FROM amazoncorretto:11 as temp
 
 ENV jetty_version=9.4.34.v20201102 \
     jetty_hash=10a7d765abd2709ce544f09100650a48 \
-    idp_version=3.4.8 \
-    idp_hash=ad0fcd834d0c6571363d47ad6dde08fbb75cce3202c41f8c64a5b42614f95a27 \
+    # idp_version=3.4.8 \
+    idp_version=4.2.1 \
+    # idp_hash=ad0fcd834d0c6571363d47ad6dde08fbb75cce3202c41f8c64a5b42614f95a27 \
+    idp_hash=2d35dbccc6c6ae6f7eec4adc98eaa406c33df3ad49879839a3839dbf427afff8 \
     idp_oidcext_version=2.0.0 \
     idp_oidcext_hash=304eb4e58eadc3377fae02209f8eef6549fd17ac5fd9356ad1216869b75bb23a \
     slf4j_version=1.7.29 \
@@ -81,6 +83,13 @@ RUN wget -q https://shibboleth.net/downloads/identity-provider/$idp_version/shib
     -Didp.entityID=${IDP_ENTITYID} \
     -Didp.property.file=idp.install.properties \
     -Didp.merge.properties=idp.merge.properties \
+    -Didp.idp.properties=idp.merge.properties \
+    -Didp.idp.logo=/images/${IDP_SCOPE}_logo.png \
+    -Didp.idp.logo.alt-text=${IDP_ORG_DISPLAYNAME} \
+    -Didp.idp.logo.target.url=${IDP_ORG_HOMEPAGE} \
+    -Didp.idp.forgotPassword.url=${IDP_FORGOT_PASSWORD_URL} \
+    -Didp.login.needHelp.url=${IDP_SUPPORT_URL} \
+    -Didp.idp.changePassword.url=${IDP_CHANGE_PASSWORD_URL} \
     && rm shibboleth-identity-provider-$idp_version.tar.gz \
     && rm -rf shibboleth-identity-provider-$idp_version
 
@@ -107,7 +116,7 @@ FROM amazoncorretto:11
 RUN yum install -y bash curl shadow-utils which
 
 
-LABEL maintainer="CSCfi"\
+LABEL maintainer="chrisryu"\
     idp.java.version="Alpine - openjdk11-jre-headless" \
     idp.jetty.version=$jetty_version \
     idp.version=$idp_version
