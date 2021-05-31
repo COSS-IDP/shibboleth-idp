@@ -24,12 +24,18 @@ services:
     build:
         context: ./
         args:
-            - IDP_SCOPE=univ.ac.kr
-            - IDP_HOST_NAME=idps2.changeme.ac.kr 
-            - IDP_ENTITYID=https://idps2.changeme.ac.kr/idp/shibboleth
-            - IDP_KEYSTORE_PASSWORD=changeme 
-            - IDP_SEALER_PASSWORD=changeme 
-    image: docker.iugj.ac.kr/jnu/shibboleth-idp:latest
+            - IDP_SCOPE=univ
+            - IDP_HOST_NAME=idp.univ.ac.kr
+            - IDP_ENTITYID=https://univ/idp/shibboleth
+            - IDP_KEYSTORE_PASSWORD=password 
+            - IDP_SEALER_PASSWORD=password 
+            - IDP_ORG_DISPLAYNAME=빛가람대학교
+            - IDP_ORG_HOMEPAGE=http://www.iugj.ac.kr
+            - IDP_FORGOT_PASSWORD_URL=http://www.iugj.ac.kr/forgot-password
+            - IDP_CHANGE_PASSWORD_URL=http://www.iugj.ac.kr/change-password
+            - IDP_SUPPORT_URL=https://support.example.org/help
+            
+    image: docker.iugj.ac.kr/shibboleth-idp:latest
     # image:  jnu-idp:latest
     environment:
      - TZ=Asia/Seoul
