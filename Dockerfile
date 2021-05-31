@@ -83,13 +83,13 @@ RUN wget -q https://shibboleth.net/downloads/identity-provider/$idp_version/shib
     -Didp.entityID=${IDP_ENTITYID} \
     -Didp.property.file=idp.install.properties \
     -Didp.merge.properties=idp.merge.properties \
-    -Didp.idp.properties=idp.merge.properties \
-    -Didp.idp.logo=/images/${IDP_SCOPE}_logo.png \
-    -Didp.idp.logo.alt-text=${IDP_ORG_DISPLAYNAME} \
-    -Didp.idp.logo.target.url=${IDP_ORG_HOMEPAGE} \
-    -Didp.idp.forgotPassword.url=${IDP_FORGOT_PASSWORD_URL} \
-    -Didp.login.needHelp.url=${IDP_SUPPORT_URL} \
-    -Didp.idp.changePassword.url=${IDP_CHANGE_PASSWORD_URL} \
+    -Didp.properties=idp.merge.properties \
+    -Didp.logo=/images/${IDP_SCOPE}_logo.png \
+    -Didp.logo.alt-text=${IDP_ORG_DISPLAYNAME} \
+    -Didp.logo.target.url=${IDP_ORG_HOMEPAGE} \
+    -Didp.forgotPassword.url=${IDP_FORGOT_PASSWORD_URL} \
+    -Didp.changePassword.url=${IDP_CHANGE_PASSWORD_URL} \
+    -Didp.changePassword.url=${IDP_CHANGE_PASSWORD_URL} \
     && rm shibboleth-identity-provider-$idp_version.tar.gz \
     && rm -rf shibboleth-identity-provider-$idp_version
 
