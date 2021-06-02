@@ -5,15 +5,15 @@ services:
     environment:
     - TZ=Asia/Seoul
     - LANG=ko_KR.UTF-8
-    - DB_USER=SYSTEM
+    - DB_USER=hr
     # - PASSWORD=/run/secrets/PASSWORD for HA config
     - DB_PASSWORD=${DB_PASSWORD}
-    - SERVICE=ORCL
-    - HOST=168.131.19.132
-    - DB_PORT=1521
+    - SERVICE=xe
+    - HOST=52.79.152.235
+    - DB_PORT=49161
     - DB_TYPE=oracle
-    - AUTH_QUERY=SELECT FIRST_NAME AS "surname", LAST_NAME AS "givenName", CONCAT(FIRST_NAME, LAST_NAME) AS "displayName", USERNAME AS "uid", EMAIL AS "mail", EMPLOYEE_NUMBER AS "employeeNumber", '빛가람대학교' as "organizationName",  DEPARTMENT as "organizationalUnitName", EMPLOYEE_TYPE as "employeeType" FROM DBUSER.USERS WHERE username = :USERID and PASSWORD=DBMS_CRYPTO.HASH(UTL_I18N.STRING_TO_RAW(:PASSWORD, 'AL32UTF8'), 4)
-    - ATTRIBUTE_QUERY=SELECT FIRST_NAME AS "surname", LAST_NAME AS "givenName", CONCAT(FIRST_NAME, LAST_NAME) AS "displayName", USERNAME AS "uid", EMAIL AS "mail", EMPLOYEE_NUMBER AS "employeeNumber", '빛가람대학교' as "organizationName",  DEPARTMENT as "organizationalUnitName", EMPLOYEE_TYPE as "employeeType" FROM DBUSER.USERS WHERE username = :USERID
+    - AUTH_QUERY=SELECT * HR.EMPLOYEES WHERE EMPLOYEE_ID = :USERID and PASSWORD=:PASSWORD
+    - ATTRIBUTE_QUERY=SELECT CONCAT(FIRST_NAME, LAST_NAME) AS "displayName", EMPLOYEE_ID AS "uid", EMAIL AS "mail", EMPLOYEE_ID AS "employeeNumber", 'IU-GJ' as "organization", 'univcode' as "organizationCode",  DEPARTMENT_ID as "division", 'student' as "userType" FROM HR.EMPLOYEES WHERE EMPLOYEE_ID = :USERID
     # secrets:
       # DB_PASSWORD
     networks:
@@ -24,18 +24,18 @@ services:
     build:
         context: ./
         args:
-            - IDP_SCOPE=univ
-            - IDP_HOST_NAME=idp.univ.ac.kr
-            - IDP_ENTITYID=https://univ/idp/shibboleth
-            - IDP_KEYSTORE_PASSWORD=password 
-            - IDP_SEALER_PASSWORD=password 
+            - IDP_SCOPE=iugj.ac.kr
+            - IDP_HOST_NAME=idp.iugj.ac.kr 
+            - IDP_ENTITYID=https://idp.iugj.ac.kr/idp/shibboleth
+            - IDP_KEYSTORE_PASSWORD=04343 
+            - IDP_SEALER_PASSWORD=04343 
             - IDP_ORG_DISPLAYNAME=빛가람대학교
             - IDP_ORG_HOMEPAGE=http://www.iugj.ac.kr
             - IDP_FORGOT_PASSWORD_URL=http://www.iugj.ac.kr/forgot-password
             - IDP_CHANGE_PASSWORD_URL=http://www.iugj.ac.kr/change-password
             - IDP_SUPPORT_URL=https://support.example.org/help
-            
-    image: docker.iugj.ac.kr/shibboleth-idp:latest
+
+    image: docker.iugj.ac.kr/kwu/shibboleth-idp:latest
     # image:  jnu-idp:latest
     environment:
      - TZ=Asia/Seoul

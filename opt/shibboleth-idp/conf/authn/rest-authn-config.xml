@@ -28,7 +28,7 @@ permissions and limitations under the License.
    <bean id="ValidateUsernamePasswordAgainstRest" 
        class="com.bitgaram.shibboleth.idp.authn.impl.ValidateUsernamePasswordAgainstRest" 
        scope="prototype"
-       p:classifiedMessages-ref="shibboleth.authn.Password.ClassifiedMessageMap" />
+       />
 
     <alias name="ValidateUsernamePasswordAgainstRest" alias="ValidateUsernamePassword"/>
 
