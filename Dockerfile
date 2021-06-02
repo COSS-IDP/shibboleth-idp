@@ -3,9 +3,9 @@ FROM amazoncorretto:11 as temp
 
 ENV jetty_version=9.4.34.v20201102 \
     jetty_hash=10a7d765abd2709ce544f09100650a48 \
-    # idp_version=3.4.8 \
-    idp_version=4.2.1 \
-    # idp_hash=ad0fcd834d0c6571363d47ad6dde08fbb75cce3202c41f8c64a5b42614f95a27 \
+    #idp_version=3.4.8 \
+    #idp_hash=ad0fcd834d0c6571363d47ad6dde08fbb75cce3202c41f8c64a5b42614f95a27 \
+    idp_version=4.1.2 \
     idp_hash=2d35dbccc6c6ae6f7eec4adc98eaa406c33df3ad49879839a3839dbf427afff8 \
     idp_oidcext_version=2.0.0 \
     idp_oidcext_hash=304eb4e58eadc3377fae02209f8eef6549fd17ac5fd9356ad1216869b75bb23a \
@@ -28,16 +28,6 @@ ENV JETTY_HOME=/opt/jetty-home \
     JETTY_BASE=/opt/shib-jetty-base \
     IDP_HOME=/opt/shibboleth-idp \
     IDP_SRC=/opt/shibboleth-identity-provider-$idp_version \
-    # IDP_SCOPE=changeme.ac.kr \
-    # IDP_HOST_NAME=idps2.changeme.ac.kr \
-    # IDP_ENTITYID=https://idps2.changeme.ac.kr/idp/shibboleth \
-    # IDP_KEYSTORE_PASSWORD=changeme \
-    # IDP_SEALER_PASSWORD=changeme \
-    # IDP_SCOPE=${IDP_SCOPE} \
-    # IDP_HOST_NAME=${IDP_HOST_NAME} \
-    # IDP_ENTITYID=${IDP_ENTITYID} \
-    # IDP_KEYSTORE_PASSWORD=${IDP_KEYSTORE_PASSWORD} \
-    # IDP_SEALER_PASSWORD=${IDP_SEALER_PASSWORD} \
     PATH=$PATH:$JAVA_HOME/bin
 
 RUN echo ${IDP_HOST_NAME}
@@ -68,27 +58,23 @@ RUN wget -q https://shibboleth.net/downloads/identity-provider/$idp_version/shib
     && S=$IDP_SRC/idp.merge.properties \
     && echo idp.scope=${IDP_SCOPE}>>$S \
     && echo idp.entityID=${IDP_ENTITYID}>>$S \
-    && echo idp.sealer.storePassword=${IDP_KEYSTORE_PASSWORD}>>$S \
-    && echo idp.sealer.keyPassword=${IDP_KEYSTORE_PASSWORD}>>$S \
     && echo idp.status.accessPolicy=status.AccessByIPAddress>>$S \
     && $IDP_SRC/bin/install.sh \
+    #-Didp.property.file=dist/idp.install.properties \
     -Didp.scope=${IDP_SCOPE} \
     -Didp.target.dir=$IDP_HOME \
     -Didp.src.dir=$IDP_SRC \
-    -Didp.scope=${IDP_SCOPE} \
     -Didp.host.name=${IDP_HOST_NAME} \
     -Didp.noprompt=true \
     -Didp.sealer.password=${IDP_SEALER_PASSWORD} \
     -Didp.keystore.password=${IDP_KEYSTORE_PASSWORD} \
     -Didp.entityID=${IDP_ENTITYID} \
-    -Didp.property.file=idp.install.properties \
     -Didp.merge.properties=idp.merge.properties \
-    -Didp.properties=idp.merge.properties \
     -Didp.logo=/images/${IDP_SCOPE}_logo.png \
     -Didp.logo.alt-text=${IDP_ORG_DISPLAYNAME} \
     -Didp.logo.target.url=${IDP_ORG_HOMEPAGE} \
     -Didp.forgotPassword.url=${IDP_FORGOT_PASSWORD_URL} \
-    -Didp.changePassword.url=${IDP_CHANGE_PASSWORD_URL} \
+    -Didp.needHelp.url=${IDP_SUPPORT_URL} \
     -Didp.changePassword.url=${IDP_CHANGE_PASSWORD_URL} \
     && rm shibboleth-identity-provider-$idp_version.tar.gz \
     && rm -rf shibboleth-identity-provider-$idp_version
