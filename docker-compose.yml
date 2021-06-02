@@ -27,8 +27,8 @@ services:
             - IDP_SCOPE=iugj.ac.kr
             - IDP_HOST_NAME=idp.iugj.ac.kr 
             - IDP_ENTITYID=https://idp.iugj.ac.kr/idp/shibboleth
-            - IDP_KEYSTORE_PASSWORD=04343 
-            - IDP_SEALER_PASSWORD=04343 
+            - IDP_KEYSTORE_PASSWORD=password 
+            - IDP_SEALER_PASSWORD=password 
             - IDP_ORG_DISPLAYNAME=빛가람대학교
             - IDP_ORG_HOMEPAGE=http://www.iugj.ac.kr
             - IDP_FORGOT_PASSWORD_URL=http://www.iugj.ac.kr/forgot-password
