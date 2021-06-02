@@ -24,11 +24,11 @@ services:
     build:
         context: ./
         args:
-            - IDP_SCOPE=changeme.ac.kr
-            - IDP_HOST_NAME=idp.changeme.ac.kr 
-            - IDP_ENTITYID=https://idp.changeme.ac.kr/idp/shibboleth
-            - IDP_KEYSTORE_PASSWORD=changeme 
-            - IDP_SEALER_PASSWORD=changeme 
+            - IDP_SCOPE=iugj.ac.kr
+            - IDP_HOST_NAME=idp.iugj.ac.kr 
+            - IDP_ENTITYID=https://idp.iugj.ac.kr/idp/shibboleth
+            - IDP_KEYSTORE_PASSWORD=password 
+            - IDP_SEALER_PASSWORD=password 
             - IDP_ORG_DISPLAYNAME=빛가람대학교
             - IDP_ORG_HOMEPAGE=http://www.changeme.ac.kr
             - IDP_FORGOT_PASSWORD_URL=http://www.changeme.ac.kr/forgot-password
