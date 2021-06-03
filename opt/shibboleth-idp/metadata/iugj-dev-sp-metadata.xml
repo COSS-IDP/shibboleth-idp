@@ -23,6 +23,6 @@
   </md:SPSSODescriptor>
   <md:ContactPerson contactType="technical">
     <md:GivenName>Administrator</md:GivenName>
-    <md:EmailAddress>idp-admin@idptestbed</md:EmailAddress>
+    <md:EmailAddress>mailto:idp-admin@idptestbed</md:EmailAddress>
   </md:ContactPerson>
 </md:EntityDescriptor>
