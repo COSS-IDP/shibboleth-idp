@@ -60,7 +60,7 @@ RUN wget -q https://shibboleth.net/downloads/identity-provider/$idp_version/shib
     && echo idp.entityID=${IDP_ENTITYID}>>$S \
     && echo idp.status.accessPolicy=status.AccessByIPAddress>>$S \
     && echo idp.login.loginTo=${IDP_LOGIN_TO_MSG}>>$S \
-    && echo idp.logo=/images/${IDP_SCOPE}_logo.png>>$S \
+    && echo idp.logo=/idp/images/${IDP_SCOPE}_logo.png>>$S \
     && $IDP_SRC/bin/install.sh \
     #-Didp.property.file=dist/idp.install.properties \
     -Didp.scope=${IDP_SCOPE} \
@@ -72,7 +72,7 @@ RUN wget -q https://shibboleth.net/downloads/identity-provider/$idp_version/shib
     -Didp.keystore.password=${IDP_KEYSTORE_PASSWORD} \
     -Didp.entityID=${IDP_ENTITYID} \
     -Didp.merge.properties=idp.merge.properties \
-    -Didp.logo=/images/${IDP_SCOPE}_logo.png \
+    -Didp.logo=/idp/images/${IDP_SCOPE}_logo.png \
     -Didp.logo.alt-text=${IDP_ORG_DISPLAYNAME} \
     -Didp.logo.target.url=${IDP_ORG_HOMEPAGE} \
     -Didp.forgotPassword.url=${IDP_FORGOT_PASSWORD_URL} \
