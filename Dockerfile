@@ -59,8 +59,6 @@ RUN wget -q https://shibboleth.net/downloads/identity-provider/$idp_version/shib
     && echo idp.scope=${IDP_SCOPE}>>$S \
     && echo idp.entityID=${IDP_ENTITYID}>>$S \
     && echo idp.status.accessPolicy=status.AccessByIPAddress>>$S \
-    && echo idp.login.loginTo=${IDP_LOGIN_TO_MSG}>>$S \
-    && echo idp.logo=/idp/images/${IDP_SCOPE}_logo.png>>$S \
     && $IDP_SRC/bin/install.sh \
     #-Didp.property.file=dist/idp.install.properties \
     -Didp.scope=${IDP_SCOPE} \
@@ -72,24 +70,26 @@ RUN wget -q https://shibboleth.net/downloads/identity-provider/$idp_version/shib
     -Didp.keystore.password=${IDP_KEYSTORE_PASSWORD} \
     -Didp.entityID=${IDP_ENTITYID} \
     -Didp.merge.properties=idp.merge.properties \
-    -Didp.logo=/idp/images/${IDP_SCOPE}_logo.png \
-    -Didp.logo.alt-text=${IDP_ORG_DISPLAYNAME} \
-    -Didp.logo.target.url=${IDP_ORG_HOMEPAGE} \
-    -Didp.forgotPassword.url=${IDP_FORGOT_PASSWORD_URL} \
-    -Didp.needHelp.url=${IDP_SUPPORT_URL} \
-    -Didp.changePassword.url=${IDP_CHANGE_PASSWORD_URL} \
     && rm shibboleth-identity-provider-$idp_version.tar.gz \
     && rm -rf shibboleth-identity-provider-$idp_version
 
 
-COPY opt/shibboleth-idp/ /opt/shibboleth-idp/
+COPY opt/shibboleth-idp/ $IDP_HOME/
+
+RUN sed -i 's/__IDP_SCOPE__/'${IDP_SCOPE}'/' $IDP_HOME/messages/messages_ko.properties
+RUN sed -i 's/__IDP_ORG_HOMEPAGE__ /'${IDP_ORG_HOMEPAGE}'/' $IDP_HOME/messages/messages_ko.properties
+RUN sed -i 's/__IDP_ORG_DISPLAYNAME__ /'${IDP_ORG_DISPLAYNAME}'/' $IDP_HOME/messages/messages_ko.properties
+RUN sed -i 's/__IDP_FORGOT_PASSWORD_URL__ /'${IDP_FORGOT_PASSWORD_URL}'/' $IDP_HOME/messages/messages_ko.properties
+RUN sed -i 's/__IDP_SUPPORT_URL__ /'${IDP_SUPPORT_URL}'/' $IDP_HOME/messages/messages_ko.properties
+
 
 COPY $JETTY_BASE $JETTY_BASE
+RUN sed -i 's/changeme/'${IDP_KEYSTORE_PASSWORD}'/' $JETTY_BASE/start.d/idp.ini
 # Create new user to run jetty with
 # RUN addgroup -g 1000 -S jetty && \
 # RUN adduser -u 1000 -S jetty -G root -s /sbin/nologin
 # RUN useradd jetty
-RUN sed -i 's/changeme/'${IDP_KEYSTORE_PASSWORD}'/' $JETTY_BASE/start.d/idp.ini
+
 RUN useradd --system --no-create-home --user-group jetty
 
 # Set ownerships
