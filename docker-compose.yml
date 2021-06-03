@@ -13,7 +13,7 @@ services:
     - DB_PORT=49161
     - DB_TYPE=oracle
     - AUTH_QUERY=SELECT * HR.EMPLOYEES WHERE EMPLOYEE_ID = :USERID and PASSWORD=:PASSWORD
-    - ATTRIBUTE_QUERY=SELECT CONCAT(FIRST_NAME, LAST_NAME) AS "displayName", EMPLOYEE_ID AS "uid", EMAIL AS "mail", EMPLOYEE_ID AS "employeeNumber", 'IU-GJ' as "organization", 'univcode' as "organizationCode",  DEPARTMENT_ID as "division", 'student' as "userType" FROM HR.EMPLOYEES WHERE EMPLOYEE_ID = :USERID
+    - ATTRIBUTE_QUERY=SELECT CONCAT(FIRST_NAME, LAST_NAME) AS "displayName", EMPLOYEE_ID AS "uid", EMAIL AS "mail", EMPLOYEE_ID AS "employeeNumber", 'IU-GJ' as "organizationName", 'univcode' as "organizationCode",  DEPARTMENT_ID as "division", 'student' as "userType" FROM HR.EMPLOYEES WHERE EMPLOYEE_ID = :USERID
     # secrets:
       # DB_PASSWORD
     networks:
@@ -27,15 +27,15 @@ services:
             - IDP_SCOPE=iugj.ac.kr
             - IDP_HOST_NAME=idp.iugj.ac.kr 
             - IDP_ENTITYID=https://idp.iugj.ac.kr/idp/shibboleth
-            - IDP_KEYSTORE_PASSWORD=password 
-            - IDP_SEALER_PASSWORD=password 
+            - IDP_KEYSTORE_PASSWORD=04343
+            - IDP_SEALER_PASSWORD=04343 
             - IDP_ORG_DISPLAYNAME=빛가람대학교
             - IDP_ORG_HOMEPAGE=http://www.iugj.ac.kr
             - IDP_FORGOT_PASSWORD_URL=http://www.iugj.ac.kr/forgot-password
             - IDP_CHANGE_PASSWORD_URL=http://www.iugj.ac.kr/change-password
             - IDP_SUPPORT_URL=https://support.example.org/help
 
-    image: docker.iugj.ac.kr/kwu/shibboleth-idp:latest
+    image: docker.iugj.ac.kr/iugj/shibboleth-idp:latest
     # image:  jnu-idp:latest
     environment:
      - TZ=Asia/Seoul
