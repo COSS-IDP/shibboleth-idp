@@ -59,6 +59,7 @@ RUN wget -q https://shibboleth.net/downloads/identity-provider/$idp_version/shib
     && echo idp.scope=${IDP_SCOPE}>>$S \
     && echo idp.entityID=${IDP_ENTITYID}>>$S \
     && echo idp.status.accessPolicy=status.AccessByIPAddress>>$S \
+    && echo idp.login.loginTo=${IDP_LOGIN_TO_MSG}>>$S \
     && $IDP_SRC/bin/install.sh \
     #-Didp.property.file=dist/idp.install.properties \
     -Didp.scope=${IDP_SCOPE} \
