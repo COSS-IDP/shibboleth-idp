@@ -37,7 +37,7 @@
               Accepted hosts: localhost & two Resource Registry hosts
             -->
             <bean id="status.AccessByIPAddress" parent="shibboleth.IPRangeAccessControl"
-		    p:allowedRanges="#{ {'127.0.0.1/32','172.16.0.0/32', '168.131.19.0/32', '::1/128'} }" />
+		    p:allowedRanges="#{ {'127.0.0.1/32','::1/128'} }" />
         </entry>
         <!--
         <entry key="AccessByUser">
