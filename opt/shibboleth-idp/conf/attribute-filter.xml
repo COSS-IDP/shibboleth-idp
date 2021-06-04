@@ -6,7 +6,6 @@
         xsi:schemaLocation="urn:mace:shibboleth:2.0:afp http://shibboleth.net/schema/idp/shibboleth-afp.xsd">
 <!-- https://devsp.jnu.ac.kr/ -->
 <AttributeFilterPolicy id="devspiugj">
-    	<PolicyRequirementRule xsi:type="Requester" value="https://dev.iugj.ac.kr/sp/simplesamlphp" />
 	<AttributeRule attributeID="grade">
             <PermitValueRule xsi:type="ANY" />
     	</AttributeRule>
@@ -35,40 +34,6 @@
             <PermitValueRule xsi:type="ANY" />
     	</AttributeRule>
 	<AttributeRule attributeID="organizationCode">
-            <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-    </AttributeFilterPolicy>
-
-    <AttributeFilterPolicy id="DEVSPJNUACKR">
-    	<PolicyRequirementRule xsi:type="Requester" value="https://devsp.jnu.ac.kr/Shibboleth.sso/Metadata" />
-    	<AttributeRule attributeID="uid">
-            <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-    	<AttributeRule attributeID="mail">
-            <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="givenName">
-            <PermitValueRule xsi:type="ANY" />
-	</AttributeRule>
-    	<AttributeRule attributeID="surname">
-        	<PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="displayName">
-        	<PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="eduPersonPrincipalName">
-            <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="employeeNumber">
-            <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="employeeType">
-            <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="organizationName">
-            <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="organizationalUnitName">
             <PermitValueRule xsi:type="ANY" />
     	</AttributeRule>
     </AttributeFilterPolicy>
