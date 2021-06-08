@@ -1,0 +1,122 @@
+##
+## Velocity Template for DisplayUsernamePasswordPage view-state
+##
+## Velocity context will contain the following properties
+## flowExecutionUrl - the form action location
+## flowRequestContext - the Spring Web Flow RequestContext
+## flowExecutionKey - the SWF execution key (this is built into the flowExecutionUrl)
+## profileRequestContext - root of context tree
+## authenticationContext - context with authentication request information
+## authenticationErrorContext - context with login error state
+## authenticationWarningContext - context with login warning state
+## ldapResponseContext - context with LDAP state (if using native LDAP)
+## rpUIContext - the context with SP UI information from the metadata
+## extendedAuthenticationFlows - collection of "extended" AuthenticationFlowDescriptor objects
+## passwordPrincipals - contents of the shibboleth.authn.Password.PrincipalOverride bean
+## encoder - HTMLEncoder class
+## request - HttpServletRequest
+## response - HttpServletResponse
+## environment - Spring Environment object for property resolution
+## custom - arbitrary object injected by deployer
+##
+#set ($rpContext = $profileRequestContext.getSubcontext('net.shibboleth.idp.profile.context.RelyingPartyContext'))
+#set ($username = $authenticationContext.getSubcontext('net.shibboleth.idp.authn.context.UsernamePasswordContext', true).getUsername())
+#set ($passwordEnabled = false)
+#if (!$passwordPrincipals or $passwordPrincipals.isEmpty() or $authenticationContext.isAcceptable($passwordPrincipals))
+  #set ($passwordEnabled = true)
+#end
+##
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>#springMessageText("idp.title", "Web Login Service")</title>
+        <link rel="stylesheet" type="text/css" href="$request.getContextPath()/css/common.css">
+        <link rel="stylesheet" type="text/css" href="$request.getContextPath()/css/login.css">
+    </head>
+    <body>
+    <div class="login">
+                <div class="visual">
+                    <img src="$request.getContextPath()/images/logo_pc.png" class="img_logo_pc">
+                    <img src="$request.getContextPath()/images/logo_mobile.png" class="img_logo_mobile">
+                    <img src="$request.getContextPath()/images/visual.png" class="img_visual" />
+                    <img src="$request.getContextPath()/images/bg_circle.png" class="img_bg_circle" />
+                </div>
+                #parse("login-error.vm")
+                <div class="formbox">
+                    <img src="$request.getContextPath()#springMessage("idp.logo")" alt="#springMessageText("idp.logo.alt-text", "logo")" class="img_logo_university">
+                    <p class="formTitle">ID FEDERATION SERVICE</p>
+                    <form action="$flowExecutionUrl" method="post">
+                        #parse("csrf/csrf.vm")
+                        #set ($serviceName = $rpUIContext.serviceName)
+                        #if ($serviceName && !$rpContext.getRelyingPartyId().contains($serviceName))
+                        <legend>
+                            #springMessageText("idp.login.loginTo", "Login to") $encoder.encodeForHTML($serviceName)
+                        </legend>
+                        #end
+            
+                        #if ($passwordEnabled)
+                            <label class="labelinput">
+                                <img src="$request.getContextPath()/images/icon_id.png" class="icon_id" />
+                                <input form-field" id="username" name="j_username" type="text"
+                                    value="#if($username)$encoder.encodeForHTML($username)#end" />
+                            </label>
+                            <label class="labelinput">
+                                <img src="$request.getContextPath()/images/icon_pw.png" class="icon_pw" />
+                                <input form-field" id="password" name="j_password" type="password" value="" />
+                            </label>
+
+                            ## You may need to modify this to taste, such as changing the flow name its checking for to authn/MFA.
+                            #if (!$authenticationContext.getActiveResults().containsKey('authn/Password'))
+                            <label class="labelcheck">
+                                <input type="checkbox" name="donotcache" value="1" id="donotcache">
+                                <span>#springMessageText("idp.login.donotcache", "Don't Remember Login")</span>
+                            </label>
+                            #end
+                            
+                        #end
+
+                        <label class="labelcheck">
+                            <input id="_shib_idp_revokeConsent" type="checkbox" name="_shib_idp_revokeConsent" value="true" />
+                            <label for="_shib_idp_revokeConsent">#springMessageText("idp.attribute-release.revoke", "Clear prior granting of permission for release of your information to this service.")</label>
+                        </label>
+                        
+                        
+                        #if ($passwordEnabled)
+                            <button class="btn_submit" type="submit" name="_eventId_proceed"
+                                onClick="this.childNodes[0].nodeValue='#springMessageText("idp.login.pleasewait", "Logging in, please wait...")'"
+                                >#springMessageText("idp.login.login", "Login")
+                            </button>
+                        #end
+                    </form>
+                </div>
+            </div>
+            <div class="footer">
+            <div class="footer_inner">
+                <div class="page_info">
+                    <a href="">
+                        <img src="$request.getContextPath()/images/logo_footer.png" alt="IU-GJ 포털시스템" />
+                    </a>
+                    <span>Copyirhgt(c) iU-GJ(Innovation University - Gwangju Jeonnam). All right reserved.</span>
+                </div>
+                <div class="page_outside">
+                    <div class="sns">
+                        <a href="">
+                            <img src="$request.getContextPath()/images/icon_sns1.png" alt="좋아요" />
+                        </a>
+                        <a href="">
+                            <img src="$request.getContextPath()/images/icon_sns2.png" alt="공유" />
+                        </a>
+                        <a href="">
+                            <img src="$request.getContextPath()/images/icon_sns3.png" alt="페이스북" />
+                        </a>
+                        <a href="">
+                            <img src="$request.getContextPath()/images/icon_sns4.png" alt="트위터" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </body>
+</html>

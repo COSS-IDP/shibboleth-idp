@@ -16,6 +16,8 @@ services:
     - ATTRIBUTE_QUERY=SELECT CONCAT(FIRST_NAME, LAST_NAME) AS "displayName", EMPLOYEE_ID AS "uid", EMAIL AS "mail", EMPLOYEE_ID AS "employeeNumber", 'IU-GJ' as "organizationName", 'univcode' as "organizationCode",  DEPARTMENT_ID as "division", 'student' as "userType" FROM HR.EMPLOYEES WHERE EMPLOYEE_ID = :USERID
     # secrets:
       # DB_PASSWORD
+    ports:
+    - 4000:4000 
     networks:
         idpapp:
             aliases:

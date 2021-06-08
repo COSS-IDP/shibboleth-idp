@@ -1,0 +1,140 @@
+.login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 767px;
+  margin: 0 auto;
+  padding: 200px 0 150px;
+}
+.img_visual {
+  position: relative;
+  top: -110px;
+}
+
+.img_bg_circle {
+  position: absolute;
+  top: -80%;
+  left: -80%;
+  z-index: -1;
+}
+
+.visual {
+  position: relative;
+  width: calc(100% - 270px);
+  -webkit-width: calc(100% - 270px);
+}
+
+.formbox {
+  width: 270px;
+}
+
+.img_logo_university {
+  width: 100%;
+}
+
+.formTitle {
+  font-size: 24px;
+  color: #fff;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  letter-spacing: -1px;
+  text-align: center;
+  background: #ef9628;
+}
+
+.labelinput {
+  height: 50px;
+  border-radius: 5px;
+  background: #d9d9d9;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+}
+.labelinput input {
+  height: 40px;
+  margin-left: 10px;
+  background: none;
+  border: none;
+  font-size: 15px;
+}
+.labelinput input:focus {
+  outline: 0;
+}
+
+.labelcheck {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 15px 0;
+}
+
+.labelcheck input {
+  position: relative;
+  top: 2px;
+  margin-right: 5px;
+}
+
+.labelcheck span {
+  color: #bababa;
+  line-height: 18px;
+}
+
+.btn_submit {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: #ef9628;
+  display: block;
+  height: 50px;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn_submit:hover {
+  background: #f18500;
+}
+
+.btn_find_pw {
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  color: #bababa;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.btn_find_pw:hover {
+  color: #999;
+}
+
+.img_logo_pc {
+  display: inline-block;
+}
+
+@media screen and (max-width: 767px) {
+  .login {
+    display: block;
+    padding: 50px 15px;
+  }
+  .img_logo_pc {
+    display: none;
+  }
+  .img_logo_mobile {
+    display: block;
+  }
+  .img_visual {
+    right: -30px;
+  }
+  .img_bg_circle {
+    top: -400px;
+    left: -400px;
+  }
+  .formbox {
+    margin: 0 auto;
+  }
+}
