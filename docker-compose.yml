@@ -1,6 +1,7 @@
 version: "3.1"
 services:
   rest:
+    restart: unless-stopped
     image: docker.iugj.ac.kr/rest-oracle:latest
     environment:
     - TZ=Asia/Seoul
@@ -23,6 +24,7 @@ services:
             aliases:
              - rest
   idp:
+    restart: unless-stopped
     build:
         context: ./
         args:
