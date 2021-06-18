@@ -28,6 +28,7 @@
         
     <MetadataProvider id="iugj-federation" xsi:type="FileBackedHTTPMetadataProvider" backingFile="%{idp.home}/metadata/iugj-federation.xml" metadataURL="http://registry.iugj.ac.kr:443/signedmetadata/federation/iu-gj/metadata.xml">
            <MetadataFilter xsi:type="SignatureValidation" certificateFile="%{idp.home}/credentials/metadata-signer.crt" />
+           <MetadataFilter xsi:type="RequiredValidUntil" maxValidityInterval="P30D"/>
     </MetadataProvider>
     <MetadataProvider id="JNU_SP" xsi:type="FileBackedHTTPMetadataProvider" backingFile="%{idp.home}/metadata/sp-metadata.xml" metadataURL="https://devsp.jnu.ac.kr/Shibboleth.sso/Metadata" />
         <!-- You should always check the signature and freshness of remote
