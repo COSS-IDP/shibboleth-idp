@@ -30,20 +30,7 @@
            <MetadataFilter xsi:type="SignatureValidation" certificateFile="%{idp.home}/credentials/metadata-signer.crt" />
            <MetadataFilter xsi:type="RequiredValidUntil" maxValidityInterval="P30D"/>
     </MetadataProvider>
-    <MetadataProvider id="JNU_SP" xsi:type="FileBackedHTTPMetadataProvider" backingFile="%{idp.home}/metadata/sp-metadata.xml" metadataURL="https://devsp.jnu.ac.kr/Shibboleth.sso/Metadata" />
-        <!-- You should always check the signature and freshness of remote
-              metadata.  It's commented out until you get the basics working.
-           <MetadataFilter xsi:type="SignatureValidation" certificateFile="%{idp.home}/credentials/signet.crt" />
-           <MetadataFilter xsi:type="RequiredValidUntil" maxValidityInterval="P30D"/>
-        -->
 
-    <MetadataProvider id="SAMLtest" xsi:type="FileBackedHTTPMetadataProvider" backingFile="%{idp.home}/metadata/SAMLtest.xml" metadataURL="https://samltest.id/saml/sp">
-        <!-- You should always check the signature and freshness of remote
-              metadata.  It's commented out until you get the basics working.
-           <MetadataFilter xsi:type="SignatureValidation" certificateFile="%{idp.home}/credentials/signet.crt" />
-           <MetadataFilter xsi:type="RequiredValidUntil" maxValidityInterval="P30D"/>
-        -->
-    </MetadataProvider>
     <!-- Example HTTP metadata provider.  Use this if you want to download
          the metadata from a remote service.
 
