@@ -45,7 +45,7 @@
                 </div>
                 #parse("login-error.vm")
                 <div class="formbox">
-                	<img src="$request.getContextPath()/images/logo_university.png" class="img_logo_university">
+                    <img src="$request.getContextPath()#springMessage("idp.logo")" alt="#springMessageText("idp.logo.alt-text", "logo")" class="img_logo_university">
                     <form action="$flowExecutionUrl" method="post">
                         #parse("csrf/csrf.vm")
                         #set ($serviceName = $rpUIContext.serviceName)
