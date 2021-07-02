@@ -107,13 +107,13 @@
         51008000 목포대학교, 51009000 목포해양대학교, 51013000 순천대학교, 73086000 순천제일대학교, 73116000 전남과학대학교 
         51016000 전남대학교, 73149000 전남도립대학교, 53097000 조선대학교, 53164000 초당대학교, 53127000 호남대학교
     -->
-    <AttributeDefinition id="organizationCode" xsi:type="Simple" >
+    <!-- <AttributeDefinition id="organizationCode" xsi:type="Simple" >
 	<InputDataConnector ref="rest"  attributeNames="organizationCode"/> 
         <DisplayName xml:lang="ko">교육부 대학 코드</DisplayName>
         <DisplayDescription xml:lang="ko">교육부에 등록되어 있는 소속 대학 코드</DisplayDescription>
         <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:organizationCode" encodeType="false" />
         <AttributeEncoder xsi:type="SAML2String" nameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified" name="organizationCode" friendlyName="organizationCode" encodeType="false" />
-    </AttributeDefinition>
+    </AttributeDefinition> -->
 
     <AttributeDefinition xsi:type="Simple" id="eduPersonScopedAffiliation">
 	<InputDataConnector ref="rest"  attributeNames="eduPersonScopedAffiliation"/> 
