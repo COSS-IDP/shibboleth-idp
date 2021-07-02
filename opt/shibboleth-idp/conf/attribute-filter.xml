@@ -1,110 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <AttributeFilterPolicyGroup id="ShibbolethFilterPolicy"
-        xmlns="urn:mace:shibboleth:2.0:afp"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="urn:mace:shibboleth:2.0:afp http://shibboleth.net/schema/idp/shibboleth-afp.xsd">
-<!-- https://devsp.jnu.ac.kr/ -->
-<AttributeFilterPolicy id="lmssp">
-    	<PolicyRequirementRule xsi:type="Requester" value="https://lms.iugj.ac.kr/sp/simplesamlphp" />
-	<AttributeRule attributeID="grade">
+    xmlns="urn:mace:shibboleth:2.0:afp"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mace:shibboleth:2.0:afp http://shibboleth.net/schema/idp/shibboleth-afp.xsd">
+    <!-- https://devsp.jnu.ac.kr/ -->
+    <AttributeFilterPolicy id="lmssp">
+        <PolicyRequirementRule xsi:type="Requester" value="https://lms.iugj.ac.kr/sp/simplesamlphp" />
+        <!-- 학과 -->
+        <AttributeRule attributeID="organizationalUnitName">
             <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="division">
+        </AttributeRule>
+        <!-- faculty or student 교수, 학생 -->
+        <AttributeRule attributeID="eduPersonScopedAffiliation">
             <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="userType">
+        </AttributeRule>
+        <!-- login id, Common Name -->
+        <AttributeRule attributeID="eduPersonPrincipalName">
             <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-    	<AttributeRule attributeID="uid">
+        </AttributeRule>
+        <!-- mail -->
+        <AttributeRule attributeID="mail">
             <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-    	<AttributeRule attributeID="mail">
+        </AttributeRule>
+        <!-- 성 -->
+        <AttributeRule attributeID="givenName">
             <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="givenName">
+        </AttributeRule>
+        <!-- 이름 -->
+        <AttributeRule attributeID="surname">
             <PermitValueRule xsi:type="ANY" />
-	</AttributeRule>
-    	<AttributeRule attributeID="surname">
-        	<PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="displayName">
-        	<PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="organizationName">
+        </AttributeRule>
+        <!-- 표시 이름 -->
+        <AttributeRule attributeID="displayName">
             <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="organizationCode">
+        </AttributeRule>
+        <!-- 대학명 static -->
+        <AttributeRule attributeID="organizationName">
             <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
+        </AttributeRule>
     </AttributeFilterPolicy>
 
-<AttributeFilterPolicy id="devspiugj">
-    	<PolicyRequirementRule xsi:type="Requester" value="https://dev.iugj.ac.kr/sp/simplesamlphp" />
-	<AttributeRule attributeID="grade">
+    <AttributeFilterPolicy id="deviugj">
+        <PolicyRequirementRule xsi:type="Requester" value="https://dev.iugj.ac.kr/sp/simplesamlphp" />
+        <AttributeRule attributeID="organizationalUnitName">
             <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="division">
+        </AttributeRule>
+        <AttributeRule attributeID="eduPersonScopedAffiliation">
             <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="userType">
+        </AttributeRule>
+        <AttributeRule attributeID="eduPersonPrincipalName">
             <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-    	<AttributeRule attributeID="uid">
+        </AttributeRule>
+        <AttributeRule attributeID="mail">
             <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-    	<AttributeRule attributeID="mail">
+        </AttributeRule>
+        <AttributeRule attributeID="givenName">
             <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="givenName">
+        </AttributeRule>
+        <AttributeRule attributeID="surname">
             <PermitValueRule xsi:type="ANY" />
-	</AttributeRule>
-    	<AttributeRule attributeID="surname">
-        	<PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="displayName">
-        	<PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="organizationName">
+        </AttributeRule>
+        <AttributeRule attributeID="displayName">
             <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="organizationCode">
+        </AttributeRule>
+        <AttributeRule attributeID="organizationName">
             <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
+        </AttributeRule>
     </AttributeFilterPolicy>
 
-    <AttributeFilterPolicy id="DEVSPJNUACKR">
-    	<PolicyRequirementRule xsi:type="Requester" value="https://devsp.jnu.ac.kr/Shibboleth.sso/Metadata" />
-    	<AttributeRule attributeID="uid">
-            <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-    	<AttributeRule attributeID="mail">
-            <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="givenName">
-            <PermitValueRule xsi:type="ANY" />
-	</AttributeRule>
-    	<AttributeRule attributeID="surname">
-        	<PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="displayName">
-        	<PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="eduPersonPrincipalName">
-            <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="employeeNumber">
-            <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="employeeType">
-            <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="organizationName">
-            <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-	<AttributeRule attributeID="organizationalUnitName">
-            <PermitValueRule xsi:type="ANY" />
-    	</AttributeRule>
-    </AttributeFilterPolicy>
 </AttributeFilterPolicyGroup>
 
