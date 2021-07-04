@@ -29,6 +29,11 @@
 -->
 
     <MetadataProvider id="iugj-federation" xsi:type="FileBackedHTTPMetadataProvider" backingFile="%{idp.home}/metadata/iugj-federation.xml" metadataURL="https://registry.iugj.ac.kr/rr3/signedmetadata/federation/iu-gj/metadata.xml">
+     <MetadataProvider id="IUGJ_DEV_SP" xsi:type="FilesystemMetadataProvider" metadataFile="%{idp.home}/metadata/iugj-dev-sp-metadata.xml"/> 
+     <MetadataProvider id="LMS_SP" xsi:type="FilesystemMetadataProvider" metadataFile="%{idp.home}/metadata/lms-sp-metadata.xml"/> 
+    </MetadataProvider>
+     <!--   
+    <MetadataProvider id="iugj-federation" xsi:type="FileBackedHTTPMetadataProvider" backingFile="%{idp.home}/metadata/iugj-federation.xml" metadataURL="http://registry.iugj.ac.kr:443/signedmetadata/federation/iu-gj/metadata.xml">
            <MetadataFilter xsi:type="SignatureValidation" certificateFile="%{idp.home}/credentials/metadata-signer.crt" />
            <MetadataFilter xsi:type="RequiredValidUntil" maxValidityInterval="P30D"/>
     </MetadataProvider>
