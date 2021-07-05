@@ -121,11 +121,11 @@
         <AttributeEncoder xsi:type="SAML2String" name="urn:oid:1.3.6.1.4.1.5923.1.1.1.9" friendlyName="eduPersonScopedAffiliation" encodeType="false" />
     </AttributeDefinition>
     <!-- 학부 -->
-  <!-- <AttributeDefinition xsi:type="Simple" id="organizationalUnitName" >
+  <AttributeDefinition xsi:type="Simple" id="organizationalUnitName" >
 	<InputDataConnector ref="rest" attributeNames="organizationalUnitName"/> 
     <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:organizationalUnitName" encodeType="false" />
     <AttributeEncoder xsi:type="SAML2String" name="urn:oid:2.5.4.11" friendlyName="organizationalUnitName"/>
-  </AttributeDefinition> -->
+  </AttributeDefinition>
     <!-- 학년 
 <AttributeDefinition xsi:type="Simple" id="grade" >
 	<InputDataConnector ref="rest" attributeNames="grade" /> 
