@@ -125,7 +125,11 @@
 	<InputDataConnector ref="rest" attributeNames="organizationalUnitName"/> 
     <AttributeEncoder xsi:type="SAML1String" name="urn:mace:dir:attribute-def:organizationalUnitName" encodeType="false" />
     <AttributeEncoder xsi:type="SAML2String" name="urn:oid:2.5.4.11" friendlyName="organizationalUnitName"/>
+<<<<<<< HEAD
   </AttributeDefinition> 
+=======
+  </AttributeDefinition>
+>>>>>>> e1d418760d6d09dae2f29979544cb9b11fe94659
     <!-- 학년 
 <AttributeDefinition xsi:type="Simple" id="grade" >
 	<InputDataConnector ref="rest" attributeNames="grade" /> 
