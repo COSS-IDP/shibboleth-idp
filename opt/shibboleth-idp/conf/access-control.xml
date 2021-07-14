@@ -30,14 +30,14 @@
 
         <entry key="AccessByIPAddress">
             <bean id="AccessByIPAddress" parent="shibboleth.IPRangeAccessControl"
-                p:allowedRanges="#{ {'127.0.0.1/32','::1/128'} }" />
+                p:allowedRanges="#{ {'127.0.0.1/32','168.131.19.1/24','::1/128'} }" />
         </entry>
         <entry key="status.AccessByIPAddress">
             <!--
               Accepted hosts: localhost & two Resource Registry hosts
             -->
             <bean id="status.AccessByIPAddress" parent="shibboleth.IPRangeAccessControl"
-		    p:allowedRanges="#{ {'127.0.0.1/32','::1/128'} }" />
+		    p:allowedRanges="#{ {'127.0.0.1/32','168.131.19.1/24','::1/128'} }" />
         </entry>
         <!--
         <entry key="AccessByUser">
