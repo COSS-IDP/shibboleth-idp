@@ -1,10 +1,61 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--Metadata was generated on: 2021-07-28 04:06 UTC
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Metadata was generated on: 2021-07-28 07:05 UTC
 TERMS OF USE
 
-Note: SP type of entities have been exluded from the generated metadata
--->
-<md:EntitiesDescriptor ID="prefix-20210804040602" Name="federation.iugj.ac.kr" validUntil="2021-08-04T04:06:02Z" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute" xmlns:mdrpi="urn:oasis:names:tc:SAML:metadata:rpi" xmlns:idpdisc="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xrd="http://docs.oasis-open.org/ns/xri/xrd-1.0" xmlns:init="urn:oasis:names:tc:SAML:profiles:SSO:request-init" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:alg="urn:oasis:names:tc:SAML:metadata:algsupport" xmlns:remd="http://refeds.org/metadata" xmlns:hoksso="urn:oasis:names:tc:SAML:2.0:profiles:holder-of-key:SSO:browser">
+--><md:EntitiesDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:alg="urn:oasis:names:tc:SAML:metadata:algsupport" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:hoksso="urn:oasis:names:tc:SAML:2.0:profiles:holder-of-key:SSO:browser" xmlns:idpdisc="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" xmlns:init="urn:oasis:names:tc:SAML:profiles:SSO:request-init" xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute" xmlns:mdrpi="urn:oasis:names:tc:SAML:metadata:rpi" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" xmlns:remd="http://refeds.org/metadata" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xrd="http://docs.oasis-open.org/ns/xri/xrd-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="prefix-20210804070548" Name="federation.iugj.ac.kr" validUntil="2021-08-04T07:05:48Z"><ds:Signature>
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+<ds:Reference URI="#prefix-20210804070548">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>gpno3P5zDGZa+jLhOO8NPIF8TKQ=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue>
+Mmtf8WBRAcLKnP2mlGx+9m/6/a6R9YyCeq+9lc3R/HlMtxH7XLPtoY5YeJ/cEEfMRa5t+v3M9mjr
+m+sopj2ApJhc+vgoimmLkutsJy3hZau5NSYsIt/c1oHCEGXnv2exm0dNkbjJWgj2qx/dGJ6xsO+y
+3VL1SVlTZ3vst4MYRwDf1kB+i+xf9TOYq15D7f2eLRsEn2l20S69Dxx85ZEnmqD8Nk8lMg/kw5sj
+Z2v0riPMaQTcdTk1mLsobFXV2Ifh6ep3HHiU7UWjTRzI1t5650O18pwn2EsU/C8PIkMrSpPUqmy+
+526cU72QLXRidYvm8NBScytophJzjN5rgvdbnw==
+</ds:SignatureValue>
+<ds:KeyInfo>
+<ds:KeyValue>
+<ds:RSAKeyValue>
+<ds:Modulus>
+tAns9zTrQ1DVdLewBS+BG0c4ONVsS4TwnPPkxtSF0aqj7AiU0uyJst2udMDO1BViVfTo1PEBzKqs
+fkFdrfFWWTerkFZc95YA1traJSz1O53sPmsTT/rsSiUacwObQGv63zi+9xmSerwYMwmYO/YOr69R
+Jel0bYMps4dWde6weJmzvf4QjeMomO7xDK02WYtfuWriDT7GDPZo6ukq7QZbVNnLPhEJOK2bm2M2
+hcY5V23ho8syHioVzYNd2I9x7jGQY6UWBwprfwhCE6YToRzu+w7xklLjw6zXpsPb+WNrHf+LGYJP
+jSmK3DQ6njPAsw9v0nAfbJCXZJOpvOQMcaaLlw==
+</ds:Modulus>
+<ds:Exponent>AQAB</ds:Exponent>
+</ds:RSAKeyValue>
+</ds:KeyValue>
+<ds:X509Data>
+<ds:X509Certificate>
+MIIDHTCCAgWgAwIBAgIUCfxO/CsAaSFm+gLh7by1p9RkTaowDQYJKoZIhvcNAQELBQAwHjEcMBoG
+A1UEAwwTcmVnaXN0cnkuaXVnai5hYy5rcjAeFw0yMTA3MDQwNzI4NTNaFw0yNDA3MDMwNzI4NTNa
+MB4xHDAaBgNVBAMME3JlZ2lzdHJ5Lml1Z2ouYWMua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+ggEKAoIBAQC0Cez3NOtDUNV0t7AFL4EbRzg41WxLhPCc8+TG1IXRqqPsCJTS7Imy3a50wM7UFWJV
+9OjU8QHMqqx+QV2t8VZZN6uQVlz3lgDW2tolLPU7new+axNP+uxKJRpzA5tAa/rfOL73GZJ6vBgz
+CZg79g6vr1El6XRtgymzh1Z17rB4mbO9/hCN4yiY7vEMrTZZi1+5auINPsYM9mjq6SrtBltU2cs+
+EQk4rZubYzaFxjlXbeGjyzIeKhXNg13Yj3HuMZBjpRYHCmt/CEITphOhHO77DvGSUuPDrNemw9v5
+Y2sd/4sZgk+NKYrcNDqeM8CzD2/ScB9skJdkk6m85AxxpouXAgMBAAGjUzBRMB0GA1UdDgQWBBS2
+4lIgXt8aaD/bHgKB9IrDX3fOJTAfBgNVHSMEGDAWgBS24lIgXt8aaD/bHgKB9IrDX3fOJTAPBgNV
+HRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQBa4LuLp7l18sZcXlPwlrwnx7mrE2Myyhs4
+RireQS1DI242QVAQNMTUoflNqWrg1CaetI8Fr4mZ02loeaz2YhIPCAY7ko+MC/YqGJe8654KbD66
+bvfBlmsGbUmrQQbMO3Dl/3vFemOGRoa2id3n55djp/jJ6s5VijkAsBAHHaCctb29woKgr+ryXxSB
+QreBe1E7VWOraCHFO0UHYVdOAbvS0ssq1ZKh5N5X7Y7DdLmr3xnHFtQC0KokoC4MUBVgksvbCMAc
+5hG+bvt/Tj3MQ0Ye3AsqJ2tsVOam1VVM+jgjpjeKtYl7IiOs+4Vft+BRAhEEu8Gsuqifn/fka6pd
+HwuH
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+</ds:Signature>
  <!--
 https://idp.kwu.ac.kr/idp/shibboleth
 -->
@@ -110,6 +161,75 @@ pg86</ds:X509Certificate>
    <md:OrganizationDisplayName xml:lang="en">KWU</md:OrganizationDisplayName>
    <md:OrganizationURL xml:lang="en">https://www.kwu.ac.kr</md:OrganizationURL>
   </md:Organization>
+ </md:EntityDescriptor>
+ <!--
+https://dev.iugj.ac.kr/sp/simplesamlphp
+-->
+ <md:EntityDescriptor entityID="https://dev.iugj.ac.kr/sp/simplesamlphp">
+  <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol urn:oasis:names:tc:SAML:1.1:protocol">
+   <md:KeyDescriptor use="signing">
+    <ds:KeyInfo>
+     <ds:X509Data>
+      <ds:X509Certificate>MIIC6zCCAdOgAwIBAgIJAOy0nki3WAOVMA0GCSqGSIb3DQEBBQUAMBcxFTATBgNV
+BAMTDDc5OTQzZmVlNzg2NTAeFw0xNTEyMTEwMzAwNDJaFw0yNTEyMDgwMzAwNDJa
+MBcxFTATBgNVBAMTDDc5OTQzZmVlNzg2NTCCASIwDQYJKoZIhvcNAQEBBQADggEP
+ADCCAQoCggEBALPBzAz0DTn+j2YsQKfqWI+m08lP5UzwVsE9ZKzLqO3PRHZqiOBm
+EaFmRrYCZCAOcJ0TXcxPGtNSo8HC4uw5/Y5lJGuI3jN7X7KB1VUQDpUSwfgOqtro
+uDoVRKrsaYZTnlNV8KbZ0WQz5s4Uw6CxKRB9RZ5iQMP1fuxc8B6GSOb3x69MiY6c
+1jlgVAc6rV4zGfpafacxOLM8qcYhY8u3TiSd0H+oiGEqi1mFLK8yp6FKzX8OUkQf
+We49YHz6wBxFOe+/p+7ziym1rBs/lGfenEo8ziCIMmjnoo257fz00bcz9rFl1rTx
+KLFfgy72xTlG72l6u+pB9VqK3YNJS52Ns5UCAwEAAaM6MDgwFwYDVR0RBBAwDoIM
+Nzk5NDNmZWU3ODY1MB0GA1UdDgQWBBRiDMNPjiAMC50WWubI3PMjP45S/DANBgkq
+hkiG9w0BAQUFAAOCAQEAYZM/iWgC93vAq0d98egEzvESKodxHffkDOagd4Kxt/S0
+AAHsVQCmAK/9kmRhsWzR3f1KIw98q4EX7nH/K68BFrerUvaL5+fEGE9W6Ki6QdW8
+bM17GQkLyRDKZzGPm/hsaG1Oxru2kDf7qSvv59aRZlZ8skrDEnx8+dZ8JKC02ZDU
+ClC+xWl1UPfO2BL4tJei/siSymGpiRqznQ2JMoTFu5CUUpoxyCVz1bl9lCVceoJ9
+FaL38knS0p5DnXcm+I8wqNEVGLDPbDalBQryhJT9fIMm1/B85gB3AWAvcu9PPfHK
+lQQUhxyEXTBJx3luLlpIjoloFKIute9K7pE5qAENjg==</ds:X509Certificate>
+     </ds:X509Data>
+    </ds:KeyInfo>
+   </md:KeyDescriptor>
+   <md:KeyDescriptor use="encryption">
+    <ds:KeyInfo>
+     <ds:X509Data>
+      <ds:X509Certificate>MIIC6zCCAdOgAwIBAgIJAOy0nki3WAOVMA0GCSqGSIb3DQEBBQUAMBcxFTATBgNV
+BAMTDDc5OTQzZmVlNzg2NTAeFw0xNTEyMTEwMzAwNDJaFw0yNTEyMDgwMzAwNDJa
+MBcxFTATBgNVBAMTDDc5OTQzZmVlNzg2NTCCASIwDQYJKoZIhvcNAQEBBQADggEP
+ADCCAQoCggEBALPBzAz0DTn+j2YsQKfqWI+m08lP5UzwVsE9ZKzLqO3PRHZqiOBm
+EaFmRrYCZCAOcJ0TXcxPGtNSo8HC4uw5/Y5lJGuI3jN7X7KB1VUQDpUSwfgOqtro
+uDoVRKrsaYZTnlNV8KbZ0WQz5s4Uw6CxKRB9RZ5iQMP1fuxc8B6GSOb3x69MiY6c
+1jlgVAc6rV4zGfpafacxOLM8qcYhY8u3TiSd0H+oiGEqi1mFLK8yp6FKzX8OUkQf
+We49YHz6wBxFOe+/p+7ziym1rBs/lGfenEo8ziCIMmjnoo257fz00bcz9rFl1rTx
+KLFfgy72xTlG72l6u+pB9VqK3YNJS52Ns5UCAwEAAaM6MDgwFwYDVR0RBBAwDoIM
+Nzk5NDNmZWU3ODY1MB0GA1UdDgQWBBRiDMNPjiAMC50WWubI3PMjP45S/DANBgkq
+hkiG9w0BAQUFAAOCAQEAYZM/iWgC93vAq0d98egEzvESKodxHffkDOagd4Kxt/S0
+AAHsVQCmAK/9kmRhsWzR3f1KIw98q4EX7nH/K68BFrerUvaL5+fEGE9W6Ki6QdW8
+bM17GQkLyRDKZzGPm/hsaG1Oxru2kDf7qSvv59aRZlZ8skrDEnx8+dZ8JKC02ZDU
+ClC+xWl1UPfO2BL4tJei/siSymGpiRqznQ2JMoTFu5CUUpoxyCVz1bl9lCVceoJ9
+FaL38knS0p5DnXcm+I8wqNEVGLDPbDalBQryhJT9fIMm1/B85gB3AWAvcu9PPfHK
+lQQUhxyEXTBJx3luLlpIjoloFKIute9K7pE5qAENjg==</ds:X509Certificate>
+     </ds:X509Data>
+    </ds:KeyInfo>
+   </md:KeyDescriptor>
+   <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://dev.iugj.ac.kr/simplesaml/module.php/saml/sp/saml2-logout.php/default-sp"/>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://dev.iugj.ac.kr/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp" index="0"/>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:browser-post" Location="https://dev.iugj.ac.kr/simplesaml/module.php/saml/sp/saml1-acs.php/default-sp" index="1"/>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://dev.iugj.ac.kr/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp" index="2"/>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:artifact-01" Location="https://dev.iugj.ac.kr/simplesaml/module.php/saml/sp/saml1-acs.php/default-sp/artifact" index="3"/>
+   <md:AttributeConsumingService index="0">
+    <md:ServiceName xml:lang="en">DEV SP</md:ServiceName>
+    <md:RequestedAttribute FriendlyName="transientId" Name="urn:oid:1.2.3.4.5.6.7.8.9.10" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="true"/>
+   </md:AttributeConsumingService>
+  </md:SPSSODescriptor>
+  <md:Organization>
+   <md:OrganizationName xml:lang="en">dev.iugj.ac.kr</md:OrganizationName>
+   <md:OrganizationDisplayName xml:lang="en">DEV SP</md:OrganizationDisplayName>
+   <md:OrganizationURL xml:lang="en">https://dev.iugj.ac.kr/simplesaml/module.php/saml/sp/metadata.php/default-sp</md:OrganizationURL>
+  </md:Organization>
+  <md:ContactPerson contactType="technical">
+   <md:GivenName>Administrator</md:GivenName>
+   <md:EmailAddress>mailto:narzis@gmail.com</md:EmailAddress>
+  </md:ContactPerson>
  </md:EntityDescriptor>
  <!--
 https://idp.cdu.ac.kr/idp/shibboleth
@@ -1278,6 +1398,87 @@ H7qslsAi1CxshG9Y</ds:X509Certificate>
   </md:Organization>
  </md:EntityDescriptor>
  <!--
+https://lms.iugj.ac.kr/sp/simplesamlphp
+-->
+ <md:EntityDescriptor entityID="https://lms.iugj.ac.kr/sp/simplesamlphp">
+  <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol urn:oasis:names:tc:SAML:1.1:protocol">
+   <md:KeyDescriptor use="signing">
+    <ds:KeyInfo>
+     <ds:X509Data>
+      <ds:X509Certificate>MIID+zCCAuOgAwIBAgIJANmccwmkZZdWMA0GCSqGSIb3DQEBCwUAMIGTMQswCQYD
+VQQGEwJLUjEOMAwGA1UECAwFU0VPVUwxFTATBgNVBAcMDERlZmF1bHQgQ2l0eTEO
+MAwGA1UECgwFVWJpb24xEjAQBgNVBAsMCWNvdXJzZW1vczEXMBUGA1UEAwwObG1z
+Lml1Z2ouYWMua3IxIDAeBgkqhkiG9w0BCQEWEW9iajAwN0BuYWRkbGUubmV0MB4X
+DTIxMDcwMjEzNDQxMVoXDTMxMDcwMjEzNDQxMVowgZMxCzAJBgNVBAYTAktSMQ4w
+DAYDVQQIDAVTRU9VTDEVMBMGA1UEBwwMRGVmYXVsdCBDaXR5MQ4wDAYDVQQKDAVV
+YmlvbjESMBAGA1UECwwJY291cnNlbW9zMRcwFQYDVQQDDA5sbXMuaXVnai5hYy5r
+cjEgMB4GCSqGSIb3DQEJARYRb2JqMDA3QG5hZGRsZS5uZXQwggEiMA0GCSqGSIb3
+DQEBAQUAA4IBDwAwggEKAoIBAQC/hr+XRgQuIuAorsNKmDLLwNSESEauNnR2ueh/
+4Y7GuL9ARQ5BOH8FGYbJcs7I7Y6im5Ho5AwosuhxJ1+ufSjKZIomLxxXwZFzoyX3
+VIKUI5cj8fgkJr6rC//gMtk8L+fOCypUZcu/iAhlztvVHbH4gjF2McEDiaIVUCFG
+de5PZ5DFoACsizoRYNDCay+u375tqLra64XkuB42fU9sk5dLKw+DSWjqq4QONFvG
+3n1HqeyVOh2oJEo1o9whEf/5RBKmxXQzm3sk0f9i6iNXlotJMos8jPJlI9NhFrxO
+MOvSwRTOjhszJ7yLVO/8EZOoF+K5/0fKq8xYXqwxB1J8VX9DAgMBAAGjUDBOMB0G
+A1UdDgQWBBQIQI17BUlzlHmr+wJLki3IacpCzjAfBgNVHSMEGDAWgBQIQI17BUlz
+lHmr+wJLki3IacpCzjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQCu
+NhXrua2LiZOQTUGfW+DxlAoRcnRij5bKJEFON+KsSSW9Nad0HPS9QseBFMsEQmUJ
+z7cPkYrEyYiQ2ClTEad4XGrAzLA5P+V08E6sueM3jwQh3fQmqD6U+7Bs8ovyDQa8
+I9RpfUXca0Ycven0B55kSCq2dTyKfE8NwdY7pQi6NqAup7xscxyTe+mhy26VtNkU
+YjUiC5gyGRWldMBsSW6nTXXJsS2PHkp2X8iWEkciwjX7C463O+lRlqxWWgQVIM/b
+BY0cuRLkPFAeAAxlRS2OlAmjx/lI7kJIg0b37/KyG0JZwmCwNQCIV9Ffz+LDUeIS
+zvH+FK1fBjYPgZGEnFAD</ds:X509Certificate>
+     </ds:X509Data>
+    </ds:KeyInfo>
+   </md:KeyDescriptor>
+   <md:KeyDescriptor use="encryption">
+    <ds:KeyInfo>
+     <ds:X509Data>
+      <ds:X509Certificate>MIID+zCCAuOgAwIBAgIJANmccwmkZZdWMA0GCSqGSIb3DQEBCwUAMIGTMQswCQYD
+VQQGEwJLUjEOMAwGA1UECAwFU0VPVUwxFTATBgNVBAcMDERlZmF1bHQgQ2l0eTEO
+MAwGA1UECgwFVWJpb24xEjAQBgNVBAsMCWNvdXJzZW1vczEXMBUGA1UEAwwObG1z
+Lml1Z2ouYWMua3IxIDAeBgkqhkiG9w0BCQEWEW9iajAwN0BuYWRkbGUubmV0MB4X
+DTIxMDcwMjEzNDQxMVoXDTMxMDcwMjEzNDQxMVowgZMxCzAJBgNVBAYTAktSMQ4w
+DAYDVQQIDAVTRU9VTDEVMBMGA1UEBwwMRGVmYXVsdCBDaXR5MQ4wDAYDVQQKDAVV
+YmlvbjESMBAGA1UECwwJY291cnNlbW9zMRcwFQYDVQQDDA5sbXMuaXVnai5hYy5r
+cjEgMB4GCSqGSIb3DQEJARYRb2JqMDA3QG5hZGRsZS5uZXQwggEiMA0GCSqGSIb3
+DQEBAQUAA4IBDwAwggEKAoIBAQC/hr+XRgQuIuAorsNKmDLLwNSESEauNnR2ueh/
+4Y7GuL9ARQ5BOH8FGYbJcs7I7Y6im5Ho5AwosuhxJ1+ufSjKZIomLxxXwZFzoyX3
+VIKUI5cj8fgkJr6rC//gMtk8L+fOCypUZcu/iAhlztvVHbH4gjF2McEDiaIVUCFG
+de5PZ5DFoACsizoRYNDCay+u375tqLra64XkuB42fU9sk5dLKw+DSWjqq4QONFvG
+3n1HqeyVOh2oJEo1o9whEf/5RBKmxXQzm3sk0f9i6iNXlotJMos8jPJlI9NhFrxO
+MOvSwRTOjhszJ7yLVO/8EZOoF+K5/0fKq8xYXqwxB1J8VX9DAgMBAAGjUDBOMB0G
+A1UdDgQWBBQIQI17BUlzlHmr+wJLki3IacpCzjAfBgNVHSMEGDAWgBQIQI17BUlz
+lHmr+wJLki3IacpCzjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQCu
+NhXrua2LiZOQTUGfW+DxlAoRcnRij5bKJEFON+KsSSW9Nad0HPS9QseBFMsEQmUJ
+z7cPkYrEyYiQ2ClTEad4XGrAzLA5P+V08E6sueM3jwQh3fQmqD6U+7Bs8ovyDQa8
+I9RpfUXca0Ycven0B55kSCq2dTyKfE8NwdY7pQi6NqAup7xscxyTe+mhy26VtNkU
+YjUiC5gyGRWldMBsSW6nTXXJsS2PHkp2X8iWEkciwjX7C463O+lRlqxWWgQVIM/b
+BY0cuRLkPFAeAAxlRS2OlAmjx/lI7kJIg0b37/KyG0JZwmCwNQCIV9Ffz+LDUeIS
+zvH+FK1fBjYPgZGEnFAD</ds:X509Certificate>
+     </ds:X509Data>
+    </ds:KeyInfo>
+   </md:KeyDescriptor>
+   <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://lms.iugj.ac.kr/simplesaml/module.php/saml/sp/saml2-logout.php/default-sp"/>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://lms.iugj.ac.kr/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp" index="0"/>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:browser-post" Location="https://lms.iugj.ac.kr/simplesaml/module.php/saml/sp/saml1-acs.php/default-sp" index="1"/>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://lms.iugj.ac.kr/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp" index="2"/>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:artifact-01" Location="https://lms.iugj.ac.kr/simplesaml/module.php/saml/sp/saml1-acs.php/default-sp/artifact" index="3"/>
+   <md:AttributeConsumingService index="0">
+    <md:ServiceName xml:lang="en">LMS</md:ServiceName>
+    <md:RequestedAttribute FriendlyName="transientId" Name="urn:oid:1.2.3.4.5.6.7.8.9.10" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="true"/>
+   </md:AttributeConsumingService>
+  </md:SPSSODescriptor>
+  <md:Organization>
+   <md:OrganizationName xml:lang="en">https://lms.iugj.ac.kr/sp/simplesamlphp</md:OrganizationName>
+   <md:OrganizationDisplayName xml:lang="en">LMS</md:OrganizationDisplayName>
+   <md:OrganizationURL xml:lang="en">https://lms.iugj.ac.kr/simplesaml/module.php/saml/sp/metadata.php/default-sp</md:OrganizationURL>
+  </md:Organization>
+  <md:ContactPerson contactType="technical">
+   <md:GivenName>Administrator</md:GivenName>
+   <md:EmailAddress>mailto:obj007@naddle.net</md:EmailAddress>
+  </md:ContactPerson>
+ </md:EntityDescriptor>
+ <!--
 https://idp.iugj.ac.kr/idp/shibboleth
 -->
  <md:EntityDescriptor entityID="https://idp.iugj.ac.kr/idp/shibboleth">
@@ -1691,6 +1892,229 @@ wWO/</ds:X509Certificate>
    <md:OrganizationName xml:lang="en">idp.dkc.ac.kr/idp/shibboleth</md:OrganizationName>
    <md:OrganizationDisplayName xml:lang="en">DKC</md:OrganizationDisplayName>
    <md:OrganizationURL xml:lang="en">http://www.dkc.ac.kr</md:OrganizationURL>
+  </md:Organization>
+ </md:EntityDescriptor>
+ <!--
+http://localhost/saml/sp
+-->
+ <md:EntityDescriptor entityID="http://localhost/saml/sp">
+  <md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+   <md:KeyDescriptor use="signing">
+    <ds:KeyInfo>
+     <ds:X509Data>
+      <ds:X509Certificate>MIIDZzCCAk+gAwIBAgIEZBJsMDANBgkqhkiG9w0BAQsFADBkMQswCQYDVQQGEwJL
+UjEQMA4GA1UECBMHR1dBTkdKVTEPMA0GA1UEBxMGRE9OR0dVMQ4wDAYDVQQKEwVD
+T01JTjEOMAwGA1UECxMFQ09NSU4xEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0yMTA3
+MjIwNjA0NTdaFw0zMTA3MjAwNjA0NTdaMGQxCzAJBgNVBAYTAktSMRAwDgYDVQQI
+EwdHV0FOR0pVMQ8wDQYDVQQHEwZET05HR1UxDjAMBgNVBAoTBUNPTUlOMQ4wDAYD
+VQQLEwVDT01JTjESMBAGA1UEAxMJbG9jYWxob3N0MIIBIjANBgkqhkiG9w0BAQEF
+AAOCAQ8AMIIBCgKCAQEAgvspTdWgVt3xuTc4a3w6f+cmtkygJLkYhVHag3Zp/fn9
+PDXC5tui2JgFQZPYJB3ISxzrCSp9Y2468kxdqonNtbUghpu2/LryW2ImUTh//1UJ
+0oqx9kWTSZOhAVSiTE3Fw8mo2MO8t5NVG87411nrV4TzkvTQNUpfEPIOQiSilQqA
+gsr2lhdl69347QLS6NmMm1cvXKrI9DpEEI46mG3UfEFLz4bxvFy8EUm5+oEs9zfc
+FuYqv7CZm+QOuyWlirLenjcyMRyVZnHp1QP5BOYcJleAglU4rTjH4xrjPhY/M3Nn
+CQTfukl9eGBUkV7OLnvCP0Q85BPyt3N4+vhHqYypqQIDAQABoyEwHzAdBgNVHQ4E
+FgQUCIcRfcSfdBtN69T7qGnMer6U0FEwDQYJKoZIhvcNAQELBQADggEBAFVKXhhL
+W7+XDhPuRlAtiKOMJ/CUA+lQ3fH7SLZQk3udEkownwN6emCkfxsYKcOb2e9ib8fD
+ieJOzyxCzfSM5vHQSTUdBLDP1iiuIuhodZjXZ398ZiRY3O0DNnbfCQXQgfnFSQU9
+7bH5/ML/t4CbpKqxjcwnYckRzgE49SwcemKT484T9ko+4/lQvGK+duzOoFCrrNTx
+QlT4XzIcjx+Gtz0BYaxZKqfA1omgjsqSGZmvl8Ksud8dwz5/tIe5zyGWrtyoqj9o
+4vOYX/BGDAm00Uc3l0tWsVslMfbmehFuql8Mn3c6fNOabswebraKB1DvmWDXZq3Y
+rhnJBurmux8ocPw=</ds:X509Certificate>
+     </ds:X509Data>
+    </ds:KeyInfo>
+   </md:KeyDescriptor>
+   <md:KeyDescriptor use="encryption">
+    <ds:KeyInfo>
+     <ds:X509Data>
+      <ds:X509Certificate>MIIDZzCCAk+gAwIBAgIEZBJsMDANBgkqhkiG9w0BAQsFADBkMQswCQYDVQQGEwJL
+UjEQMA4GA1UECBMHR1dBTkdKVTEPMA0GA1UEBxMGRE9OR0dVMQ4wDAYDVQQKEwVD
+T01JTjEOMAwGA1UECxMFQ09NSU4xEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0yMTA3
+MjIwNjA0NTdaFw0zMTA3MjAwNjA0NTdaMGQxCzAJBgNVBAYTAktSMRAwDgYDVQQI
+EwdHV0FOR0pVMQ8wDQYDVQQHEwZET05HR1UxDjAMBgNVBAoTBUNPTUlOMQ4wDAYD
+VQQLEwVDT01JTjESMBAGA1UEAxMJbG9jYWxob3N0MIIBIjANBgkqhkiG9w0BAQEF
+AAOCAQ8AMIIBCgKCAQEAgvspTdWgVt3xuTc4a3w6f+cmtkygJLkYhVHag3Zp/fn9
+PDXC5tui2JgFQZPYJB3ISxzrCSp9Y2468kxdqonNtbUghpu2/LryW2ImUTh//1UJ
+0oqx9kWTSZOhAVSiTE3Fw8mo2MO8t5NVG87411nrV4TzkvTQNUpfEPIOQiSilQqA
+gsr2lhdl69347QLS6NmMm1cvXKrI9DpEEI46mG3UfEFLz4bxvFy8EUm5+oEs9zfc
+FuYqv7CZm+QOuyWlirLenjcyMRyVZnHp1QP5BOYcJleAglU4rTjH4xrjPhY/M3Nn
+CQTfukl9eGBUkV7OLnvCP0Q85BPyt3N4+vhHqYypqQIDAQABoyEwHzAdBgNVHQ4E
+FgQUCIcRfcSfdBtN69T7qGnMer6U0FEwDQYJKoZIhvcNAQELBQADggEBAFVKXhhL
+W7+XDhPuRlAtiKOMJ/CUA+lQ3fH7SLZQk3udEkownwN6emCkfxsYKcOb2e9ib8fD
+ieJOzyxCzfSM5vHQSTUdBLDP1iiuIuhodZjXZ398ZiRY3O0DNnbfCQXQgfnFSQU9
+7bH5/ML/t4CbpKqxjcwnYckRzgE49SwcemKT484T9ko+4/lQvGK+duzOoFCrrNTx
+QlT4XzIcjx+Gtz0BYaxZKqfA1omgjsqSGZmvl8Ksud8dwz5/tIe5zyGWrtyoqj9o
+4vOYX/BGDAm00Uc3l0tWsVslMfbmehFuql8Mn3c6fNOabswebraKB1DvmWDXZq3Y
+rhnJBurmux8ocPw=</ds:X509Certificate>
+     </ds:X509Data>
+    </ds:KeyInfo>
+   </md:KeyDescriptor>
+   <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://localhost:80/saml/SingleLogout"/>
+   <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:80/saml/SingleLogout"/>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName</md:NameIDFormat>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://localhost:80/saml/SSO" index="0" isDefault="true"/>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="http://localhost:80/saml/SSO" index="1"/>
+   <md:AttributeConsumingService index="0">
+    <md:ServiceName xml:lang="en">Comin</md:ServiceName>
+    <md:RequestedAttribute FriendlyName="transientId" Name="urn:oid:1.2.3.4.5.6.7.8.9.10" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="true"/>
+   </md:AttributeConsumingService>
+  </md:SPSSODescriptor>
+  <md:Organization>
+   <md:OrganizationName xml:lang="en">localhost/sp/saml</md:OrganizationName>
+   <md:OrganizationDisplayName xml:lang="en">Comin</md:OrganizationDisplayName>
+   <md:OrganizationURL xml:lang="en">http://localhost</md:OrganizationURL>
+  </md:Organization>
+ </md:EntityDescriptor>
+ <!--
+http://spring-sp.iugj.ac.kr:8080/saml/sp
+-->
+ <md:EntityDescriptor entityID="http://spring-sp.iugj.ac.kr:8080/saml/sp">
+  <md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+   <md:KeyDescriptor use="signing">
+    <ds:KeyInfo>
+     <ds:X509Data>
+      <ds:X509Certificate>MIIDUjCCAjqgAwIBAgIEUOLIQTANBgkqhkiG9w0BAQUFADBrMQswCQYDVQQGEwJG
+STEQMA4GA1UECBMHVXVzaW1hYTERMA8GA1UEBxMISGVsc2lua2kxGDAWBgNVBAoT
+D1JNNSBTb2Z0d2FyZSBPeTEMMAoGA1UECwwDUiZEMQ8wDQYDVQQDEwZhcG9sbG8w
+HhcNMTMwMTAxMTEyODAxWhcNMjIxMjMwMTEyODAxWjBrMQswCQYDVQQGEwJGSTEQ
+MA4GA1UECBMHVXVzaW1hYTERMA8GA1UEBxMISGVsc2lua2kxGDAWBgNVBAoTD1JN
+NSBTb2Z0d2FyZSBPeTEMMAoGA1UECwwDUiZEMQ8wDQYDVQQDEwZhcG9sbG8wggEi
+MA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCXqP0wqL2Ai1haeTj0alwsLafh
+rDtUt00E5xc7kdD7PISRA270ZmpYMB4W24Uk2QkuwaBp6dI/yRdUvPfOT45YZrqI
+xMe2451PAQWtEKWF5Z13F0J4/lB71TtrzyH94RnqSHXFfvRN8EY/rzuEzrpZrHdt
+Ns9LRyLqcRTXMMO4z7QghBuxh3K5gu7KqxpHx6No83WNZj4B3gvWLRWv05nbXh/F
+9YMeQClTX1iBNAhLQxWhwXMKB4u1iPQ/KSaal3R26pONUUmu1qVtU1quQozSTPD8
+HvsDqGG19v2+/N3uf5dRYtvEPfwXN3wIY+/R93vBA6lnl5nTctZIRsyg0Gv5AgMB
+AAEwDQYJKoZIhvcNAQEFBQADggEBAFQwAAYUjso1VwjDc2kypK/RRcB8bMAUUIG0
+hLGL82IvnKouGixGqAcULwQKIvTs6uGmlgbSG6Gn5ROb2mlBztXqQ49zRvi5qWNR
+ttir6eyqwRFGOM6A8rxj3Jhxi2Vb/MJn7XzeVHHLzA1sV5hwl/2PLnaL2h9WyG9Q
+wBbwtmkMEqUt/dgixKb1Rvby/tBuRogWgPONNSACiW+Z5o8UdAOqNMZQozD/i1gO
+jBXoF0F5OksjQN7xoQZLj9xXefxCFQ69FPcFDeEWbHwSoBy5hLPNALaEUoa5zPDw
+lixwRjFQTc5XXaRpgIjy/2gsL8+Y5QRhyXnLqgO67BlLYW/GuHE=</ds:X509Certificate>
+     </ds:X509Data>
+    </ds:KeyInfo>
+   </md:KeyDescriptor>
+   <md:KeyDescriptor use="encryption">
+    <ds:KeyInfo>
+     <ds:X509Data>
+      <ds:X509Certificate>MIIDUjCCAjqgAwIBAgIEUOLIQTANBgkqhkiG9w0BAQUFADBrMQswCQYDVQQGEwJG
+STEQMA4GA1UECBMHVXVzaW1hYTERMA8GA1UEBxMISGVsc2lua2kxGDAWBgNVBAoT
+D1JNNSBTb2Z0d2FyZSBPeTEMMAoGA1UECwwDUiZEMQ8wDQYDVQQDEwZhcG9sbG8w
+HhcNMTMwMTAxMTEyODAxWhcNMjIxMjMwMTEyODAxWjBrMQswCQYDVQQGEwJGSTEQ
+MA4GA1UECBMHVXVzaW1hYTERMA8GA1UEBxMISGVsc2lua2kxGDAWBgNVBAoTD1JN
+NSBTb2Z0d2FyZSBPeTEMMAoGA1UECwwDUiZEMQ8wDQYDVQQDEwZhcG9sbG8wggEi
+MA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCXqP0wqL2Ai1haeTj0alwsLafh
+rDtUt00E5xc7kdD7PISRA270ZmpYMB4W24Uk2QkuwaBp6dI/yRdUvPfOT45YZrqI
+xMe2451PAQWtEKWF5Z13F0J4/lB71TtrzyH94RnqSHXFfvRN8EY/rzuEzrpZrHdt
+Ns9LRyLqcRTXMMO4z7QghBuxh3K5gu7KqxpHx6No83WNZj4B3gvWLRWv05nbXh/F
+9YMeQClTX1iBNAhLQxWhwXMKB4u1iPQ/KSaal3R26pONUUmu1qVtU1quQozSTPD8
+HvsDqGG19v2+/N3uf5dRYtvEPfwXN3wIY+/R93vBA6lnl5nTctZIRsyg0Gv5AgMB
+AAEwDQYJKoZIhvcNAQEFBQADggEBAFQwAAYUjso1VwjDc2kypK/RRcB8bMAUUIG0
+hLGL82IvnKouGixGqAcULwQKIvTs6uGmlgbSG6Gn5ROb2mlBztXqQ49zRvi5qWNR
+ttir6eyqwRFGOM6A8rxj3Jhxi2Vb/MJn7XzeVHHLzA1sV5hwl/2PLnaL2h9WyG9Q
+wBbwtmkMEqUt/dgixKb1Rvby/tBuRogWgPONNSACiW+Z5o8UdAOqNMZQozD/i1gO
+jBXoF0F5OksjQN7xoQZLj9xXefxCFQ69FPcFDeEWbHwSoBy5hLPNALaEUoa5zPDw
+lixwRjFQTc5XXaRpgIjy/2gsL8+Y5QRhyXnLqgO67BlLYW/GuHE=</ds:X509Certificate>
+     </ds:X509Data>
+    </ds:KeyInfo>
+   </md:KeyDescriptor>
+   <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://spring-sp.iugj.ac.kr:8080/spring-security-saml2-sample/saml/SingleLogout"/>
+   <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://spring-sp.iugj.ac.kr:8080/spring-security-saml2-sample/saml/SingleLogout"/>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName</md:NameIDFormat>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://spring-sp.iugj.ac.kr:8080/spring-security-saml2-sample/saml/SSO" index="0" isDefault="true"/>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="http://spring-sp.iugj.ac.kr:8080/spring-security-saml2-sample/saml/SSO" index="1"/>
+   <md:AttributeConsumingService index="0">
+    <md:ServiceName xml:lang="en">spring-sp.iugj.ac.kr:8080</md:ServiceName>
+    <md:RequestedAttribute FriendlyName="transientId" Name="urn:oid:1.2.3.4.5.6.7.8.9.10" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="true"/>
+   </md:AttributeConsumingService>
+  </md:SPSSODescriptor>
+  <md:Organization>
+   <md:OrganizationName xml:lang="en">spring-sp.iugj.ac.kr:8080/saml/sp</md:OrganizationName>
+   <md:OrganizationDisplayName xml:lang="en">spring-sp.iugj.ac.kr:8080</md:OrganizationDisplayName>
+   <md:OrganizationURL xml:lang="en">http://spring-sp.iugj.ac.kr</md:OrganizationURL>
+  </md:Organization>
+ </md:EntityDescriptor>
+ <!--
+http://localhost:8080/saml/sp
+-->
+ <md:EntityDescriptor entityID="http://localhost:8080/saml/sp">
+  <md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+   <md:KeyDescriptor use="signing">
+    <ds:KeyInfo>
+     <ds:X509Data>
+      <ds:X509Certificate>MIIDYTCCAkmgAwIBAgIEbxAVrDANBgkqhkiG9w0BAQsFADBhMQswCQYDVQQGEwJL
+UjEQMA4GA1UECBMHR3dhbmdqdTELMAkGA1UEBxMCR1cxETAPBgNVBAoTCGJpdGdh
+cmFtMQwwCgYDVQQLEwNERVYxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0yMTA3Mjgw
+NjU5MjdaFw0zMTA3MjYwNjU5MjdaMGExCzAJBgNVBAYTAktSMRAwDgYDVQQIEwdH
+d2FuZ2p1MQswCQYDVQQHEwJHVzERMA8GA1UEChMIYml0Z2FyYW0xDDAKBgNVBAsT
+A0RFVjESMBAGA1UEAxMJbG9jYWxob3N0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A
+MIIBCgKCAQEAnPu555ddKmu3JVGFOK6MvkUYPfh8Bi5Rhg+ekAAce85uNJF4pyoU
+2iUKKnY/8QfwzXMKtRMTIX89YiEkCXmlgIrl0me0CALnRdSlh/DRtQuVnK8+69OM
+l3ngSV2+O0OcrHQgk8TcgBLS5W+A9R+862OaKMpkPF4jqfDyj8YDJ+l2ct0ccdUH
+9lVPUT9fVZYAJY+ZcmA8z2TMMyV5+z/FfAOR6csfyhbl1QEvPSYuchHQV+xaKdf7
+fgjbBpMDV1VQDj9Gf2SbMeJFr+PlK7F/u6YX9q1aM7AmlTC3wKJTgfheDer7htig
+RgEFYkk4a1SNeUwSTGT1yCfzZZMl443nlwIDAQABoyEwHzAdBgNVHQ4EFgQUifej
+EwlJTTWzP+tNC5PAIBUANBowDQYJKoZIhvcNAQELBQADggEBAIzZmOwf6VYPekPk
+42M9huV8KYx9QLSMO0aFAkWMhIobLkJwka+0AhQTcHnXsUl+BabIICA2sIEKDX9U
+FSd9XASyi8hS/orvdlgmE5Ei9nPlQpYoYexJJeMwk41w42HFSn9XIsuyolcXouKb
+8vonDAyR0MHWu0q1aQBtOaG9exMnPo+6T2oA7jT9Ia2m0gbRDBDqJiqhBKora3bf
+a7Yw9ZxMJMXVIVxxD0x3KWjVfRP24Bjl91T/1Qf1bXua8ao6aM0RzIZtozEKfMNc
+rGtXE2kf8Fz////3GoVHWZ7NQT5c+cjuKpw12ktwFD6yjqdlwK9Mj4yMx4r/f7VB
+Q0KdLeo=</ds:X509Certificate>
+     </ds:X509Data>
+    </ds:KeyInfo>
+   </md:KeyDescriptor>
+   <md:KeyDescriptor use="encryption">
+    <ds:KeyInfo>
+     <ds:X509Data>
+      <ds:X509Certificate>MIIDYTCCAkmgAwIBAgIEbxAVrDANBgkqhkiG9w0BAQsFADBhMQswCQYDVQQGEwJL
+UjEQMA4GA1UECBMHR3dhbmdqdTELMAkGA1UEBxMCR1cxETAPBgNVBAoTCGJpdGdh
+cmFtMQwwCgYDVQQLEwNERVYxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0yMTA3Mjgw
+NjU5MjdaFw0zMTA3MjYwNjU5MjdaMGExCzAJBgNVBAYTAktSMRAwDgYDVQQIEwdH
+d2FuZ2p1MQswCQYDVQQHEwJHVzERMA8GA1UEChMIYml0Z2FyYW0xDDAKBgNVBAsT
+A0RFVjESMBAGA1UEAxMJbG9jYWxob3N0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A
+MIIBCgKCAQEAnPu555ddKmu3JVGFOK6MvkUYPfh8Bi5Rhg+ekAAce85uNJF4pyoU
+2iUKKnY/8QfwzXMKtRMTIX89YiEkCXmlgIrl0me0CALnRdSlh/DRtQuVnK8+69OM
+l3ngSV2+O0OcrHQgk8TcgBLS5W+A9R+862OaKMpkPF4jqfDyj8YDJ+l2ct0ccdUH
+9lVPUT9fVZYAJY+ZcmA8z2TMMyV5+z/FfAOR6csfyhbl1QEvPSYuchHQV+xaKdf7
+fgjbBpMDV1VQDj9Gf2SbMeJFr+PlK7F/u6YX9q1aM7AmlTC3wKJTgfheDer7htig
+RgEFYkk4a1SNeUwSTGT1yCfzZZMl443nlwIDAQABoyEwHzAdBgNVHQ4EFgQUifej
+EwlJTTWzP+tNC5PAIBUANBowDQYJKoZIhvcNAQELBQADggEBAIzZmOwf6VYPekPk
+42M9huV8KYx9QLSMO0aFAkWMhIobLkJwka+0AhQTcHnXsUl+BabIICA2sIEKDX9U
+FSd9XASyi8hS/orvdlgmE5Ei9nPlQpYoYexJJeMwk41w42HFSn9XIsuyolcXouKb
+8vonDAyR0MHWu0q1aQBtOaG9exMnPo+6T2oA7jT9Ia2m0gbRDBDqJiqhBKora3bf
+a7Yw9ZxMJMXVIVxxD0x3KWjVfRP24Bjl91T/1Qf1bXua8ao6aM0RzIZtozEKfMNc
+rGtXE2kf8Fz////3GoVHWZ7NQT5c+cjuKpw12ktwFD6yjqdlwK9Mj4yMx4r/f7VB
+Q0KdLeo=</ds:X509Certificate>
+     </ds:X509Data>
+    </ds:KeyInfo>
+   </md:KeyDescriptor>
+   <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://localhost:8080/spring-security-saml2-sample/saml/SingleLogout"/>
+   <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:8080/spring-security-saml2-sample/saml/SingleLogout"/>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName</md:NameIDFormat>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://localhost:8080/spring-security-saml2-sample/saml/SSO" index="0" isDefault="true"/>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="http://localhost:8080/spring-security-saml2-sample/saml/SSO" index="1"/>
+   <md:AttributeConsumingService index="0">
+    <md:ServiceName xml:lang="en">localhost</md:ServiceName>
+    <md:RequestedAttribute FriendlyName="transientId" Name="urn:oid:1.2.3.4.5.6.7.8.9.10" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="true"/>
+   </md:AttributeConsumingService>
+  </md:SPSSODescriptor>
+  <md:Organization>
+   <md:OrganizationName xml:lang="en">http://localhost:8080/saml/sp</md:OrganizationName>
+   <md:OrganizationDisplayName xml:lang="en">localhost</md:OrganizationDisplayName>
+   <md:OrganizationURL xml:lang="en">http://localhost:8080/</md:OrganizationURL>
   </md:Organization>
  </md:EntityDescriptor>
 </md:EntitiesDescriptor>
