@@ -1,26 +1,26 @@
 
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Metadata was generated on: 2021-07-28 07:05 UTC
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Metadata was generated on: 2021-07-29 01:28 UTC
 TERMS OF USE
 
---><md:EntitiesDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:alg="urn:oasis:names:tc:SAML:metadata:algsupport" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:hoksso="urn:oasis:names:tc:SAML:2.0:profiles:holder-of-key:SSO:browser" xmlns:idpdisc="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" xmlns:init="urn:oasis:names:tc:SAML:profiles:SSO:request-init" xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute" xmlns:mdrpi="urn:oasis:names:tc:SAML:metadata:rpi" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" xmlns:remd="http://refeds.org/metadata" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xrd="http://docs.oasis-open.org/ns/xri/xrd-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="prefix-20210804070548" Name="federation.iugj.ac.kr" validUntil="2021-08-04T07:05:48Z"><ds:Signature>
+--><md:EntitiesDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:alg="urn:oasis:names:tc:SAML:metadata:algsupport" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:hoksso="urn:oasis:names:tc:SAML:2.0:profiles:holder-of-key:SSO:browser" xmlns:idpdisc="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" xmlns:init="urn:oasis:names:tc:SAML:profiles:SSO:request-init" xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute" xmlns:mdrpi="urn:oasis:names:tc:SAML:metadata:rpi" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" xmlns:remd="http://refeds.org/metadata" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xrd="http://docs.oasis-open.org/ns/xri/xrd-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="prefix-20210805012809" Name="federation.iugj.ac.kr" validUntil="2021-08-05T01:28:09Z"><ds:Signature>
 <ds:SignedInfo>
 <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
 <ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-<ds:Reference URI="#prefix-20210804070548">
+<ds:Reference URI="#prefix-20210805012809">
 <ds:Transforms>
 <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
 <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
 </ds:Transforms>
 <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-<ds:DigestValue>gpno3P5zDGZa+jLhOO8NPIF8TKQ=</ds:DigestValue>
+<ds:DigestValue>c1UZe0TXs84KZd4GSj2RUbIwWD0=</ds:DigestValue>
 </ds:Reference>
 </ds:SignedInfo>
 <ds:SignatureValue>
-Mmtf8WBRAcLKnP2mlGx+9m/6/a6R9YyCeq+9lc3R/HlMtxH7XLPtoY5YeJ/cEEfMRa5t+v3M9mjr
-m+sopj2ApJhc+vgoimmLkutsJy3hZau5NSYsIt/c1oHCEGXnv2exm0dNkbjJWgj2qx/dGJ6xsO+y
-3VL1SVlTZ3vst4MYRwDf1kB+i+xf9TOYq15D7f2eLRsEn2l20S69Dxx85ZEnmqD8Nk8lMg/kw5sj
-Z2v0riPMaQTcdTk1mLsobFXV2Ifh6ep3HHiU7UWjTRzI1t5650O18pwn2EsU/C8PIkMrSpPUqmy+
-526cU72QLXRidYvm8NBScytophJzjN5rgvdbnw==
+pSlA3XQ0Wx1xSyyrEzKTrhtLlh9LOxyp3kPAMp+ryLbG/CbbvkJIQFZ3C/uVjAP+ERc4khbB4+yc
+ZrjLZ/iiO63jz4NIqOS3UMqL2QpdJuvjEpCdk3cQ0GsAEVlPgnx5BKh3S+fkGza/X3BYznTifT0f
+GB4hV79d2oUxi015ylnz3NqogEqjcljm9n9VOdMa0wWjdoMz+msRdcSCSdnVo7kvumLD4J3IOecI
+sRI/SfgcG/JgKos53uRsQfVEoQsk0HtERqSEZVSl61JyGgJeZDhYzlKx/sSkf6KqsxRB7CxpuRBN
+fE775ZhI/E6iFpByN4xarWkogUTUbsZFe2XGKA==
 </ds:SignatureValue>
 <ds:KeyInfo>
 <ds:KeyValue>
@@ -2115,6 +2115,87 @@ Q0KdLeo=</ds:X509Certificate>
    <md:OrganizationName xml:lang="en">http://localhost:8080/saml/sp</md:OrganizationName>
    <md:OrganizationDisplayName xml:lang="en">localhost</md:OrganizationDisplayName>
    <md:OrganizationURL xml:lang="en">http://localhost:8080/</md:OrganizationURL>
+  </md:Organization>
+ </md:EntityDescriptor>
+ <!--
+https://gjrip.comin.com/saml/sp
+-->
+ <md:EntityDescriptor entityID="https://gjrip.comin.com/saml/sp">
+  <md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+   <md:KeyDescriptor use="signing">
+    <ds:KeyInfo>
+     <ds:X509Data>
+      <ds:X509Certificate>MIIDbTCCAlWgAwIBAgIEGbuP1TANBgkqhkiG9w0BAQsFADBnMQswCQYDVQQGEwJL
+UjEQMA4GA1UECBMHR3dhbmdqdTELMAkGA1UEBxMCR1cxETAPBgNVBAoTCGJpdGdh
+cmFtMQwwCgYDVQQLEwNERVYxGDAWBgNVBAMTD2dqcmlwLmNvbWluLmNvbTAeFw0y
+MTA3MjgwNzU1NTNaFw0zMTA3MjYwNzU1NTNaMGcxCzAJBgNVBAYTAktSMRAwDgYD
+VQQIEwdHd2FuZ2p1MQswCQYDVQQHEwJHVzERMA8GA1UEChMIYml0Z2FyYW0xDDAK
+BgNVBAsTA0RFVjEYMBYGA1UEAxMPZ2pyaXAuY29taW4uY29tMIIBIjANBgkqhkiG
+9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqfkijXc0HE1tRt4QVKFW4wHN+yRprw7vC6xi
+vrCQDSvLLXFRtIRfPC3ME2tH/csN2j1vByxhDGfVI4r+a5qmqTlIi+V/LILYHPxS
+oeINevZ7G2u0Ng6+eOwplz3kRrMTzQVA7QzY62eV6Q4DegNJN9Jfbg38yNkvP0Sr
+OihdOo0vZxgqRj1GNX2KrGeHg3VgXc7WUTd3ThYszACmJRSCiAKD3Cic+7myhs+S
+A3rZZzxL8Ug1+xI6gBOYAYJaTmcwLLInCMjUV2U84KAofzQUpdoO71tgrw24opHH
+bB9wO3at0Olz1ZASJ2ga9jGUtBQx3Xy5+B2q8EdIjXVG9IQj8QIDAQABoyEwHzAd
+BgNVHQ4EFgQU7NuXqMo+AvZ08cSSWFfPOwv9CMowDQYJKoZIhvcNAQELBQADggEB
+ACNLZDLSFiB2oUXStqZRIJLcvFRZEZZeB6UsyGLdCViCsq/LXIaKpdP7bksltsAu
+qzJvA6ff2ZYS7Q7mg9E3KAeY88CJlyG3+jrB3aKQkTne+6fScSzAJEmjHIoVEC3z
+4VkvAHmlSqp9JccfeA2RpRLLgBnyTtrXmaNqTCaeVoxQxVwXFeN/j6tRdQJLK90s
+YshilnBuugUVEwDefIGKq90MrP4atCxYp45CXbl57iXUcAUvpXZJFKt7hsC4h+mo
+WIWnwcaF4Y33jaqEbsNmTY+glPhSkBNDsiB2FUAnlf9B7QKppJ3/dImwMZErBKp2
+v4aqj1qAUjOnEdrByUlGS+Q=</ds:X509Certificate>
+     </ds:X509Data>
+    </ds:KeyInfo>
+   </md:KeyDescriptor>
+   <md:KeyDescriptor use="encryption">
+    <ds:KeyInfo>
+     <ds:X509Data>
+      <ds:X509Certificate>MIIDbTCCAlWgAwIBAgIEGbuP1TANBgkqhkiG9w0BAQsFADBnMQswCQYDVQQGEwJL
+UjEQMA4GA1UECBMHR3dhbmdqdTELMAkGA1UEBxMCR1cxETAPBgNVBAoTCGJpdGdh
+cmFtMQwwCgYDVQQLEwNERVYxGDAWBgNVBAMTD2dqcmlwLmNvbWluLmNvbTAeFw0y
+MTA3MjgwNzU1NTNaFw0zMTA3MjYwNzU1NTNaMGcxCzAJBgNVBAYTAktSMRAwDgYD
+VQQIEwdHd2FuZ2p1MQswCQYDVQQHEwJHVzERMA8GA1UEChMIYml0Z2FyYW0xDDAK
+BgNVBAsTA0RFVjEYMBYGA1UEAxMPZ2pyaXAuY29taW4uY29tMIIBIjANBgkqhkiG
+9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqfkijXc0HE1tRt4QVKFW4wHN+yRprw7vC6xi
+vrCQDSvLLXFRtIRfPC3ME2tH/csN2j1vByxhDGfVI4r+a5qmqTlIi+V/LILYHPxS
+oeINevZ7G2u0Ng6+eOwplz3kRrMTzQVA7QzY62eV6Q4DegNJN9Jfbg38yNkvP0Sr
+OihdOo0vZxgqRj1GNX2KrGeHg3VgXc7WUTd3ThYszACmJRSCiAKD3Cic+7myhs+S
+A3rZZzxL8Ug1+xI6gBOYAYJaTmcwLLInCMjUV2U84KAofzQUpdoO71tgrw24opHH
+bB9wO3at0Olz1ZASJ2ga9jGUtBQx3Xy5+B2q8EdIjXVG9IQj8QIDAQABoyEwHzAd
+BgNVHQ4EFgQU7NuXqMo+AvZ08cSSWFfPOwv9CMowDQYJKoZIhvcNAQELBQADggEB
+ACNLZDLSFiB2oUXStqZRIJLcvFRZEZZeB6UsyGLdCViCsq/LXIaKpdP7bksltsAu
+qzJvA6ff2ZYS7Q7mg9E3KAeY88CJlyG3+jrB3aKQkTne+6fScSzAJEmjHIoVEC3z
+4VkvAHmlSqp9JccfeA2RpRLLgBnyTtrXmaNqTCaeVoxQxVwXFeN/j6tRdQJLK90s
+YshilnBuugUVEwDefIGKq90MrP4atCxYp45CXbl57iXUcAUvpXZJFKt7hsC4h+mo
+WIWnwcaF4Y33jaqEbsNmTY+glPhSkBNDsiB2FUAnlf9B7QKppJ3/dImwMZErBKp2
+v4aqj1qAUjOnEdrByUlGS+Q=</ds:X509Certificate>
+     </ds:X509Data>
+    </ds:KeyInfo>
+   </md:KeyDescriptor>
+   <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://gjrip.comin.com:80/saml/SingleLogout"/>
+   <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://gjrip.comin.com:80/saml/SingleLogout"/>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+   <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName</md:NameIDFormat>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://gjrip.comin.com:80/saml/SSO" index="0" isDefault="true"/>
+   <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="http://gjrip.comin.com:80/saml/SSO" index="1"/>
+   <md:AttributeConsumingService index="0">
+    <md:ServiceName xml:lang="en">GJRIP</md:ServiceName>
+    <md:RequestedAttribute FriendlyName="email" Name="urn:oid:0.9.2342.19200300.100.1.3" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="true"/>
+    <md:RequestedAttribute FriendlyName="uid" Name="urn:oid:0.9.2342.19200300.100.1.1" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="true"/>
+    <md:RequestedAttribute FriendlyName="eduPersonPrincipalName" Name="urn:oid:1.3.6.1.4.1.5923.1.1.1.6" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="false"/>
+    <md:RequestedAttribute FriendlyName="organizationName" Name="urn:oid:2.5.4.10" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="false"/>
+    <md:RequestedAttribute FriendlyName="eduPersonScopedAffiliation" Name="urn:oid:1.3.6.1.4.1.5923.1.1.1.9" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="false"/>
+    <md:RequestedAttribute FriendlyName="ou" Name="urn:oid:2.5.4.11" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="false"/>
+    <md:RequestedAttribute FriendlyName="transientId" Name="urn:oid:1.2.3.4.5.6.7.8.9.10" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="true"/>
+   </md:AttributeConsumingService>
+  </md:SPSSODescriptor>
+  <md:Organization>
+   <md:OrganizationName xml:lang="en">gjrip.comin.com/saml/sp</md:OrganizationName>
+   <md:OrganizationDisplayName xml:lang="en">GJRIP</md:OrganizationDisplayName>
+   <md:OrganizationURL xml:lang="en">https://gjrip.comin.com</md:OrganizationURL>
   </md:Organization>
  </md:EntityDescriptor>
 </md:EntitiesDescriptor>
