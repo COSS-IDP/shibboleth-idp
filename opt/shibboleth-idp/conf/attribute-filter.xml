@@ -3,6 +3,41 @@
 <AttributeFilterPolicyGroup id="ShibbolethFilterPolicy"
     xmlns="urn:mace:shibboleth:2.0:afp"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mace:shibboleth:2.0:afp http://shibboleth.net/schema/idp/shibboleth-afp.xsd">
+<AttributeFilterPolicy id="localhost8080">
+        <PolicyRequirementRule xsi:type="Requester" value="http://localhost:8080/saml/sp" />
+        <!-- 학과 -->
+        <AttributeRule attributeID="organizationalUnitName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- faculty or student 교수, 학생 -->
+        <AttributeRule attributeID="eduPersonScopedAffiliation">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- login id, Common Name -->
+        <AttributeRule attributeID="eduPersonPrincipalName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- mail -->
+        <AttributeRule attributeID="mail">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- 성 -->
+        <AttributeRule attributeID="givenName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- 이름 -->
+        <AttributeRule attributeID="surname">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- 표시 이름 -->
+        <AttributeRule attributeID="displayName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- 대학명 static -->
+        <AttributeRule attributeID="organizationName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+    </AttributeFilterPolicy>
     <!-- https://devsp.jnu.ac.kr/ -->
     <AttributeFilterPolicy id="lmssp">
         <PolicyRequirementRule xsi:type="Requester" value="https://lms.iugj.ac.kr/sp/simplesamlphp" />
