@@ -28,7 +28,13 @@
      <MetadataProvider id="LMS_SP" xsi:type="FilesystemMetadataProvider" metadataFile="%{idp.home}/metadata/lms-sp-metadata.xml"/> 
 -->
 
-    <MetadataProvider id="iugj-federation" xsi:type="FileBackedHTTPMetadataProvider" backingFile="%{idp.home}/metadata/iugj-federation.xml" metadataURL="https://registry.iugj.ac.kr/rr3/signedmetadata/federation/iu-gj/metadata.xml">
+    <MetadataProvider 
+	    id="iugj-federation" 
+	    xsi:type="FileBackedHTTPMetadataProvider" 
+	    backingFile="%{idp.home}/metadata/iugj-federation.xml" 
+	    metadataURL="https://registry.iugj.ac.kr/rr3/signedmetadata/federation/iu-gj/metadata.xml"
+	    initializeFromBackupFile="true"
+	    >
         <MetadataFilter xsi:type="SignatureValidation" certificateFile="%{idp.home}/credentials/metadata-signer.crt" />
         <MetadataFilter xsi:type="RequiredValidUntil" maxValidityInterval="P30D"/>
     </MetadataProvider>
