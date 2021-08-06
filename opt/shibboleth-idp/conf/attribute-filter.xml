@@ -3,13 +3,13 @@
 <AttributeFilterPolicyGroup id="ShibbolethFilterPolicy"
     xmlns="urn:mace:shibboleth:2.0:afp"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mace:shibboleth:2.0:afp http://shibboleth.net/schema/idp/shibboleth-afp.xsd">
-<AttributeFilterPolicy id="GJRIP">
-        <PolicyRequirementRule xsi:type="Requester" value="https://gjrip.comin.com/saml/sp" />
-        <!-- 학과 -->
+    <AttributeFilterPolicy id="GJRIP-Production">
+        <PolicyRequirementRule xsi:type="Requester" value="https://www.gjrip.or.kr/saml/sp" />
+        <!-- ÌïôÍ≥º -->
         <AttributeRule attributeID="organizationalUnitName">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
-        <!-- faculty or student 교수, 학생 -->
+        <!-- faculty or student ÍµêÏàò, ÌïôÏÉù -->
         <AttributeRule attributeID="eduPersonScopedAffiliation">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
@@ -21,25 +21,25 @@
         <AttributeRule attributeID="mail">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
-        <!-- 성 -->
+        <!-- ÏÑ± -->
         <AttributeRule attributeID="givenName">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
-        <!-- 이름 -->
+        <!-- Ïù¥Î¶Ñ -->
         <AttributeRule attributeID="surname">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
-        <!-- 표시 이름 -->
+        <!-- ÌëúÏãú Ïù¥Î¶Ñ -->
         <AttributeRule attributeID="displayName">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
-        <!-- 대학명 static -->
+        <!-- ÎåÄÌïôÎ™Ö static -->
         <AttributeRule attributeID="organizationName">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
     </AttributeFilterPolicy>
-<AttributeFilterPolicy id="localhostComin">
-        <PolicyRequirementRule xsi:type="Requester" value="http://localhost/saml/sp" />
+<AttributeFilterPolicy id="GJRIP">
+        <PolicyRequirementRule xsi:type="Requester" value="https://gjrip.comin.com/saml/sp" />
         <!-- 학과 -->
         <AttributeRule attributeID="organizationalUnitName">
             <PermitValueRule xsi:type="ANY" />
