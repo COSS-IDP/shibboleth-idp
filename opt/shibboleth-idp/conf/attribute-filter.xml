@@ -108,9 +108,44 @@
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
     </AttributeFilterPolicy>
-    <!-- https://devsp.jnu.ac.kr/ -->
-    <AttributeFilterPolicy id="lmssp">
+<AttributeFilterPolicy id="lmsSSP">
         <PolicyRequirementRule xsi:type="Requester" value="https://lms.iugj.ac.kr/sp/simplesamlphp" />
+        <!-- 학과 -->
+        <AttributeRule attributeID="organizationalUnitName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- faculty or student 교수, 학생 -->
+        <AttributeRule attributeID="eduPersonScopedAffiliation">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- login id, Common Name -->
+        <AttributeRule attributeID="eduPersonPrincipalName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- mail -->
+        <AttributeRule attributeID="mail">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- 성 -->
+        <AttributeRule attributeID="givenName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- 이름 -->
+        <AttributeRule attributeID="surname">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- 표시 이름 -->
+        <AttributeRule attributeID="displayName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- 대학명 static -->
+        <AttributeRule attributeID="organizationName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+    </AttributeFilterPolicy>
+    <!-- https://lms.jnu.ac.kr/ -->
+    <AttributeFilterPolicy id="lmssp">
+        <PolicyRequirementRule xsi:type="Requester" value="https://lms.jnu.ac.kr/auth/saml2/sp/metadata.php" />
         <!-- 학과 -->
         <AttributeRule attributeID="organizationalUnitName">
             <PermitValueRule xsi:type="ANY" />
@@ -146,7 +181,7 @@
     </AttributeFilterPolicy>
 
     <AttributeFilterPolicy id="deviugj">
-        <PolicyRequirementRule xsi:type="Requester" value="https://dev.iugj.ac.kr/sp/simplesamlphp" />
+        <PolicyRequirementRule xsi:type="Requester" value="https://dev.iugj.ac.kr/simplesaml/module.php/saml/sp/metadata.php/default-sp" />
         <AttributeRule attributeID="organizationalUnitName">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
@@ -172,6 +207,40 @@
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
     </AttributeFilterPolicy>
-
+	<AttributeFilterPolicy id="moodlejnusp">
+        <PolicyRequirementRule xsi:type="Requester" value="https://moodle.jnu.ac.kr/auth/saml2/sp/metadata.php" />
+        <!-- 학과 -->
+        <AttributeRule attributeID="organizationalUnitName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- faculty or student 교수, 학생 -->
+        <AttributeRule attributeID="eduPersonScopedAffiliation">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- login id, Common Name -->
+        <AttributeRule attributeID="eduPersonPrincipalName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- mail -->
+        <AttributeRule attributeID="mail">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- 성 -->
+        <AttributeRule attributeID="givenName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- 이름 -->
+        <AttributeRule attributeID="surname">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- 표시 이름 -->
+        <AttributeRule attributeID="displayName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- 대학명 static -->
+        <AttributeRule attributeID="organizationName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+    </AttributeFilterPolicy>
 </AttributeFilterPolicyGroup>
 
