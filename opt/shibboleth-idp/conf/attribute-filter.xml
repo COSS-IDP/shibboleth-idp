@@ -145,7 +145,7 @@
     </AttributeFilterPolicy>
     <!-- https://lms.jnu.ac.kr/ -->
     <AttributeFilterPolicy id="lmssp">
-        <PolicyRequirementRule xsi:type="Requester" value="https://lms.jnu.ac.kr/auth/saml2/sp/metadata.php" />
+        <PolicyRequirementRule xsi:type="Requester" value="https://lms.iugj.ac.kr/auth/saml2/sp/metadata.php" />
         <!-- 학과 -->
         <AttributeRule attributeID="organizationalUnitName">
             <PermitValueRule xsi:type="ANY" />
