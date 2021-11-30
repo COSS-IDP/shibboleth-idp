@@ -32,7 +32,7 @@
 	    id="iugj-federation" 
 	    xsi:type="FileBackedHTTPMetadataProvider" 
 	    backingFile="%{idp.home}/metadata/iugj-federation.xml" 
-	    metadataURL="https://registry.iugj.ac.kr/rr3/metadata/federation/iu-gj/IDP/metadata.xml"
+	    metadataURL="https://registry.iugj.ac.kr/rr3/metadata/federation/iu-gj/SP/metadata.xml"
 	    initializeFromBackupFile="true"
 	    >
     </MetadataProvider>
