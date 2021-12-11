@@ -69,6 +69,7 @@ RUN wget -q https://shibboleth.net/downloads/identity-provider/$idp_version/shib
     -Didp.keystore.password=${IDP_KEYSTORE_PASSWORD} \
     -Didp.entityID=${IDP_ENTITYID} \
     -Didp.merge.properties=idp.merge.properties \
+    -Didp.initial.modules=+idp.intercept.Consent \
     && rm shibboleth-identity-provider-$idp_version.tar.gz \
     && rm -rf shibboleth-identity-provider-$idp_version
 
