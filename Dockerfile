@@ -5,8 +5,8 @@ ENV jetty_version=9.4.34.v20201102 \
     jetty_hash=10a7d765abd2709ce544f09100650a48 \
     #idp_version=3.4.8 \
     #idp_hash=ad0fcd834d0c6571363d47ad6dde08fbb75cce3202c41f8c64a5b42614f95a27 \
-    idp_version=4.1.2 \
-    idp_hash=2d35dbccc6c6ae6f7eec4adc98eaa406c33df3ad49879839a3839dbf427afff8 \
+    idp_version=4.1.4 \
+    idp_hash=65429f547a7854b30713d86ba5901ca718eae91efb3e618ee11108be59bf8a29 \
     idp_oidcext_version=2.0.0 \
     idp_oidcext_hash=304eb4e58eadc3377fae02209f8eef6549fd17ac5fd9356ad1216869b75bb23a \
     slf4j_version=1.7.29 \
@@ -69,6 +69,7 @@ RUN wget -q https://shibboleth.net/downloads/identity-provider/$idp_version/shib
     -Didp.keystore.password=${IDP_KEYSTORE_PASSWORD} \
     -Didp.entityID=${IDP_ENTITYID} \
     -Didp.merge.properties=idp.merge.properties \
+    -Didp.initial.modules=+idp.intercept.Consent \
     && rm shibboleth-identity-provider-$idp_version.tar.gz \
     && rm -rf shibboleth-identity-provider-$idp_version
 
