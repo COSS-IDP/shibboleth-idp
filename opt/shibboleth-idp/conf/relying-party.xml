@@ -33,11 +33,11 @@
             <list>
                 <!-- SAML 1.1 and SAML 2.0 AttributeQuery are disabled by default. -->
                 <!--
+                <bean parent="Shibboleth.SSO" />
                 <ref bean="SAML1.AttributeQuery" />
                 <ref bean="SAML1.ArtifactResolution" />
-                <bean parent="SAML2.SSO" />
                 -->
-		<bean parent="SAML2.SSO" p:postAuthenticationFlows="#{ {'terms-of-use', 'attribute-release'} }" />
+                <bean parent="SAML2.SSO" p:postAuthenticationFlows="#{ {'terms-of-use', 'attribute-release'} }" />
                 <ref bean="SAML2.ECP" />
                 <ref bean="SAML2.Logout" />
                 <!--
@@ -52,19 +52,35 @@
     <!-- Container for any overrides you want to add. -->
 
     <util:list id="shibboleth.RelyingPartyOverrides">
-	<bean id="gjrip" parent="RelyingPartyByName" c:relyingPartyIds="#{{'https://lms.iugj.ac.kr/auth/saml2/sp/metadata.php','https://gjrip.comin.com/saml/sp'}}">
-        <property name="profileConfigurations">
-	<list>
-            <bean parent="Shibboleth.SSO" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
-            <bean parent="SAML1.AttributeQuery" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
-            <bean parent="SAML1.ArtifactResolution" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
-            <bean parent="SAML2.SSO" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
-            <bean parent="SAML2.ECP" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
-            <bean parent="SAML2.Logout" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
-            <bean parent="SAML2.AttributeQuery" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
-            <bean parent="SAML2.ArtifactResolution" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
-        </list>
-        </property>
+	    <bean id="MoodleJNU" parent="RelyingPartyByName" c:relyingPartyIds="#{{'https://lms.iugj.ac.kr/auth/saml2/sp/metadata.php','https://gjrip.comin.com/saml/sp'}}">
+            <property name="profileConfigurations">
+		<list>
+            		<bean parent="Shibboleth.SSO" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+            		<bean parent="SAML1.AttributeQuery" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+            		<bean parent="SAML1.ArtifactResolution" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+            		<bean parent="SAML2.SSO" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+            		<bean parent="SAML2.ECP" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+            		<bean parent="SAML2.Logout" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+            		<bean parent="SAML2.AttributeQuery" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+            		<bean parent="SAML2.ArtifactResolution" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+        	</list>
+            </property>
         </bean>
+	<!--
+    	<bean id="gjrip" parent="RelyingPartyByName" c:relyingPartyIds="https://gjrip.comin.com/saml/sp">
+            <property name="profileConfigurations">
+		<list>
+            		<bean parent="Shibboleth.SSO" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+            		<bean parent="SAML1.AttributeQuery" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+            		<bean parent="SAML1.ArtifactResolution" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+            		<bean parent="SAML2.SSO" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+            		<bean parent="SAML2.ECP" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+            		<bean parent="SAML2.Logout" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+            		<bean parent="SAML2.AttributeQuery" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+            		<bean parent="SAML2.ArtifactResolution" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
+        	</list>
+            </property>
+        </bean>
+	-->
     </util:list>
 </beans>
