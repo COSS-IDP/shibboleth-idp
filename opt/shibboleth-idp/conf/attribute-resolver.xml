@@ -86,7 +86,7 @@
     </AttributeDefinition>
 
     <AttributeDefinition xsi:type="Scoped" scope="%{idp.scope}" id="eduPersonPrincipalName">
-	<InputDataConnector ref="rest"  attributeNames="uid"/> 
+	<InputDataConnector ref="rest"  attributeNames="eduPersonPrincipalName"/> 
     </AttributeDefinition>
 
     <AttributeDefinition xsi:type="Simple" id="mail" >
