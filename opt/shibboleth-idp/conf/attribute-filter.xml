@@ -9,6 +9,10 @@
         <AttributeRule attributeID="organizationalUnitName">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
+        <!-- employeeNumber -->
+        <AttributeRule attributeID="employeeNumber">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
         <!-- faculty or student ÍµêÏàò, ÌïôÏÉù -->
         <AttributeRule attributeID="eduPersonScopedAffiliation">
             <PermitValueRule xsi:type="ANY" />
@@ -42,6 +46,10 @@
         <PolicyRequirementRule xsi:type="Requester" value="https://gjrip.comin.com/saml/sp" />
         <!-- 학과 -->
         <AttributeRule attributeID="organizationalUnitName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- employeeNumber -->
+        <AttributeRule attributeID="employeeNumber">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
         <!-- faculty or student 교수, 학생 -->
@@ -79,6 +87,10 @@
         <AttributeRule attributeID="organizationalUnitName">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
+        <!-- employeeNumber -->
+        <AttributeRule attributeID="employeeNumber">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
         <!-- faculty or student 교수, 학생 -->
         <AttributeRule attributeID="eduPersonScopedAffiliation">
             <PermitValueRule xsi:type="ANY" />
@@ -112,6 +124,10 @@
         <PolicyRequirementRule xsi:type="Requester" value="https://lms.iugj.ac.kr/sp/simplesamlphp" />
         <!-- 학과 -->
         <AttributeRule attributeID="organizationalUnitName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- employeeNumber -->
+        <AttributeRule attributeID="employeeNumber">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
         <!-- faculty or student 교수, 학생 -->
@@ -150,6 +166,10 @@
         <AttributeRule attributeID="organizationalUnitName">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
+        <!-- employeeNumber -->
+        <AttributeRule attributeID="employeeNumber">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
         <!-- faculty or student 교수, 학생 -->
         <AttributeRule attributeID="eduPersonScopedAffiliation">
             <PermitValueRule xsi:type="ANY" />
@@ -185,6 +205,10 @@
         <AttributeRule attributeID="organizationalUnitName">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
+        <!-- employeeNumber -->
+        <AttributeRule attributeID="employeeNumber">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
         <AttributeRule attributeID="eduPersonScopedAffiliation">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
@@ -211,6 +235,10 @@
         <PolicyRequirementRule xsi:type="Requester" value="https://moodle.jnu.ac.kr/auth/saml2/sp/metadata.php" />
         <!-- 학과 -->
         <AttributeRule attributeID="organizationalUnitName">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule>
+        <!-- employeeNumber -->
+        <AttributeRule attributeID="employeeNumber">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
         <!-- faculty or student 교수, 학생 -->
