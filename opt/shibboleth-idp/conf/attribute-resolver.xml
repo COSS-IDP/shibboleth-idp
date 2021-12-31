@@ -125,7 +125,7 @@
         <AttributeEncoder xsi:type="SAML2String" nameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified" name="organizationCode" friendlyName="organizationCode" encodeType="false" />
     </AttributeDefinition> -->
 
-    <AttributeDefinition  xsi:type="Simple" id="eduPersonScopedAffiliation">
+    <AttributeDefinition  xsi:type="Scoped" scope="%{idp.scope}" id="eduPersonScopedAffiliation">
 	<InputDataConnector ref="rest"  attributeNames="eduPersonScopedAffiliation"/> 
     </AttributeDefinition>
     <!-- 학부 -->
