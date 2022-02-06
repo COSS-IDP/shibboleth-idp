@@ -58,7 +58,14 @@
 	    initializeFromBackupFile="true"
 	    >
     </MetadataProvider>
-
+    <MetadataProvider 
+	    id="iugj-test" 
+	    xsi:type="FileBackedHTTPMetadataProvider" 
+	    backingFile="%{idp.home}/metadata/iugj-federation.xml" 
+	    metadataURL="https://registry.iugj.ac.kr/rr3/metadata/federation/iugj-test/SP/metadata.xml"
+	    initializeFromBackupFile="true"
+	    >
+    </MetadataProvider>
     <!-- Example HTTP metadata provider.  Use this if you want to download
          the metadata from a remote service.
 
