@@ -20,7 +20,10 @@
 #end
 
 #if ($message)
-    <section>
-        <p class="form-element form-error">$encoder.encodeForHTML($message)</p>
-    </section>
+<script>
+alert('로그인 계정이나 암호가 틀렸습니다.');
+</script>
+##    <section>
+##        <p class="form-element form-error">$encoder.encodeForHTML($message)</p>
+##    </section>
 #end
