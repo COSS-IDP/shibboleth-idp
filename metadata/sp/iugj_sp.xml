@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" entityID="https://dev.iugj.ac.kr/sp/simplesamlphp">
+  <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol urn:oasis:names:tc:SAML:1.1:protocol">
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIIFBzCCA2+gAwIBAgIUD3Nsg3iuHrX5vo0o1iRtULICxYcwDQYJKoZIhvcNAQELBQAwgZIxCzAJBgNVBAYTAktSMRAwDgYDVQQIDAdHd2FuZ2p1MRAwDgYDVQQHDAdHd2FuZ2p1MRcwFQYDVQQKDA5CaXRnYXJhbSBJbmZvLjEMMAoGA1UECwwDRGV2MRcwFQYDVQQDDA5kZXYuaXVnai5hYy5rcjEfMB0GCSqGSIb3DQEJARYQbmFyemlzQGdtYWlsLmNvbTAeFw0yMjA0MTcwNzExMzhaFw0zMjA0MTYwNzExMzhaMIGSMQswCQYDVQQGEwJLUjEQMA4GA1UECAwHR3dhbmdqdTEQMA4GA1UEBwwHR3dhbmdqdTEXMBUGA1UECgwOQml0Z2FyYW0gSW5mby4xDDAKBgNVBAsMA0RldjEXMBUGA1UEAwwOZGV2Lml1Z2ouYWMua3IxHzAdBgkqhkiG9w0BCQEWEG5hcnppc0BnbWFpbC5jb20wggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAwggGKAoIBgQDE3zBkIsv0wlDCTbfjr3AZwjG0zlklzrmzP6vdwHnX+7TtBK613y9bMfGnCEhVOCD7gQTwpadalWh3iIopejHK34meN2Chlek+3WohPjkgxBCZnWTHsUP9apERjCuctrBCb6WIzSmkpccNUPXGxNAkcQQbrnhevjsKkhQfd8iqsLUh7jqVEtz12Em0i/7vTgm/Cf9q3Lz5EifVqlrnQq9T+s0pi1TsV5MylbVh521FKhlI2RNypXWC+UsySD8cNBDzLT2rzR0q8iguJ8+zhOrjBdDGc4oFX7PIs2L/BlJzQ+LeMIBBsGtv++mJ2u3mhovPEJC/3CGWgDw4eDPXyu/2Rr1/XU9JZIq6pXRRtfztkG9F6j7667pSPsHhrBH4Y9dW34b2I2tG3rWb6kaTtD+GAmB5kDO3FU9J1rhAXtodtca04HeVa3oz1Z1CNw7KFSYglmbRPbhYns9Bse0uJZtlxirUFI50X14H8gb5aSFGR1XW2Fl8z0pH53r3999+jqUCAwEAAaNTMFEwHQYDVR0OBBYEFAhXI2HgNrIJOB6B2GPoUxENF+tfMB8GA1UdIwQYMBaAFAhXI2HgNrIJOB6B2GPoUxENF+tfMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggGBADJAYD6ioXiKii1vZXVYMBhv+v55q2XsZJey5l0IzGt50ud59DntxYZgsuQFL7DU/L25Yw9x7RbXt8Dpk5qCDNjJJlBiXgB1BBkOJr+nuGQuF/SwTXjEfytv/Pmzv7a1PJt2Q3/CpeeOsOTDFMkGNWFqPrHAXyV4/MEIEb3EqYU4WbvDrsJRykeKLfHkUg0GVNccz1ITIRBpbaCCqQi2D3eqpLnItJUTymCwS6iG/HAYAuzNfG9wk+EXFhZjhELzdF6yTPy0cA6+rtUsj66Y0VF04RRPh24V8fgoRVLTcHf46ZboEhpngUxjUrsIoHnPAmQCQ8FsOt+Y2xVc7hrug3rrxah1n9h6XSnaXm+CIOViG5v4fUQvAAVmnH8kAYxXqNcxoQGVyPsiuCmJRvA0x/80b7+RiJTJ8/ADP+lEun3o8fqbXiRBRiAxbtYySs7jnv99aot1HhCIOfSfeqo+sROVGnwbirREYrMeV6m+alnbnvOO7mH7MZcheKZhc+/nUg==</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor use="encryption">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIIFBzCCA2+gAwIBAgIUD3Nsg3iuHrX5vo0o1iRtULICxYcwDQYJKoZIhvcNAQELBQAwgZIxCzAJBgNVBAYTAktSMRAwDgYDVQQIDAdHd2FuZ2p1MRAwDgYDVQQHDAdHd2FuZ2p1MRcwFQYDVQQKDA5CaXRnYXJhbSBJbmZvLjEMMAoGA1UECwwDRGV2MRcwFQYDVQQDDA5kZXYuaXVnai5hYy5rcjEfMB0GCSqGSIb3DQEJARYQbmFyemlzQGdtYWlsLmNvbTAeFw0yMjA0MTcwNzExMzhaFw0zMjA0MTYwNzExMzhaMIGSMQswCQYDVQQGEwJLUjEQMA4GA1UECAwHR3dhbmdqdTEQMA4GA1UEBwwHR3dhbmdqdTEXMBUGA1UECgwOQml0Z2FyYW0gSW5mby4xDDAKBgNVBAsMA0RldjEXMBUGA1UEAwwOZGV2Lml1Z2ouYWMua3IxHzAdBgkqhkiG9w0BCQEWEG5hcnppc0BnbWFpbC5jb20wggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAwggGKAoIBgQDE3zBkIsv0wlDCTbfjr3AZwjG0zlklzrmzP6vdwHnX+7TtBK613y9bMfGnCEhVOCD7gQTwpadalWh3iIopejHK34meN2Chlek+3WohPjkgxBCZnWTHsUP9apERjCuctrBCb6WIzSmkpccNUPXGxNAkcQQbrnhevjsKkhQfd8iqsLUh7jqVEtz12Em0i/7vTgm/Cf9q3Lz5EifVqlrnQq9T+s0pi1TsV5MylbVh521FKhlI2RNypXWC+UsySD8cNBDzLT2rzR0q8iguJ8+zhOrjBdDGc4oFX7PIs2L/BlJzQ+LeMIBBsGtv++mJ2u3mhovPEJC/3CGWgDw4eDPXyu/2Rr1/XU9JZIq6pXRRtfztkG9F6j7667pSPsHhrBH4Y9dW34b2I2tG3rWb6kaTtD+GAmB5kDO3FU9J1rhAXtodtca04HeVa3oz1Z1CNw7KFSYglmbRPbhYns9Bse0uJZtlxirUFI50X14H8gb5aSFGR1XW2Fl8z0pH53r3999+jqUCAwEAAaNTMFEwHQYDVR0OBBYEFAhXI2HgNrIJOB6B2GPoUxENF+tfMB8GA1UdIwQYMBaAFAhXI2HgNrIJOB6B2GPoUxENF+tfMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggGBADJAYD6ioXiKii1vZXVYMBhv+v55q2XsZJey5l0IzGt50ud59DntxYZgsuQFL7DU/L25Yw9x7RbXt8Dpk5qCDNjJJlBiXgB1BBkOJr+nuGQuF/SwTXjEfytv/Pmzv7a1PJt2Q3/CpeeOsOTDFMkGNWFqPrHAXyV4/MEIEb3EqYU4WbvDrsJRykeKLfHkUg0GVNccz1ITIRBpbaCCqQi2D3eqpLnItJUTymCwS6iG/HAYAuzNfG9wk+EXFhZjhELzdF6yTPy0cA6+rtUsj66Y0VF04RRPh24V8fgoRVLTcHf46ZboEhpngUxjUrsIoHnPAmQCQ8FsOt+Y2xVc7hrug3rrxah1n9h6XSnaXm+CIOViG5v4fUQvAAVmnH8kAYxXqNcxoQGVyPsiuCmJRvA0x/80b7+RiJTJ8/ADP+lEun3o8fqbXiRBRiAxbtYySs7jnv99aot1HhCIOfSfeqo+sROVGnwbirREYrMeV6m+alnbnvOO7mH7MZcheKZhc+/nUg==</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://dev.iugj.ac.kr/simplesaml/module.php/saml/sp/saml2-logout.php/default-sp"/>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://dev.iugj.ac.kr/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp" index="0"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://dev.iugj.ac.kr/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp" index="1"/>
+</md:SPSSODescriptor>
+  <md:ContactPerson contactType="technical">
+    <md:GivenName>Administrator</md:GivenName>
+    <md:EmailAddress>mailto:narzis@gmail.com</md:EmailAddress>
+  </md:ContactPerson>
+</md:EntityDescriptor>
