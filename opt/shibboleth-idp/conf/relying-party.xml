@@ -22,7 +22,7 @@
     <bean id="shibboleth.UnverifiedRelyingParty" parent="RelyingParty">
         <property name="profileConfigurations">
             <list>
-            <!-- <bean parent="SAML2.SSO" p:encryptAssertions="false" /> -->
+		    <!--<bean parent="SAML2.SSO" p:encryptAssertions="false" />-->
             </list>
         </property>
     </bean>
@@ -52,8 +52,8 @@
     <!-- Container for any overrides you want to add. -->
 
     <util:list id="shibboleth.RelyingPartyOverrides">
-	    <bean id="MoodleJNU" parent="RelyingPartyByName" c:relyingPartyIds="#{{'https://lms.iugj.ac.kr/auth/saml2/sp/metadata.php','https://gjrip.comin.com/saml/sp'}}">
-            <property name="profileConfigurations">
+	<bean id="MoodleJNU" parent="RelyingPartyByName" c:relyingPartyIds="#{{'https://lms.iugj.ac.kr/auth/saml2/sp/metadata.php','https://gjrip.comin.com/saml/sp'}}">
+           <property name="profileConfigurations">
 		<list>
             		<bean parent="Shibboleth.SSO" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
             		<bean parent="SAML1.AttributeQuery" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
@@ -64,6 +64,15 @@
             		<bean parent="SAML2.AttributeQuery" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
             		<bean parent="SAML2.ArtifactResolution" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />
         	</list>
+            </property>
+        </bean>
+	<bean id="verbela" parent="RelyingPartyByName" c:relyingPartyIds="#{{'https://dev.iugj.ac.kr/sp/simplesamlphp','urn:amazon:cognito:sp:us-west-2_HGXzo2GfF'}}">
+           <property name="profileConfigurations">
+		   <list>
+			   <bean parent="SAML2.SSO" 
+				   p:encryptAssertions="false" 
+				   p:nameIDFormatPrecedence="urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress" />
+		   </list>
             </property>
         </bean>
 	<!--
