@@ -52,7 +52,7 @@
     <!-- Container for any overrides you want to add. -->
 
     <util:list id="shibboleth.RelyingPartyOverrides">
-	<bean id="MoodleJNU" parent="RelyingPartyByName" c:relyingPartyIds="#{{'https://lms.iugj.ac.kr/auth/saml2/sp/metadata.php','https://gjrip.comin.com/saml/sp'}}">
+	    <bean id="MoodleJNU" parent="RelyingPartyByName" c:relyingPartyIds="#{{'https://lms.iugj.ac.kr/auth/saml2/sp/metadata.php','https://gjrip.comin.com/saml/sp', 'https://iugj.moodler.kr/auth/saml2/sp/metadata.php' }}">
            <property name="profileConfigurations">
 		<list>
             		<bean parent="Shibboleth.SSO" p:securityConfiguration-ref="shibboleth.SecurityConfiguration.CBC" />

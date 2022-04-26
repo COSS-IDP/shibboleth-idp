@@ -271,7 +271,7 @@
         </AttributeRule>
     </AttributeFilterPolicy>
 	<AttributeFilterPolicy id="moodlejnusp">
-        <PolicyRequirementRule xsi:type="Requester" value="https://moodle.jnu.ac.kr/auth/saml2/sp/metadata.php" />
+        <PolicyRequirementRule xsi:type="Requester" value="https://iugj.moodler.kr/auth/saml2/sp/metadata.php" />
         <!-- 학과 -->
         <AttributeRule attributeID="organizationalUnitName">
             <PermitValueRule xsi:type="ANY" />
