@@ -1,3 +1,5 @@
 opt/shibboleth-idp/credentials/idp-browser.p12
 .env
 docker-compose.yml
+opt/shibboleth-idp/credentials
+.devcontainer

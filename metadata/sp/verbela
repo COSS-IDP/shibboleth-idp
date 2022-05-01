@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" entityID="urn:amazon:cognito:sp:us-west-2_HGXzo2GfF">
+  <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol urn:oasis:names:tc:SAML:1.1:protocol">
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIICvDCCAaSgAwIBAgIIdOpvtt2777AwDQYJKoZIhvcNAQELBQAwHjEcMBoGA1UEAwwTdXMtd2VzdC0yX0hHWHpvMkdmRjAeFw0yMjA0MDYxOTM2NTdaFw0zMjA0MDYxOTM2NTdaMB4xHDAaBgNVBAMME3VzLXdlc3QtMl9IR1h6bzJHZkYwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDF+EC8OGLCqKKsEcdwUFzt0K4ekQ36+/7kOOHCYM4+cQ8w2VhJGocJ1Oi5CIwKQvGbGmXDjbKkFXfhCPz7+nt+yRCGyvv7tOUi/FNsDni4H1lf4N2Qshpxc8MbMAIoJhGgTaAlLPgqtoVWQdcabOEhGF6zLdk3LUEZrI9glWL4OQOag8C0uNhS4NdNmSspNrwDm/rD97du8vD6+3oEMXdCZUhEPUBqBVRT986BSU8zDnU3x6jFVKTT4L01CXQoDAYYfTO2KyEiPv/5NR/+cLDWpfUdaSLoe9C+Q60KTsPe+1u41UkHYI6w87TXgVAWKL/mzKzvWQ9O1JZ4C54jKtxhAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAJH8IjPvuCjJPiu55fd+hsWVxQ7xp1yygPPKNecdE/6UfaabeUtrJq+0329N3nUz7buw25FjFoyKav/An6/yCjTK0hCzpcMqrTOY+cRavvKZvZ0rpNgjNgJYTQgt1DyNqtIylsIZeXNjIAwRUQNI17GV9LjwdyNST69e9WU6zPQ6AbfLZ/I611xCbZO5UPxklkj5DBOnpqwWmrPgZJM5jMuwKDj00v0LOLBwXXUWpgfWFNJ5GbjZfVONcWjoJW+Z2/3+Sx25ybuZsZQT+5pkfPO9BDmdnOfWMVL3uCB1u2gZw8JJ4hVcKgZjsB43heXzOBf2ENMF7V7vBXTsGZP4dmc=</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor use="encryption">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIICvDCCAaSgAwIBAgIIdOpvtt2777AwDQYJKoZIhvcNAQELBQAwHjEcMBoGA1UEAwwTdXMtd2VzdC0yX0hHWHpvMkdmRjAeFw0yMjA0MDYxOTM2NTdaFw0zMjA0MDYxOTM2NTdaMB4xHDAaBgNVBAMME3VzLXdlc3QtMl9IR1h6bzJHZkYwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDF+EC8OGLCqKKsEcdwUFzt0K4ekQ36+/7kOOHCYM4+cQ8w2VhJGocJ1Oi5CIwKQvGbGmXDjbKkFXfhCPz7+nt+yRCGyvv7tOUi/FNsDni4H1lf4N2Qshpxc8MbMAIoJhGgTaAlLPgqtoVWQdcabOEhGF6zLdk3LUEZrI9glWL4OQOag8C0uNhS4NdNmSspNrwDm/rD97du8vD6+3oEMXdCZUhEPUBqBVRT986BSU8zDnU3x6jFVKTT4L01CXQoDAYYfTO2KyEiPv/5NR/+cLDWpfUdaSLoe9C+Q60KTsPe+1u41UkHYI6w87TXgVAWKL/mzKzvWQ9O1JZ4C54jKtxhAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAJH8IjPvuCjJPiu55fd+hsWVxQ7xp1yygPPKNecdE/6UfaabeUtrJq+0329N3nUz7buw25FjFoyKav/An6/yCjTK0hCzpcMqrTOY+cRavvKZvZ0rpNgjNgJYTQgt1DyNqtIylsIZeXNjIAwRUQNI17GV9LjwdyNST69e9WU6zPQ6AbfLZ/I611xCbZO5UPxklkj5DBOnpqwWmrPgZJM5jMuwKDj00v0LOLBwXXUWpgfWFNJ5GbjZfVONcWjoJW+Z2/3+Sx25ybuZsZQT+5pkfPO9BDmdnOfWMVL3uCB1u2gZw8JJ4hVcKgZjsB43heXzOBf2ENMF7V7vBXTsGZP4dmc=</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://iu-gj.auth.us-west-2.amazoncognito.com/saml2/idpresponse"/>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://iu-gj.auth.us-west-2.amazoncognito.com/saml2/idpresponse" index="0"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:browser-post" Location="https://iu-gj.auth.us-west-2.amazoncognito.com/saml2/idpresponse" index="1"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://iu-gj.auth.us-west-2.amazoncognito.com/saml2/idpresponse" index="2"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:artifact-01" Location="https://iu-gj.auth.us-west-2.amazoncognito.com/saml2/idpresponse" index="3"/>
+  </md:SPSSODescriptor>
+</md:EntityDescriptor>

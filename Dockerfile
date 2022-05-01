@@ -52,7 +52,7 @@ RUN mkdir -p $JETTY_BASE/modules $JETTY_BASE/lib/ext $JETTY_BASE/lib/logging $JE
     # && $JAVA_HOME/bin/java -jar $JETTY_HOME/start.jar --create-startd --add-to-start=idp,https,http2,http2c,deploy,ext,annotations,jstl,rewrite,setuid
 
 # Shibboleth IdP - Download, verify hash and install
-RUN wget -q https://shibboleth.net/downloads/identity-provider/$idp_version/shibboleth-identity-provider-$idp_version.tar.gz \
+RUN wget -q https://shibboleth.net/downloads/identity-provider/archive/$idp_version/shibboleth-identity-provider-$idp_version.tar.gz \
     && echo "$idp_hash  shibboleth-identity-provider-$idp_version.tar.gz" | sha256sum -c - \
     && tar -zxvf  shibboleth-identity-provider-$idp_version.tar.gz -C /opt \
     && S=$IDP_SRC/idp.merge.properties \
@@ -101,7 +101,7 @@ RUN mkdir -p $JETTY_BASE/logs \
 
 FROM amazoncorretto:11
 
-RUN yum install -y bash curl shadow-utils which
+RUN yum install -y bash curl shadow-utils which tar gzip
 
 
 LABEL maintainer="chrisryu"\

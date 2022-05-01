@@ -16,11 +16,15 @@
 ##
 #set ($activeIdPSessions = $logoutContext and !$logoutContext.getIdPSessions().isEmpty())
 #set ($activeSPSessions = $logoutContext and !$logoutContext.getSessionMap().isEmpty())
+#set ($regex = '(http|https):\/\/(?:.*\.)*(.+\..+?)\/')
+#set ($redirectUrl = $logoutContext.getSessionMap().keySet().toArray()[0].replaceAll('sp/simplesamlphp', ''))
+## add sp path
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="refresh" content="3;url=$redirectUrl">
         <title>#springMessageText("idp.title", "Web Login Service")</title>
         <link rel="stylesheet" type="text/css" href="$request.getContextPath()/css/main.css">
     </head>
@@ -33,21 +37,24 @@
         </header>
 
         <div class="content">
-          <div class="column one">
+         ## <div class="column one">
           #if ($activeIdPSessions)
             <p>#springMessageText("idp.logout.cancelled", "Logout has been cancelled.")</p>
           #elseif ($activeSPSessions)
-            <p>#springMessageText("idp.logout.local", "You elected not to log out of all the applications accessed during your session.")</p>
+            <p style="font-size: 18pt">#springMessageText("idp.logout.local", "로그아웃 완료, PC방등 공공장소에 사용 중이라면 브라우져를 닫아주세요.")</p>
           #else
             <p>#springMessageText("idp.logout.complete", "The logout operation is complete, and no other services appear to have been accessed during this session.")</p>
           #end
-          </div>
+        
+         ## </div>
+          #*
           <div class="column two">
             <ul class="list list-help">
               <li class="list-help-item"><a href="#springMessageText("idp.url.password.reset", '#')"><span class="item-marker">&rsaquo;</span> #springMessageText("idp.login.forgotPassword", "Forgot your password?")</a></li>
               <li class="list-help-item"><a href="#springMessageText("idp.url.helpdesk", '#')"><span class="item-marker">&rsaquo;</span> #springMessageText("idp.login.needHelp", "Need Help?")</a></li>
             </ul>
           </div>
+          *#
         </div>
       </div>
 
