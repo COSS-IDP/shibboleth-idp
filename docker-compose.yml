@@ -1,0 +1,46 @@
+version: "3.1"
+services:
+  rest:
+    image: docker.iugj.ac.kr/rest-oracle:latest
+    environment:
+    - TZ=Asia/Seoul
+    - LANG=ko_KR.UTF-8
+    - DB_USER
+    - DB_PASSWORD
+    - SERVICE
+    - HOST
+    - DB_PORT
+    - DB_TYPE
+    - AUTH_QUERY
+    - ATTRIBUTE_QUERY
+    ports:
+    - 4000:4000
+
+  idp:
+    build:
+        context: ./shibboleth-idp/
+        args:
+            - IDP_SCOPE=${IDP_SCOPE}
+            - IDP_HOST_NAME=${IDP_HOST_NAME}
+            - IDP_ENTITYID=${IDP_ENTITYID}
+            - IDP_KEYSTORE_PASSWORD=${IDP_SSL_PASSWORD}
+            - IDP_SEALER_PASSWORD=${IDP_SSL_PASSWORD}
+            - IDP_ORG_DISPLAYNAME=${IDP_ORG_DISPLAYNAME}
+            - IDP_ORG_HOMEPAGE=${IDP_ORG_HOMEPAGE}
+            - IDP_FORGOT_PASSWORD_URL=https://www.example.ac.kr/forgot-password
+            - IDP_CHANGE_PASSWORD_URL=https://www.example.ac.kr/change-password
+            - IDP_SUPPORT_URL=https://support.example.org/help
+            - IDP_LOGIN_TO_MSG=<p>서비스 사용을 위해 <strong>빛가람 대학 인증서버를 선택</strong>한 사용자입니다.</p> <p>■ 해당 서비스에 로그인하기 위해 <strong>광주전남 지역혁신 플랫폼 아이디와 패스워드</strong>를 입력하세요.</p>
+
+    image: docker.iugj.ac.kr/coss/shibboleth-idp:latest
+    # image:  jnu-idp:latest
+    environment:
+     - TZ=Asia/Seoul
+     - LANG=ko_KR.UTF-8
+    ports:
+    - 443:443
+    - 80:80
+    depends_on:
+    - rest
+    links:
+    - rest:rest
