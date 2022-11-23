@@ -51,19 +51,19 @@
 -->
 
     <MetadataProvider 
-	    id="iugj-federation" 
+	    id="coss-federation" 
 	    xsi:type="FileBackedHTTPMetadataProvider" 
-	    backingFile="%{idp.home}/metadata/iugj-federation.xml" 
-	    metadataURL="https://registry.iugj.ac.kr/rr3/metadata/federation/iu-gj/SP/metadata.xml"
+	    backingFile="%{idp.home}/metadata/coss-federation.xml" 
+	    metadataURL="https://ds.sichimi.kr/rr3/metadata/federation/sichimi/SP/metadata.xml"
 	    initializeFromBackupFile="true"
 	    >
     </MetadataProvider>
 
     <MetadataProvider 
-	    id="iugj-test-federation" 
+	    id="coss-test-federation" 
 	    xsi:type="FileBackedHTTPMetadataProvider" 
 	    backingFile="%{idp.home}/metadata/iugj-test-federation.xml" 
-	    metadataURL="https://registry.iugj.ac.kr/rr3/metadata/federation/iugj-test/SP/metadata.xml"
+	    metadataURL="https://ds.sichimi.kr/rr3/metadata/federation/sichimi-test/SP/metadata.xml "
 	    initializeFromBackupFile="true"
 	    >
     </MetadataProvider>
